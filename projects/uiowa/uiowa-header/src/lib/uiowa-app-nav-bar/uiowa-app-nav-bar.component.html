@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-2 py-1">
+  <a class="navbar-brand app-name" routerLink="">{{applicationName}}</a>
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngbCollapse]="isCollapsed" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item mr-2" *ngFor="let item of internalRoutes" routerLinkActive="active-link">
+        <a *ngIf="!item.subMenus" class="nav-link link-item"
+          [routerLink]="item.route">
+          {{item.text}}
+        </a>
+        <div ngbDropdown class="d-inline-block" *ngIf="item.subMenus">
+          <a *ngIf="item.route" [attr.id]="'navbarDropdown_' + item.text" ngbDropdownToggle class="nav-link link-item"
+            [routerLink]="item.route" >
+            {{item.text}}
+          </a>
+          <a *ngIf="!item.route" [attr.id]="'navbarDropdown_' + item.text" ngbDropdownToggle class="nav-link link-item"
+            href="javascript:void(0)">
+            {{item.text}}
+          </a>
+          <div ngbDropdownMenu class="dropdown-menu" [attr.aria-labelledby]="'navbarDropdown_' + item.text">
+            <div *ngFor="let subitem of item.subMenus">
+              <a *ngIf="subitem.route" class="dropdown-item" [routerLink]="subitem.route">{{subitem.text}}</a>
+              <div *ngIf="!subitem.route" class="dropdown-divider"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

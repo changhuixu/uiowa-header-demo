@@ -1,0 +1,20 @@
+{
+  "name": "@uiowa/uiowa-header",
+  "version": "6.0.5",
+  "author": "Changhui Xu <changhui-xu@uiowa.edu>",
+  "description": "An Angular library for uiowa website header, including a UIOWA branding bar and a website nav bar.",
+  "keywords": ["Angular", "uiowa", "header", "nav bar", "uiowa-branding"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/changhuixu/uiowa-header-demo.git"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0",
+    "@angular/core": "^6.0.0",
+    "@angular/forms": "^6.0.0",
+    "@angular/router": "^6.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^2.0.0",
+    "font-awesome": "^4.7.0"
+  }
+}

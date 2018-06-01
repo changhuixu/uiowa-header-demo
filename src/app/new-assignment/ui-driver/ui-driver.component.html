@@ -1,0 +1,11 @@
+<div class="row d-flex justify-content-around mt-2 mx-0">
+    <div class="col-12 col-lg-6 col-xl-5">
+        <button type="button" class="btn btn-link" (click)="h=!h">Show/Hide HTML Template</button>
+        <pre *ngIf="h" class="w-100"><code class="w-100" highlight [code]="html"></code></pre>
+        <!-- <pre class="w-100"><code class="w-100" highlight [code]="code2"></code></pre> -->
+    </div>
+    <div class="col-12 col-lg-6 col-xl-5">
+        <button type="button" class="btn btn-link" (click)="t=!t">Show/Hide TypeScript Class</button>
+        <pre *ngIf="t" class="w-100"><code class="w-100" highlight [code]="code"></code></pre>
+    </div>
+</div>
