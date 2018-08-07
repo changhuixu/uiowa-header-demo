@@ -6,10 +6,19 @@ export class LoginService {
   constructor() {}
 
   login(): void {
-    window.location.replace(`account/login?returnUri=${this.returnUri}`);
+    const url = `account/login?returnUri=${this.returnUri}`;
+    try {
+      window.location.replace(url);
+    } catch {
+      window.location.href = url;
+    }
   }
 
   logout(): void {
-    window.location.replace(`account/logout`);
+    try {
+      window.location.replace(`account/logout`);
+    } catch {
+      window.location.href = `account/logout`;
+    }
   }
 }
