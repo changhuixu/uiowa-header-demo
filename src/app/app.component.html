@@ -1,10 +1,10 @@
-<header>
+<header role="banner">
   <uiowa-header [externalLinks]="externalLinks" [applicationName]="applicationName" [internalRoutes]="internalRoutes" [user]="headerUser">
   </uiowa-header>
 </header>
-<main class="container-fluid full-height">
+<main role="main" class="w-100 full-height d-flex">
   <router-outlet></router-outlet>
 </main>
-<footer>
+<footer role="contentinfo">
   <app-footer></app-footer>
 </footer>

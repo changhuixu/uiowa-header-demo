@@ -4,7 +4,13 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <router-outlet></router-outlet>
   `,
-  styles: []
+  styles: [
+    `
+      :host {
+        width: 100%;
+      }
+    `
+  ]
 })
 export class HomeComponent implements OnInit {
   constructor() {}

@@ -1,0 +1,13 @@
+#curveUpColor path,
+#curveDownColor path {
+  fill: #3498db;
+  stroke: none;
+}
+
+.color {
+  background: #3498db;
+}
+:host {
+  background: #2980b9;
+  width: 100%;
+}

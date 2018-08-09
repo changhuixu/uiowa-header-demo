@@ -23,6 +23,11 @@ interface InternalRoute {
       .nav-item a {
         color: #0372e8;
       }
+    `,
+    `
+      :host {
+        width: 100%;
+      }
     `
   ]
 })

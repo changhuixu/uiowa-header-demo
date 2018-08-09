@@ -1,3 +1,7 @@
 .btn-link {
   color: #0372e8;
 }
+
+:host {
+  width: 100%;
+}

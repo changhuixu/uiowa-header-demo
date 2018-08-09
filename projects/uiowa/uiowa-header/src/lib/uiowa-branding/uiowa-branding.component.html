@@ -36,7 +36,7 @@
     </div>
     <div class="ml-auto" *ngIf="otherContent.children.length==0">
       <ul class="navbar-nav pt-2">
-        <li class="nav-item text-white mr-3 d-none d-sm-flex" *ngFor="let item of externalLinks">
+        <li class="nav-item text-white mr-4 d-none d-md-flex" *ngFor="let item of externalLinks">
           <a href="{{item.url}}" class="external-link" target="_blank" rel="noopener">{{item.text}}</a>
         </li>
         <li class="nav-item dropdown ml-3" *ngIf="user && user.userName">

@@ -22,17 +22,6 @@
   top: 0;
 }
 
-@media (max-width: 500px) {
-  #uiowa-bar {
-    height: inherit;
-  }
-  #uiowa-bar #wordmark-link {
-    display: inline-block;
-    text-align: center;
-    position: static;
-  }
-}
-
 .user-button {
   color: #ffcd00;
   text-decoration: none;
@@ -52,7 +41,9 @@
 }
 
 .external-link {
-  color: #c9c9c9;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  align-self: center;
 }
 
 .logout-dropdown {
