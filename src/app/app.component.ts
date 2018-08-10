@@ -30,7 +30,16 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.headerUser = {
-      userName: 'changhxu'
+      userName: 'abc',
+      originalUserName: 'changhxu'
     };
+  }
+
+  stopImpersonation() {
+    this.headerUser = this.headerUser = {
+      userName: 'changhxu',
+      originalUserName: ''
+    };
+    console.log(`impersonation stopped`);
   }
 }

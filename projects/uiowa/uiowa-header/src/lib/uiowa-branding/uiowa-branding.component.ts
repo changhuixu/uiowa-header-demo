@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ExternalLink } from '../models/external-link';
 import { HeaderUser } from '../models/header-user';
 import { LoginService } from '../services/login.service';
@@ -11,6 +11,8 @@ import { LoginService } from '../services/login.service';
 export class UiowaBrandingComponent implements OnInit {
   @Input() externalLinks?: ExternalLink[];
   @Input() user?: HeaderUser;
+  @Output() stopImpersonation = new EventEmitter<void>();
+
   constructor(private readonly loginService: LoginService) {}
 
   ngOnInit() {}

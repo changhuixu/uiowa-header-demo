@@ -53,4 +53,6 @@ export class CoreModule {
 }
 ```
 
+* When user is impersonating and wants to stop impersonation, user dropdown will show a link which would emit a `stopImpersonation` event. You can handle this event accordingly.
+
 * Follow web content accessibility guidelines.

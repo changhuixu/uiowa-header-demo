@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ExternalLink } from '../models/external-link';
 import { InternalRoute } from '../models/internal-route';
 import { HeaderUser } from '../models/header-user';
@@ -13,7 +13,7 @@ export class UiowaHeaderComponent implements OnInit {
   @Input() user?: HeaderUser;
   @Input() applicationName: string;
   @Input() internalRoutes: InternalRoute[];
-
+  @Output() stopImpersonation = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit() {}

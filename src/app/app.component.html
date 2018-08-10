@@ -1,5 +1,6 @@
 <header role="banner">
-  <uiowa-header [externalLinks]="externalLinks" [applicationName]="applicationName" [internalRoutes]="internalRoutes" [user]="headerUser">
+  <uiowa-header [externalLinks]="externalLinks" [applicationName]="applicationName" [internalRoutes]="internalRoutes" [user]="headerUser"
+    (stopImpersonation)="stopImpersonation()">
   </uiowa-header>
 </header>
 <main role="main" class="w-100 full-height d-flex">

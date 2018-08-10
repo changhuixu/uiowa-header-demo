@@ -48,6 +48,10 @@
               </span>
             </button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1" role="menuitem" class="logout-dropdown">
+              <a *ngIf="user.originalUserName" href="javascript:void(0)" (click)="stopImpersonation.emit()" style="white-space: nowrap;">
+                <span class="fa fa-stop-circle" aria-hidden="true"></span> Stop Impersonation
+              </a>
+              <div *ngIf="user.originalUserName" class="dropdown-divider"></div>
               <a href="javascript:void(0)" (click)="logout()">
                 <span class="fa fa-sign-out" aria-hidden="true"></span> Logout
               </a>

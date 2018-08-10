@@ -1,4 +1,4 @@
-<uiowa-branding [externalLinks]="externalLinks" [user]="user">
+<uiowa-branding [externalLinks]="externalLinks" [user]="user" (stopImpersonation)="stopImpersonation.emit()">
     <ng-content></ng-content>
 </uiowa-branding>
 <uiowa-app-nav-bar [applicationName]="applicationName" [internalRoutes]="internalRoutes"></uiowa-app-nav-bar>
