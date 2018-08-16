@@ -1,12 +1,16 @@
 # UIowa Header
 
-An Angular library for common website header, including a UIOWA branding bar and a website nav bar.
+An Angular library for common website header, including a UIOWA branding bar and a website nav bar. This library also handles impersonation use case.
+
+You might also want to check out libraries [@uiowa/spinner](https://github.com/changhuixu/spinner) and [session-expiration-alert](https://github.com/changhuixu/session-expiration-alert).
 
 [![Build Status](https://img.shields.io/travis/changhuixu/uiowa-header-demo/master.svg?label=Travis%20CI&style=flat-square)](https://travis-ci.org/changhuixu/uiowa-header-demo)
 [![npm](https://img.shields.io/npm/v/@uiowa/uiowa-header.svg?style=flat-square)](https://www.npmjs.com/package/@uiowa/uiowa-header)
 ![Web Content Accessibility](https://img.shields.io/badge/Accessibility-100-brightgreen.svg?longCache=true&style=flat-square)
 
 ## [Demo](https://uiowa-header.firebaseapp.com)
+
+![Application Screenshots](apps.png)
 
 Dependencies: Angular 6, ng-bootstrap 2, Bootstrap 4 (css), font-awesome 4.7
 
