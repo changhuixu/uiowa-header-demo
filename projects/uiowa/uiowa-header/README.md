@@ -8,7 +8,7 @@ An Angular library for common website header, including a UIowa branding bar and
 
 ## [Demo](https://uiowa-header.firebaseapp.com)
 
-Dependencies: Angular 6, ng-bootstrap 2, Bootstrap 4 (css), font-awesome 4.7
+Dependencies: Angular 6, ng-bootstrap 2, Bootstrap 4 (css)
 
 ## Library Details
 
@@ -33,7 +33,7 @@ Dependencies: Angular 6, ng-bootstrap 2, Bootstrap 4 (css), font-awesome 4.7
 ```
 
 * Support application Nav menus with dropdown sub menus, as well as dividers in dropdown menu.
-* Provide `LoginService` with default implementations for `login()` and `logout()` methods which correspond to click event from login and logout buttons. By default, you don't need to do extra work for login/logout. The two methods follow .NET Core convention redirect to routes `account\login` and `account\logout`, respectively. `LoginService` has a public member `returnUri` (string, default empty), which is the return route after login.
+* Provide `LoginService` with default implementations for `login()` and `logout()` methods which correspond to click event from login and logout buttons. By default, you don't need to do extra work for login/logout. The two methods follow .NET Core convention redirect to routes `account\login` and `account\logout`, respectively. `LoginService` has a public member `returnUri` (string, default empty), which is the return uri after login.
 
   If you want to customize login and/or logout process, you can provide your customized service via dependency injection. eg,
 

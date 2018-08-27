@@ -25,18 +25,16 @@ export class AppComponent implements OnInit {
       new InternalRoute('Invalid Link', '/admin/firstGrid')
     ])
   ];
-  headerUser: HeaderUser;
+  headerUser: HeaderUser = {
+    userName: 'abc',
+    originalUserName: 'changhxu'
+  } as HeaderUser;
   constructor() {}
 
-  ngOnInit() {
-    this.headerUser = {
-      userName: 'abc',
-      originalUserName: 'changhxu'
-    };
-  }
+  ngOnInit() {}
 
   stopImpersonation() {
-    this.headerUser = this.headerUser = {
+    this.headerUser = {
       userName: 'changhxu',
       originalUserName: ''
     };
