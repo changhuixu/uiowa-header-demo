@@ -14,7 +14,11 @@ export class UiowaHeaderComponent implements OnInit {
   @Input() applicationName: string;
   @Input() internalRoutes: InternalRoute[];
   @Output() stopImpersonation = new EventEmitter<void>();
+  showStopImpersonation = false;
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.showStopImpersonation = this.stopImpersonation.observers.length > 0;
+  }
 }

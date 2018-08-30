@@ -11,6 +11,7 @@ import { LoginService } from '../services/login.service';
 export class UiowaBrandingComponent implements OnInit {
   @Input() externalLinks?: ExternalLink[];
   @Input() user?: HeaderUser;
+  @Input() showStopImpersonation: boolean;
   @Output() stopImpersonation = new EventEmitter<void>();
 
   constructor(private readonly loginService: LoginService) {}
