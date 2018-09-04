@@ -1,3 +1,14 @@
-<p>
-  required-assignments works!
-</p>
+<div class="row">
+  <div class="col-12 col-sm-6 col-lg-4 my-2" *ngFor="let item of cars; index as i;">
+    <fieldset class="m-0 px-2 border rounded bg-light position-relative">
+      <legend class="border rounded font-weight-bold m-0 p-2 bg-white" style="font-size: 0.9rem; width: 35%;">
+        Car {{i+1}}
+      </legend>
+      <div class="py-2">
+        <p class="m-0"><span class="label">Make</span> {{item.make}}</p>
+        <p class="m-0"><span class="label">Model</span> {{item.model}}</p>
+        <p class="m-0"><span class="label">Price</span> {{item.price}}</p>
+      </div>
+    </fieldset>
+  </div>
+</div>
