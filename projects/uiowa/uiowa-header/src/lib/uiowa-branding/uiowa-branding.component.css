@@ -1,25 +1,20 @@
-#uiowa-bar {
+.uiowa-bar {
   background-color: black;
-  margin: 0;
-  font-size: 1rem;
   font-family: sans-serif;
   box-sizing: border-box;
-  padding: 6px 10px 2px;
-  width: 100%;
-  position: relative;
   height: 41px;
 }
 
-#uiowa-bar svg {
+.uiowa-bar .wordmark-link {
+  position: absolute;
+  top: 0;
+  margin-left: 0.125rem;
+}
+
+.uiowa-bar .wordmark-link .wordmark-svg {
   width: auto;
   height: 27px;
   fill: #ffcd00;
-}
-
-#uiowa-bar #wordmark-link {
-  display: inline-block;
-  position: absolute;
-  top: 0;
 }
 
 .user-button {
