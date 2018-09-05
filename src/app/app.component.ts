@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
       new InternalRoute('Duplicate Drivers', '/admin/duplicateDrivers'),
       new InternalRoute('', ''),
       new InternalRoute('Invalid Link', '/admin/firstGrid')
-    ])
+    ]),
+    new InternalRoute('Access Denied', 'accessDenied')
   ];
   headerUser: HeaderUser = {
     userName: 'abc',

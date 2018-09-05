@@ -9,6 +9,7 @@
 .nav-item .link-item {
   color: rgba(0, 0, 0, 0.6) !important;
   padding: 0.5rem 1rem 0.2rem 1rem;
+  white-space: nowrap;
 }
 .nav-item .link-item:hover {
   background-color: #e2e2e2;
