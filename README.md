@@ -2,7 +2,7 @@
 
 An Angular library for common website header, including a UIOWA branding bar and a website nav bar. This library also handles impersonation use case.
 
-You might also want to check out libraries [@uiowa/spinner](https://github.com/changhuixu/spinner), [session-expiration-alert](https://github.com/changhuixu/session-expiration-alert), [@uiowa/digit-only](https://github.com/changhuixu/ngx-digit-only) and [@uiowa/uiowa-mfk](https://github.com/changhuixu/uiowa-mfk-project).
+You might also want to check out libraries [@uiowa/spinner](https://github.com/changhuixu/spinner), [session-expiration-alert](https://github.com/changhuixu/session-expiration-alert), [@uiowa/date-range-picker](https://github.com/changhuixu/date-range-picker), [@uiowa/digit-only](https://github.com/changhuixu/ngx-digit-only) and [@uiowa/uiowa-mfk](https://github.com/changhuixu/uiowa-mfk-project).
 
 [![Build Status](https://img.shields.io/travis/changhuixu/uiowa-header-demo/master.svg?label=Travis%20CI&style=flat-square)](https://travis-ci.org/changhuixu/uiowa-header-demo)
 [![npm](https://img.shields.io/npm/v/@uiowa/uiowa-header.svg?style=flat-square)](https://www.npmjs.com/package/@uiowa/uiowa-header)
