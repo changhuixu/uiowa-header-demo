@@ -26,7 +26,7 @@ interface InternalRoute {
     `,
     `
       :host {
-        width: 100%;
+        width: 100vw;
       }
     `
   ]
