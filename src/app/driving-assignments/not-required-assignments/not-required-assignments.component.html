@@ -1,3 +1,16 @@
-<p>
-  not-required-assignments works!
-</p>
+<div class="d-flex flex-column w-100">
+  <button class="btn btn-primary my-2" style="max-width: 200px;" (click)="getSelectedRows()">Get Selected Rows</button>
+
+  <ag-grid-angular
+    #agGrid
+    class="ag-theme-balham w-100 h-100 flex-fill"
+    [enableSorting]="true"
+    [enableFilter]="true"
+    [pagination]="true"
+    [enableColResize]="true"
+    [rowData]="rowData | async"
+    [columnDefs]="columnDefs"
+    rowSelection="multiple"
+  >
+  </ag-grid-angular>
+</div>
