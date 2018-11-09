@@ -5,7 +5,9 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-
+nav {
+  z-index: 20;
+}
 .nav-item .link-item {
   color: rgba(0, 0, 0, 0.6) !important;
   padding: 0.5rem 1rem 0.2rem 1rem;

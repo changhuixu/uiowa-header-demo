@@ -25,11 +25,11 @@ const routes: Routes = [
         component: CompletedReviewsComponent
       },
       {
-        path: 'driversReport',
+        path: 'printingorders',
         component: DriversReportComponent
       },
       {
-        path: 'duplicateDrivers',
+        path: 'waitlist',
         component: DuplicateDriversComponent
       }
     ]

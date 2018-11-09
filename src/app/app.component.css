@@ -1,15 +1,6 @@
-.full-height {
-  overflow-x: hidden;
-  position: absolute;
-  top: 89px;
-  height: calc(100vh - 116px);
-}
-
-@media only screen and (max-width: 486px) {
-  .full-height {
-    overflow-x: hidden;
-    position: absolute;
-    top: 89px;
-    height: calc(100vh - 135px);
-  }
+:host {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
 }

@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
       new InternalRoute('Pending Reviews', '/admin/pendingReviews'),
       new InternalRoute('Completed Reviews', '/admin/completedReviews'),
       new InternalRoute('', ''),
-      new InternalRoute('Drivers Report', '/admin/driversReport'),
-      new InternalRoute('Duplicate Drivers', '/admin/duplicateDrivers'),
+      new InternalRoute('Printing Orders', '/admin/printingorders'),
+      new InternalRoute('Wait List', '/admin/waitlist'),
       new InternalRoute('', ''),
       new InternalRoute('Invalid Link', '/admin/firstGrid')
     ]),
