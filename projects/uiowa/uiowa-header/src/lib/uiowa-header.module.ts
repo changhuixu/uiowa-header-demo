@@ -9,17 +9,16 @@ import { UiowaBrandingComponent } from './uiowa-branding/uiowa-branding.componen
 import { UiowaAppNavBarComponent } from './uiowa-app-nav-bar/uiowa-app-nav-bar.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    NgbModule
-  ],
+  imports: [CommonModule, FormsModule, RouterModule, NgbModule],
   declarations: [
     UiowaHeaderComponent,
     UiowaBrandingComponent,
     UiowaAppNavBarComponent
   ],
-  exports: [UiowaHeaderComponent]
+  exports: [
+    UiowaHeaderComponent,
+    UiowaBrandingComponent,
+    UiowaAppNavBarComponent
+  ]
 })
 export class UiowaHeaderModule {}
