@@ -16,11 +16,11 @@ export class AppComponent implements OnInit {
     new InternalRoute('Driving Assignments', '/assignments'),
     new InternalRoute('DLRS Users', '/users'),
     new InternalRoute('Admin', '', [
-      new InternalRoute('Pending Reviews', '/admin/pendingReviews'),
-      new InternalRoute('Completed Reviews', '/admin/completedReviews'),
-      new InternalRoute('', ''),
       new InternalRoute('Printing Orders', '/admin/printingorders'),
       new InternalRoute('Wait List', '/admin/waitlist'),
+      new InternalRoute('', ''),
+      new InternalRoute('Pending Reviews', '/admin/pendingReviews'),
+      new InternalRoute('Completed Reviews', '/admin/completedReviews'),
       new InternalRoute('', ''),
       new InternalRoute('Invalid Link', '/admin/firstGrid')
     ]),

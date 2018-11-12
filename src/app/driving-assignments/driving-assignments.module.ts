@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { DrivingAssignmentsRoutingModule } from './driving-assignments-routing.module';
 import { AgGridModule } from 'ag-grid-angular';
 
@@ -10,6 +11,7 @@ import { NotRequiredAssignmentsComponent } from './not-required-assignments/not-
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     DrivingAssignmentsRoutingModule,
     AgGridModule.withComponents([])
   ],

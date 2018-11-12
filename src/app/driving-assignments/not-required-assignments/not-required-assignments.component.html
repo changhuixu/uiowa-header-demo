@@ -1,16 +1,39 @@
 <div class="d-flex flex-column w-100">
-  <button class="btn btn-primary my-2" style="max-width: 200px;" (click)="getSelectedRows()">Get Selected Rows</button>
+  <div class="d-flex justify-content-between flex-wrap my-2">
+    <div
+      class="input-group mb-2 mb-md-0"
+      style="max-width: 400px; min-width: 300px;"
+    >
+      <input
+        type="text"
+        class="form-control"
+        placeholder="filter"
+        aria-label="filter search"
+        aria-describedby="filter-addon"
+        [(ngModel)]="filter"
+        (ngModelChange)="onFilterTextBoxChanged()"
+      />
+      <div class="input-group-append" style="height: 38px;">
+        <span class="input-group-text" id="filter-addon"
+          ><i class="fa fa-filter" aria-label="filter search"></i
+        ></span>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary mb-2 mb-md-0"
+      style="max-width: 200px;"
+      (click)="getSelectedRows()"
+    >
+      Get Selected Rows
+    </button>
+  </div>
 
   <ag-grid-angular
     #agGrid
-    class="ag-theme-balham w-100 h-100 flex-fill"
-    [enableSorting]="true"
-    [enableFilter]="true"
-    [pagination]="true"
-    [enableColResize]="true"
+    class="ag-theme-balham h-100"
     [rowData]="rowData | async"
-    [columnDefs]="columnDefs"
-    rowSelection="multiple"
+    [gridOptions]="gridOptions"
+    (gridReady)="onGridReady($event)"
   >
   </ag-grid-angular>
 </div>
