@@ -27,7 +27,11 @@ export const routes: Routes = [
     loadChildren: './dlrs-admin/dlrs-admin.module#DlrsAdminModule'
   },
   {
-    path: 'accessDenied',
+    path: 'waitlist-admin',
+    loadChildren: './waitlist-admin/waitlist-admin.module#WaitlistAdminModule'
+  },
+  {
+    path: 'access-denied',
     component: AccessDeniedComponent
   },
   {

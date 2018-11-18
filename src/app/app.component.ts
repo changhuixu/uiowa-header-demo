@@ -12,19 +12,19 @@ export class AppComponent implements OnInit {
   ];
   applicationName = 'Driver License Review System';
   internalRoutes = [
-    new InternalRoute('New Assignment', '/newassignment'),
-    new InternalRoute('Driving Assignments', '/assignments'),
-    new InternalRoute('DLRS Users', '/users'),
-    new InternalRoute('Admin', '', [
-      new InternalRoute('Printing Orders', '/admin/printingorders'),
-      new InternalRoute('Wait List', '/admin/waitlist'),
+    new InternalRoute('New Assignment', 'newassignment'),
+    new InternalRoute('Driving Assignments', 'assignments'),
+    new InternalRoute('DLRS Users', 'users'),
+    new InternalRoute('Admin 1', '', [
+      new InternalRoute('Printing Orders', 'admin/printingorders'),
+      new InternalRoute('Wait List', 'admin/waitlist'),
       new InternalRoute('', ''),
-      new InternalRoute('Pending Reviews', '/admin/pendingReviews'),
-      new InternalRoute('Completed Reviews', '/admin/completedReviews'),
+      new InternalRoute('Pending Reviews', 'admin/pendingReviews'),
+      new InternalRoute('Completed Reviews', 'admin/completedReviews'),
       new InternalRoute('', ''),
-      new InternalRoute('Invalid Link', '/admin/firstGrid')
+      new InternalRoute('Invalid Link', 'admin/firstGrid')
     ]),
-    new InternalRoute('Access Denied', 'accessDenied')
+    new InternalRoute('Admin 2', 'waitlist-admin')
   ];
   headerUser: HeaderUser = {
     userName: 'abc',

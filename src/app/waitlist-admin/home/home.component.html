@@ -1,0 +1,51 @@
+<div class="d-flex flex-column">
+  <header>
+    <h2 class="my-1 text-primary">Admin Dashboard</h2>
+    <hr class="mt-0" />
+  </header>
+  <section class="row m-0">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
+      <app-tile
+        type="warning"
+        icon="fa-hourglass-start"
+        title="Pending Offers"
+        n="28"
+        path="../pending-offers"
+      ></app-tile>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
+      <app-tile
+        type="success"
+        icon="fa-fire"
+        title="Current Offers"
+        n="170"
+        path="../current-offers"
+      ></app-tile>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
+      <app-tile
+        type="primary"
+        icon="fa-hand-paper-o"
+        title="Active Requests"
+        n="2289"
+        path="../pending-offers"
+      ></app-tile>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
+      <app-tile
+        type="danger"
+        icon="fa-frown-o"
+        title="Email Failures"
+        n="5"
+        path="../pending-offers"
+      ></app-tile>
+    </div>
+  </section>
+  <section class="row my-3">
+    <div class="col-6 col-md-4 py-1" *ngFor="let item of linkItems">
+      <a routerLink="../{{item.path}}" style="font-size: 1.5rem;">
+        <i class="fa fa-fw " [ngClass]="item.iconClass"></i> {{ item.text }}
+      </a>
+    </div>
+  </section>
+</div>

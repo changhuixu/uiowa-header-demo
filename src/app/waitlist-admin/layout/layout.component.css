@@ -1,0 +1,23 @@
+.side-nav {
+  width: 250px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.side-nav .nav-item a {
+  color: #585858;
+  font-weight: 500;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.side-nav .nav-item:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.side-nav .nav-item .active-link {
+  border-right: 0.5rem #ffee00 solid;
+  background-color: #3c3c3c;
+  color: #ffee00;
+}

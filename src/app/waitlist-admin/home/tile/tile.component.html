@@ -1,0 +1,12 @@
+<div class="text-white p-3 shadow" [ngClass]="type">
+  <div class="row">
+    <div class="col-6">
+      <p class="m-0"><i class="fa fa-3x" [ngClass]="icon"></i></p>
+      <p class="title-text m-0">{{ title }}</p>
+    </div>
+    <div class="col-6 text-right">
+      <p class="significant">{{ number }}</p>
+      <a [routerLink]="path" class="text-white">View Details</a>
+    </div>
+  </div>
+</div>
