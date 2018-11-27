@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChartsModule } from 'ng2-charts';
 
 import { WaitlistAdminRoutingModule } from './waitlist-admin-routing.module';
 import { LayoutComponent } from './layout/layout.component';
@@ -28,6 +29,6 @@ import { TileComponent } from './home/tile/tile.component';
     HomeComponent,
     TileComponent
   ],
-  imports: [CommonModule, WaitlistAdminRoutingModule]
+  imports: [CommonModule, WaitlistAdminRoutingModule, ChartsModule]
 })
 export class WaitlistAdminModule {}

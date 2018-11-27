@@ -41,8 +41,35 @@
       ></app-tile>
     </div>
   </section>
-  <section class="row my-3">
-    <div class="col-6 col-md-4 py-1" *ngFor="let item of linkItems">
+  <section id="charts" class="row my-5">
+    <div class="col-12 col-xl-6 my-5">
+      <canvas
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+      ></canvas>
+    </div>
+    <div class="col-12 col-xl-6 my-5">
+      <canvas
+        baseChart
+        width="500"
+        height="200"
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [options]="pieChartOptions"
+        [chartType]="pieChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+      ></canvas>
+    </div>
+  </section>
+  <section class="row my-3 d-flex d-lg-none">
+    <div class="col-12 col-sm-6 col-md-4 py-1" *ngFor="let item of linkItems">
       <a routerLink="../{{item.path}}" style="font-size: 1.5rem;">
         <i class="fa fa-fw " [ngClass]="item.iconClass"></i> {{ item.text }}
       </a>
