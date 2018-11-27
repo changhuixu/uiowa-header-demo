@@ -7,18 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UiDriverComponent implements OnInit {
   html = `// app.component.html
-<header>
-  <uiowa-header [externalLinks]="externalLinks"
+<header role="banner">
+  <uiowa-header
+    [externalLinks]="externalLinks"
     [applicationName]="applicationName"
-    [internalRoutes]="internalRoutes">
+    [internalRoutes]="internalRoutes"
+    [user]="headerUser"
+    (stopImpersonation)="stopImpersonation()"
+  >
   </uiowa-header>
 </header>
-<main class="container-fluid full-height">
+<main role="main" class="container-fluid p-0 flex-fill h-100" style="overflow: auto;">
   <router-outlet></router-outlet>
 </main>
-<footer>
+<footer role="contentinfo">
   <app-footer></app-footer>
 </footer>
+
   `;
   code = `// app.component.ts
 import { InternalRoute, ExternalLink } from '@uiowa/uiowa-header';

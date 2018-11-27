@@ -6,20 +6,20 @@ import { AccessDeniedComponent } from './core/components/access-denied/access-de
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'newassignment',
+    redirectTo: 'basic-usage',
     pathMatch: 'full'
   },
   {
-    path: 'newassignment',
+    path: 'basic-usage',
     component: UiDriverComponent
   },
   {
-    path: 'assignments',
+    path: 'page-with-tabs',
     loadChildren:
       './driving-assignments/driving-assignments.module#DrivingAssignmentsModule'
   },
   {
-    path: 'users',
+    path: 'example-page-1',
     loadChildren: './dlrs-users/dlrs-users.module#DlrsUsersModule'
   },
   {
@@ -36,7 +36,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'newassignment'
+    redirectTo: 'basic-usage'
   }
 ];
 

@@ -10,7 +10,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'required',
+        redirectTo: 'card-list',
         pathMatch: 'full'
       },
       ...childRoutes

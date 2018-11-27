@@ -10,12 +10,12 @@ export class AppComponent implements OnInit {
   externalLinks = [
     new ExternalLink('GitHub Repo', 'https://github.com/changhuixu/uiowa-header-demo')
   ];
-  applicationName = 'Driver License Review System';
+  applicationName = 'Your Awesome Application Name';
   internalRoutes = [
-    new InternalRoute('New Assignment', 'newassignment'),
-    new InternalRoute('Driving Assignments', 'assignments'),
-    new InternalRoute('DLRS Users', 'users'),
-    new InternalRoute('Admin 1', '', [
+    new InternalRoute('Basic Usage', 'basic-usage'),
+    new InternalRoute('Page with Tabs', 'page-with-tabs'),
+    new InternalRoute('Example Page 1', 'example-page-1'),
+    new InternalRoute('Dropdown Menus', '', [
       new InternalRoute('Printing Orders', 'admin/printingorders'),
       new InternalRoute('Wait List', 'admin/waitlist'),
       new InternalRoute('', ''),
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
       new InternalRoute('', ''),
       new InternalRoute('Invalid Link', 'admin/firstGrid')
     ]),
-    new InternalRoute('Admin 2', 'waitlist-admin')
+    new InternalRoute('Side Nav Menus', 'waitlist-admin')
   ];
   headerUser: HeaderUser = {
     userName: 'abc',

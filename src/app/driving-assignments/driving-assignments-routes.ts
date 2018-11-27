@@ -4,13 +4,13 @@ import { NotRequiredAssignmentsComponent } from './not-required-assignments/not-
 
 export const childRoutes: Routes = [
   {
-    path: 'required',
+    path: 'card-list',
     component: RequiredAssignmentsComponent,
-    data: { title: 'Required' }
+    data: { title: 'Card List' }
   },
   {
-    path: 'notRequired',
+    path: 'ag-grid',
     component: NotRequiredAssignmentsComponent,
-    data: { title: 'Not Required' }
+    data: { title: 'ag-grid' }
   }
 ];

@@ -29,7 +29,11 @@ export class HomeComponent implements OnInit {
     { data: [280, 480, 400, 190, 860, 270, 900], label: 'Succeed Requests' }
   ];
 
-  pieChartLabels: string[] = ['Completed Offers', 'Accepted Offers', 'Revoked/Expired Offers'];
+  pieChartLabels: string[] = [
+    'Completed Offers',
+    'Accepted Offers',
+    'Revoked/Expired Offers'
+  ];
   pieChartData: number[] = [300, 500, 100];
   pieChartType = 'pie';
   pieChartOptions = {
