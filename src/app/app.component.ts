@@ -8,6 +8,7 @@ import { InternalRoute, ExternalLink, HeaderUser } from '@uiowa/uiowa-header';
 })
 export class AppComponent implements OnInit {
   externalLinks = [
+    new ExternalLink('Employee Self Service', 'https://hris.uiowa.edu'),
     new ExternalLink('GitHub Repo', 'https://github.com/changhuixu/uiowa-header-demo')
   ];
   applicationName = 'Your Awesome Application Name';

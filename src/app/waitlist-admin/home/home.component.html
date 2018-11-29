@@ -1,6 +1,21 @@
 <div class="d-flex flex-column">
   <header>
-    <h2 class="my-1 text-primary">Admin Dashboard</h2>
+    <h2 class="my-1 text-primary">
+      Admin Dashboard
+      <div ngbDropdown class="d-inline-block d-lg-none">
+        <button class="btn btn-link" id="admin-menu" ngbDropdownToggle>
+          More
+        </button>
+        <div ngbDropdownMenu aria-labelledby="admin-menu">
+          <ng-container *ngFor="let item of linkItems">
+            <a class="dropdown-item" routerLink="../{{item.path}}">
+              <i class="fa fa-fw " [ngClass]="item.iconClass"></i>
+              {{ item.text }}
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </h2>
     <hr class="mt-0" />
   </header>
   <section class="row m-0">
@@ -66,13 +81,6 @@
         (chartHover)="chartHovered($event)"
         (chartClick)="chartClicked($event)"
       ></canvas>
-    </div>
-  </section>
-  <section class="row my-3 d-flex d-lg-none">
-    <div class="col-12 col-sm-6 col-md-4 py-1" *ngFor="let item of linkItems">
-      <a routerLink="../{{item.path}}" style="font-size: 1.5rem;">
-        <i class="fa fa-fw " [ngClass]="item.iconClass"></i> {{ item.text }}
-      </a>
     </div>
   </section>
 </div>
