@@ -11,7 +11,6 @@ import { ApplicantsComponent } from './applicants/applicants.component';
 import { BuildingsComponent } from './buildings/buildings.component';
 import { LotsComponent } from './lots/lots.component';
 import { EmailTemplatesComponent } from './email-templates/email-templates.component';
-import { UniversityHolidaysComponent } from './university-holidays/university-holidays.component';
 import { ReportsComponent } from './reports/reports.component';
 import { HomeComponent } from './home/home.component';
 import { TileComponent } from './home/tile/tile.component';
@@ -25,7 +24,6 @@ import { TileComponent } from './home/tile/tile.component';
     BuildingsComponent,
     LotsComponent,
     EmailTemplatesComponent,
-    UniversityHolidaysComponent,
     ReportsComponent,
     HomeComponent,
     TileComponent

@@ -6,7 +6,6 @@ import { BuildingsComponent } from './buildings/buildings.component';
 import { LotsComponent } from './lots/lots.component';
 import { ReportsComponent } from './reports/reports.component';
 import { EmailTemplatesComponent } from './email-templates/email-templates.component';
-import { UniversityHolidaysComponent } from './university-holidays/university-holidays.component';
 
 export const childRoutes: Routes = [
   {
@@ -46,7 +45,7 @@ export const childRoutes: Routes = [
   },
   {
     path: 'university-holidays',
-    component: UniversityHolidaysComponent,
+    loadChildren: './university-holidays/university-holidays.module#UniversityHolidaysModule',
     data: { linkText: 'University Holidays', iconClass: 'fa-calendar-check-o' }
   }
 ];

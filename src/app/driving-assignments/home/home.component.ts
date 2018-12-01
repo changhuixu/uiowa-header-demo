@@ -9,15 +9,28 @@ interface InternalRoute {
 @Component({
   selector: 'app-home',
   template: `
-<div class="container d-flex flex-column h-100">
-  <ul class="nav nav-tabs">
-    <li class="nav-item" *ngFor="let item of menus">
-      <a class="nav-link" routerLinkActive="active" [routerLink]="item.route" style="color: #0372e8;">{{item.text}}</a>
-    </li>
-  </ul>
-  <router-outlet></router-outlet>
-</div>
-  `
+    <div class="container d-flex flex-column h-100 py-2">
+      <ul class="nav nav-tabs">
+        <li class="nav-item" *ngFor="let item of menus">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="item.route"
+            style="color: #0372e8;"
+            >{{ item.text }}</a
+          >
+        </li>
+      </ul>
+      <router-outlet></router-outlet>
+    </div>
+  `,
+  styles: [
+    `
+      .active {
+        border-top: 3px #0372e8 solid !important;
+      }
+    `
+  ]
 })
 export class HomeComponent implements OnInit {
   menus: InternalRoute[];

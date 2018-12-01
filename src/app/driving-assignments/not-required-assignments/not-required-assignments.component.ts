@@ -28,6 +28,7 @@ export class NotRequiredAssignmentsComponent implements OnInit {
     enableSorting: true,
     enableColResize: true,
     pagination: true,
+    paginationAutoPageSize: true,
     cacheQuickFilter: true
   };
   @ViewChild('agGrid') agGrid: AgGridNg2;
