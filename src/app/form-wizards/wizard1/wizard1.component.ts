@@ -1,21 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 
-interface TabItem {
-  id: string;
-  index: number;
-  disabled: boolean;
-  active: boolean;
-  title: string;
-  icon: string;
-}
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-wizard1',
+  templateUrl: './wizard1.component.html',
+  styleUrls: ['./wizard1.component.css']
 })
-export class HomeComponent implements OnInit {
+export class Wizard1Component implements OnInit {
   currentTab = 1;
 
   constructor() {}

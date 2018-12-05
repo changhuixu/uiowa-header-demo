@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   internalRoutes = [
     new InternalRoute('Basic Usage', 'basic-usage'),
     new InternalRoute('Page with Tabs', 'page-with-tabs'),
-    new InternalRoute('Form Wizard', 'form-wizard'),
+    new InternalRoute('Form Wizards', 'form-wizards'),
     new InternalRoute('Dropdown Menus', '', [
       new InternalRoute('Printing Orders', 'admin/printingorders'),
       new InternalRoute('Wait List', 'admin/waitlist'),

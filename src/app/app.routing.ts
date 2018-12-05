@@ -19,8 +19,8 @@ export const routes: Routes = [
       './driving-assignments/driving-assignments.module#DrivingAssignmentsModule'
   },
   {
-    path: 'form-wizard',
-    loadChildren: './form-wizard/form-wizard.module#FormWizardModule'
+    path: 'form-wizards',
+    loadChildren: './form-wizards/form-wizards.module#FormWizardsModule'
   },
   {
     path: 'admin',
