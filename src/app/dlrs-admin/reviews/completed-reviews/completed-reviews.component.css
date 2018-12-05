@@ -1,0 +1,16 @@
+:host {
+  background: #2980b9;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#curveUpColor path,
+#curveDownColor path {
+  fill: #3498db;
+  stroke: none;
+}
+
+.color {
+  background: #3498db;
+}

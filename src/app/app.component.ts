@@ -15,13 +15,13 @@ export class AppComponent implements OnInit {
   internalRoutes = [
     new InternalRoute('Basic Usage', 'basic-usage'),
     new InternalRoute('Page with Tabs', 'page-with-tabs'),
-    new InternalRoute('Example Page 1', 'example-page-1'),
+    new InternalRoute('Form Wizard', 'form-wizard'),
     new InternalRoute('Dropdown Menus', '', [
       new InternalRoute('Printing Orders', 'admin/printingorders'),
       new InternalRoute('Wait List', 'admin/waitlist'),
       new InternalRoute('', ''),
+      new InternalRoute('DLRS', 'admin/completedReviews'),
       new InternalRoute('Pending Reviews', 'admin/pendingReviews'),
-      new InternalRoute('Completed Reviews', 'admin/completedReviews'),
       new InternalRoute('', ''),
       new InternalRoute('Invalid Link', 'admin/firstGrid')
     ]),
