@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Reservation } from '../../models/reservation';
 
 @Component({
   selector: 'app-tab-content2',
@@ -6,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab-content2.component.css']
 })
 export class TabContent2Component implements OnInit {
+  @Input() reservation: Reservation;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
