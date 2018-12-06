@@ -8,22 +8,22 @@
   <div class="collapse navbar-collapse" [ngbCollapse]="isCollapsed" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item mr-2" *ngFor="let item of internalRoutes" routerLinkActive="active-link">
-        <a *ngIf="!item.subMenus" class="nav-link link-item"
-          [routerLink]="item.route">
+        <a *ngIf="!item.subMenus" class="nav-link link-item" (click)="isCollapsed=true;" [routerLink]="item.route">
           {{item.text}}
         </a>
         <div ngbDropdown class="d-inline-block" *ngIf="item.subMenus">
-          <a *ngIf="item.route" [attr.id]="'navbarDropdown_' + item.text" ngbDropdownToggle class="nav-link link-item"
+          <a *ngIf="item.route" [attr.id]="'navbarDropdown_' + item.text" ngbDropdownToggle class="nav-link link-item" (click)="isCollapsed=true;"
             [routerLink]="item.route" >
             {{item.text}}
           </a>
-          <a *ngIf="!item.route" [attr.id]="'navbarDropdown_' + item.text" ngbDropdownToggle class="nav-link link-item"
-            href="javascript:void(0)">
+          <a *ngIf="!item.route" [attr.id]="'navbarDropdown_' + item.text" ngbDropdownToggle class="nav-link link-item" href="javascript:void(0)">
             {{item.text}}
           </a>
           <div ngbDropdownMenu class="dropdown-menu" [attr.aria-labelledby]="'navbarDropdown_' + item.text">
             <div *ngFor="let subitem of item.subMenus">
-              <a *ngIf="subitem.route" class="dropdown-item" [routerLink]="subitem.route">{{subitem.text}}</a>
+              <a *ngIf="subitem.route" class="dropdown-item" [routerLink]="subitem.route" (click)="isCollapsed=true;">
+                {{subitem.text}}
+              </a>
               <div *ngIf="!subitem.route" class="dropdown-divider"></div>
             </div>
           </div>
