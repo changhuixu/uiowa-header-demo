@@ -1,7 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { RoomType } from '../../models/room-type';
+import {
+  Component,
+  OnInit,
+  Input,
+  EventEmitter,
+  Output,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
+import { RoomType, Reservation } from '../../models';
 import { ReservationService } from '../../services/reservation.service';
-import { Reservation } from '../../models/reservation';
 
 @Component({
   selector: 'app-tab-content1',
@@ -10,7 +17,10 @@ import { Reservation } from '../../models/reservation';
 })
 export class TabContent1Component implements OnInit {
   @Input() reservation: Reservation;
+  @Output() next = new EventEmitter<void>();
   roomtypes: RoomType[];
+  @ViewChild('form') form: ElementRef;
+
   constructor(private readonly svc: ReservationService) {}
 
   ngOnInit() {
@@ -21,7 +31,11 @@ export class TabContent1Component implements OnInit {
     return a && b && a.id === b.id;
   }
 
-  next() {
-    this.svc.selectTab(2);
+  continue() {
+    if (!this.svc.isStep1Valid(this.reservation)) {
+      this.form.nativeElement.classList.add('was-validated');
+      return;
+    }
+    this.next.emit();
   }
 }

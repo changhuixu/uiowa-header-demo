@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Reservation } from '../../models/reservation';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Reservation } from '../../models';
 
 @Component({
   selector: 'app-tab-content3',
@@ -8,7 +8,14 @@ import { Reservation } from '../../models/reservation';
 })
 export class TabContent3Component implements OnInit {
   @Input() reservation: Reservation;
+  @Output() prev = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit() {}
+
+  back() {
+    this.prev.emit();
+  }
+
+  confirm() {}
 }

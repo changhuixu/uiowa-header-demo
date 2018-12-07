@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, BehaviorSubject } from 'rxjs';
-import { RoomType } from '../models/room-type';
+import { Observable, of } from 'rxjs';
+import { RoomType, Reservation, RoomExtras } from '../models';
+import { DateRange } from '@uiowa/date-range-picker';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationService {
-  private readonly _currentTab = new BehaviorSubject<number>(1);
-  currentTab$ = this._currentTab.asObservable();
   constructor() {}
 
-  selectTab(i: number) {
-    this._currentTab.next(i);
+  isStep1Valid(reservation: Reservation): boolean {
+    return !!reservation.roomType;
   }
 
   getAllRoomTypes(): Observable<RoomType[]> {
@@ -42,5 +41,20 @@ export class ReservationService {
         price: 58
       } as RoomType
     ]);
+  }
+
+  getDefaultReservation(): Reservation {
+    return {
+      dateRange: DateRange.nextDays(2),
+      quantity: 1,
+      extras: {
+        breakfast: false,
+        tv: true,
+        wifi: false,
+        parking: false,
+        balcony: false
+      } as RoomExtras,
+      payment: {}
+    } as Reservation;
   }
 }

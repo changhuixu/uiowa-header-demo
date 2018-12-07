@@ -1,4 +1,4 @@
-<section class="mx-4">
+<section class="mx-4 needs-validation" novalidate #form>
   <div class="form-group">
     <label for="daterange">Check in / Check out</label>
     <date-range-picker [dateRange]="reservation.dateRange"></date-range-picker>
@@ -7,16 +7,20 @@
   <div class="form-row">
     <div class="from-group col-12 col-sm-8 col-md-6 col-lg-4">
       <label for="room-type">Room Type</label>
-      <select class="form-control" id="room-type"
+      <select class="form-control" id="room-type" name="room-type"
         [(ngModel)]="reservation.roomType"
         [compareWith]="isSameRoomType"
+        required
       >
         <option *ngFor="let item of roomtypes" [ngValue]="item">{{ item.name }}</option>
       </select>
+      <div class="invalid-feedback">
+          Please choose a room type.
+      </div>
     </div>
     <div class="form-group col-6 col-sm-2 col-lg-1">
       <label for="quantity">Quantity</label>
-      <input type="number" class="form-control" id="quantity" [(ngModel)]="reservation.quantity" max="20" min="1" step="1">
+      <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="reservation.quantity" max="20" min="1" step="1">
     </div>
   </div>
 
@@ -25,19 +29,19 @@
     <div>
       <div class="btn-group btn-group-toggle flex-wrap" id="extras">
         <label class="btn-light" ngbButtonLabel>
-          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.breakfast"> Breakfast
+          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.breakfast" name="breakfast"> Breakfast
         </label>
         <label class="btn-light" ngbButtonLabel>
-          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.tv"> TV
+          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.tv" name="tv"> TV
         </label>
         <label class="btn-light" ngbButtonLabel>
-          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.wifi"> WiFi
+          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.wifi" name="wifi"> WiFi
         </label>
         <label class="btn-light" ngbButtonLabel>
-          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.parking"> Parking Lot
+          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.parking" name="parking"> Parking Lot
         </label>
         <label class="btn-light" ngbButtonLabel>
-          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.balcony"> Balcony
+          <input type="checkbox" ngbButton [(ngModel)]="reservation.extras.balcony" name="balcony"> Balcony
         </label>
       </div>
     </div>
@@ -46,12 +50,15 @@
   <div class="form-group">
     <label for="arrival-time">Estimate Arrival Time</label>
     <div>
-      <ngb-timepicker id="arrival-time" [(ngModel)]="reservation.estimatedArrivalTime" [meridian]="true" [spinners]="false"></ngb-timepicker>
+      <ngb-timepicker id="arrival-time" [(ngModel)]="reservation.estimatedArrivalTime" name="arrivaltime" [meridian]="true" [spinners]="false"></ngb-timepicker>
     </div>
+    <small id="arrival-time-help" class="form-text text-muted">NOTE: The earlist check-in time is 3:00 PM.</small>
   </div>
 
-  <button type="button" class="btn btn-primary" (click)="next()">
-    Next
+  <br />
+
+  <button type="button" class="btn btn-primary" (click)="continue()">
+    Continue
     <i class="fa fa-chevron-right" aria-hidden="true"></i>
   </button>
 </section>

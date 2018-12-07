@@ -1,8 +1,9 @@
-<section class="form-wizard" *ngIf="(currentTab$ | async) as currentTab">
+<section class="form-wizard">
   <ngb-tabset
     (tabChange)="beforeChange($event)"
     type="custom"
     justify="justified"
+    #t="ngbTabset"
   >
     <ngb-tab id="tab1">
       <ng-template ngbTabTitle>
@@ -17,7 +18,7 @@
         </div>
       </ng-template>
       <ng-template ngbTabContent>
-        <app-tab-content1 [reservation]="reservation"></app-tab-content1>
+        <app-tab-content1 [reservation]="reservation" (next)="t.select('tab2')"></app-tab-content1>
       </ng-template>
     </ngb-tab>
     <ngb-tab id="tab2">
@@ -33,7 +34,7 @@
         </div>
       </ng-template>
       <ng-template ngbTabContent>
-        <app-tab-content2 [reservation]="reservation"></app-tab-content2>
+        <app-tab-content2 [reservation]="reservation" (next)="t.select('tab3')" (prev)="t.select('tab1')"></app-tab-content2>
       </ng-template>
     </ngb-tab>
     <ngb-tab id="tab3">
@@ -49,7 +50,7 @@
         </div>
       </ng-template>
       <ng-template ngbTabContent>
-        <app-tab-content3 [reservation]="reservation"></app-tab-content3>
+        <app-tab-content3 [reservation]="reservation" (prev)="t.select('tab2')"></app-tab-content3>
       </ng-template>
     </ngb-tab>
   </ngb-tabset>

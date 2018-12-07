@@ -1,0 +1,8 @@
+label {
+  font-weight: 500;
+}
+
+p strong {
+  min-width: 120px;
+  display: inline-block;
+}

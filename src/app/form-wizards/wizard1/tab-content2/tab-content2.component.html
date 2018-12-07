@@ -1,21 +1,65 @@
-<section>
+<section class="mx-4">
+  <section class="p-2" style="background: #e7ffec;">
+    <p><strong>Reservation:</strong> {{ reservation.roomType.name }}</p>
+    <p><strong>Quantity:</strong> {{ reservation.quantity }}</p>
+    <p>
+      <strong>Nights:</strong> {{ days }} (
+      {{ reservation.dateRange.start | date }} -
+      {{ reservation.dateRange.end | date }})
+    </p>
+    <p class="m-0"><strong>Total Charge:</strong> ${{ reservation.totalAmount }}</p>
+  </section>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="first">First</label>
+      <input
+        type="text"
+        class="form-control"
+        id="first"
+        placeholder="First Name"
+        [(ngModel)]="reservation.payment.first"
+      />
+    </div>
+    <div class="form-group col-md-2">
+      <label for="mi">MI</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mi"
+        placeholder="MI"
+        [(ngModel)]="reservation.payment.mi"
+      />
+    </div>
+    <div class="form-group col-md-4">
+      <label for="last">Last</label>
+      <input
+        type="text"
+        class="form-control"
+        id="last"
+        placeholder="Last Name"
+        [(ngModel)]="reservation.payment.last"
+      />
+    </div>
+  </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
+      <label for="email">Email</label>
       <input
         type="email"
         class="form-control"
-        id="inputEmail4"
+        id="email"
         placeholder="Email"
+        [(ngModel)]="reservation.payment.email"
       />
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Phone</label>
+      <label for="phone">Phone</label>
       <input
         type="tel"
         class="form-control"
-        id="inputPassword4"
-        placeholder="Password"
+        id="phone"
+        placeholder="(319) 123-1234"
+        [(ngModel)]="reservation.payment.phone"
       />
     </div>
   </div>
@@ -26,6 +70,7 @@
       class="form-control"
       id="inputAddress"
       placeholder="1234 Main St"
+      [(ngModel)]="reservation.payment.street1"
     />
   </div>
   <div class="form-group">
@@ -35,30 +80,59 @@
       class="form-control"
       id="inputAddress2"
       placeholder="Apartment, studio, or floor"
+      [(ngModel)]="reservation.payment.street2"
     />
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity" />
+      <input
+        type="text"
+        class="form-control"
+        id="inputCity"
+        [(ngModel)]="reservation.payment.city"
+      />
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
+      <select
+        id="inputState"
+        class="form-control"
+        [(ngModel)]="reservation.payment.state"
+      >
         <option selected>Choose...</option>
-        <option>...</option>
+        <option>IA</option>
+        <option>Other</option>
       </select>
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip" />
+      <input
+        type="text"
+        class="form-control"
+        id="inputZip"
+        [(ngModel)]="reservation.payment.zipcode"
+      />
     </div>
   </div>
   <div class="form-group">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck" />
-      <label class="form-check-label" for="gridCheck"> Check me out </label>
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="gridCheck"
+        [(ngModel)]="reservation.payment.remember"
+      />
+      <label class="form-check-label" for="gridCheck"> Remember me </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+
+  <br />
+
+  <button type="button" class="btn btn-default mr-2" (click)="back()">
+    <i class="fa fa-chevron-left" aria-hidden="true"></i> Back
+  </button>
+  <button type="button" class="btn btn-primary" (click)="continue()">
+    Continue <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </button>
 </section>

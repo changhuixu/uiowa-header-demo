@@ -9,4 +9,5 @@ export interface Payment {
   city: string;
   state: string;
   zipcode: string;
+  remember: boolean;
 }
