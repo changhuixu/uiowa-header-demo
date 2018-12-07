@@ -7,6 +7,9 @@
 }
 nav {
   z-index: 20;
+  -moz-box-shadow: 0 2px 2px #eeeeee;
+  -webkit-box-shadow: 0 2px 2px #eeeeee;
+  box-shadow: 0 2px 2px #eeeeee;
 }
 .nav-item .link-item {
   color: rgba(0, 0, 0, 0.6) !important;

@@ -11,7 +11,7 @@
         <a *ngIf="!item.subMenus" class="nav-link link-item" (click)="isCollapsed=true;" [routerLink]="item.route">
           {{item.text}}
         </a>
-        <div ngbDropdown class="d-inline-block" *ngIf="item.subMenus">
+        <div ngbDropdown *ngIf="item.subMenus">
           <a *ngIf="item.route" [attr.id]="'navbarDropdown_' + item.text" ngbDropdownToggle class="nav-link link-item" (click)="isCollapsed=true;"
             [routerLink]="item.route" >
             {{item.text}}
