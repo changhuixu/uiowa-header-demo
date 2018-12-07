@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-ui-driver',
-  templateUrl: './ui-driver.component.html',
-  styleUrls: ['./ui-driver.component.css']
+  templateUrl: './basic-usage.component.html',
+  styleUrls: ['./basic-usage.component.css']
 })
-export class UiDriverComponent implements OnInit {
+export class BasicUsageComponent implements OnInit {
   html = `// app.component.html
 <header role="banner">
   <uiowa-header

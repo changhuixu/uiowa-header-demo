@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
     new InternalRoute('Dropdown Menus', '', [
       new InternalRoute('Printing Orders', 'admin/printingorders'),
       new InternalRoute('Wait List', 'admin/waitlist'),
+      new InternalRoute('DLRS', 'admin/dlrs'),
       new InternalRoute('', ''),
-      new InternalRoute('DLRS', 'admin/completedReviews'),
       new InternalRoute('Pending Reviews', 'admin/pendingReviews'),
       new InternalRoute('', ''),
       new InternalRoute('Invalid Link', 'admin/firstGrid')

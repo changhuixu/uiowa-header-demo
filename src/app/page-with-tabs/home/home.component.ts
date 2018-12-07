@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { childRoutes } from '../driving-assignments-routes';
+import { childRoutes } from '../page-with-tabs-routes';
 
 interface InternalRoute {
   text: string;

@@ -5,21 +5,18 @@ import { DlrsAdminRoutingModule } from './dlrs-admin-routing.module';
 
 import { HomeComponent } from './home/home.component';
 import { PendingReviewsComponent } from './reviews/pending-reviews/pending-reviews.component';
-import { CompletedReviewsComponent } from './reviews/completed-reviews/completed-reviews.component';
-import { DriversReportComponent } from './drivers/drivers-report/drivers-report.component';
-import { DuplicateDriversComponent } from './drivers/duplicate-drivers/duplicate-drivers.component';
+import { DlrsComponent } from './landing-pages/dlrs/dlrs.component';
+import { PrintingOrdersComponent } from './landing-pages/printing-orders/printing-orders.component';
+import { ParkingWaitlistComponent } from './landing-pages/parking-waitlist/parking-waitlist.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    DlrsAdminRoutingModule
-  ],
+  imports: [CommonModule, DlrsAdminRoutingModule],
   declarations: [
     HomeComponent,
     PendingReviewsComponent,
-    CompletedReviewsComponent,
-    DriversReportComponent,
-    DuplicateDriversComponent
+    DlrsComponent,
+    PrintingOrdersComponent,
+    ParkingWaitlistComponent
   ]
 })
 export class DlrsAdminModule {}

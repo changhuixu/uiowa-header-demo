@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UiDriverComponent } from './new-assignment/ui-driver/ui-driver.component';
 import { AccessDeniedComponent } from './core/components/access-denied/access-denied.component';
+import { BasicUsageComponent } from './basic-usage/basic-usage/basic-usage.component';
 
 export const routes: Routes = [
   {
@@ -11,12 +11,11 @@ export const routes: Routes = [
   },
   {
     path: 'basic-usage',
-    component: UiDriverComponent
+    component: BasicUsageComponent
   },
   {
     path: 'page-with-tabs',
-    loadChildren:
-      './driving-assignments/driving-assignments.module#DrivingAssignmentsModule'
+    loadChildren: './page-with-tabs/page-with-tabs.module#PageWithTabsModule'
   },
   {
     path: 'form-wizards',

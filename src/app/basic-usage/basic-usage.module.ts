@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { HighlightModule } from 'ngx-highlightjs'; 
 
-import { UiDriverComponent } from './ui-driver/ui-driver.component';
+import { BasicUsageComponent } from './basic-usage/basic-usage.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     HighlightModule
   ],
-  declarations: [UiDriverComponent]
+  declarations: [BasicUsageComponent]
 })
-export class NewAssignmentModule { }
+export class BasicUsageModule { }

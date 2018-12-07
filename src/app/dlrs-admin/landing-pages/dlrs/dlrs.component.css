@@ -1,0 +1,37 @@
+:host {
+  background: #2980b9;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#curveUpColor path,
+#curveDownColor path {
+  fill: #3498db;
+  stroke: none;
+}
+
+.color {
+  background: #3498db;
+  z-index: 2;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+}
+
+.title {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.university {
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-height: 420px) {
+  .university {
+    margin: 5rem 0;
+  }
+}

@@ -7,11 +7,11 @@ interface Car {
 }
 
 @Component({
-  selector: 'app-required-assignments',
-  templateUrl: './required-assignments.component.html',
-  styleUrls: ['./required-assignments.component.css']
+  selector: 'app-card-list-example1',
+  templateUrl: './card-list-example1.component.html',
+  styleUrls: ['./card-list-example1.component.css']
 })
-export class RequiredAssignmentsComponent implements OnInit {
+export class CardListExample1Component implements OnInit {
   cars: Car[] = [
     { make: 'Toyota', model: 'Celica', price: 35000 },
     { make: 'Ford', model: 'Mondeo', price: 32000 },

@@ -5,11 +5,11 @@ import { AgGridColumn } from 'ag-grid-angular';
 import { GridApi, GridOptions } from 'ag-grid-community';
 
 @Component({
-  selector: 'app-not-required-assignments',
-  templateUrl: './not-required-assignments.component.html',
-  styleUrls: ['./not-required-assignments.component.css']
+  selector: 'app-ag-grid-example1',
+  templateUrl: './ag-grid-example1.component.html',
+  styleUrls: ['./ag-grid-example1.component.css']
 })
-export class NotRequiredAssignmentsComponent implements OnInit {
+export class AgGridExample1Component implements OnInit {
   private gridApi: GridApi;
   private gridColumnApi;
   filter = '';

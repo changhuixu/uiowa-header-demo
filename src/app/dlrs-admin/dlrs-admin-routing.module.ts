@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PendingReviewsComponent } from './reviews/pending-reviews/pending-reviews.component';
-import { CompletedReviewsComponent } from './reviews/completed-reviews/completed-reviews.component';
-import { DriversReportComponent } from './drivers/drivers-report/drivers-report.component';
-import { DuplicateDriversComponent } from './drivers/duplicate-drivers/duplicate-drivers.component';
+import { PrintingOrdersComponent } from './landing-pages/printing-orders/printing-orders.component';
+import { ParkingWaitlistComponent } from './landing-pages/parking-waitlist/parking-waitlist.component';
+import { DlrsComponent } from './landing-pages/dlrs/dlrs.component';
 
 const routes: Routes = [
   {
@@ -21,16 +21,16 @@ const routes: Routes = [
         component: PendingReviewsComponent
       },
       {
-        path: 'completedReviews',
-        component: CompletedReviewsComponent
+        path: 'dlrs',
+        component: DlrsComponent
       },
       {
         path: 'printingorders',
-        component: DriversReportComponent
+        component: PrintingOrdersComponent
       },
       {
         path: 'waitlist',
-        component: DuplicateDriversComponent
+        component: ParkingWaitlistComponent
       }
     ]
   }
