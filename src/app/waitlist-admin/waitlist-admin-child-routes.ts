@@ -45,8 +45,14 @@ export const childRoutes: Routes = [
   },
   {
     path: 'university-holidays',
-    loadChildren: './university-holidays/university-holidays.module#UniversityHolidaysModule',
+    loadChildren:
+      './university-holidays/university-holidays.module#UniversityHolidaysModule',
     data: { linkText: 'University Holidays', iconClass: 'fa-calendar-check-o' }
+  },
+  {
+    path: 'faqs',
+    loadChildren: './faqs/faqs.module#FaqsModule',
+    data: { linkText: 'FAQs', iconClass: 'fa-question-circle-o' }
   }
 ];
 
