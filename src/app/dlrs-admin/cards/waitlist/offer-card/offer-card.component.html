@@ -1,0 +1,19 @@
+<div class="offer-card bg-white text-center">
+  <div class="offer-card-header">
+    <div class="offer-card-header-tag"></div>
+    <div class="py-1 px-2">
+      <p class="h3">{{ offer.lot }}</p>
+    </div>
+  </div>
+  <div class="offer-card-body">
+    <div class="">
+      <p class="offer-place">🎉Offer</p>
+      <p class="m-0">Expire at {{ offer.expirationDate }}</p>
+      <p class="m-0"><a href="#" style="color: #0372e8;">Details</a></p>
+    </div>
+  </div>
+  <div class="offer-card-footer d-flex justify-content-between">
+    <button type="button" class="btn btn-success rounded-0">Accept</button>
+    <button type="button" class="btn btn-danger rounded-0">Decline</button>
+  </div>
+</div>

@@ -8,6 +8,9 @@ import { PendingReviewsComponent } from './reviews/pending-reviews/pending-revie
 import { DlrsComponent } from './landing-pages/dlrs/dlrs.component';
 import { PrintingOrdersComponent } from './landing-pages/printing-orders/printing-orders.component';
 import { ParkingWaitlistComponent } from './landing-pages/parking-waitlist/parking-waitlist.component';
+import { WaitlistComponent } from './cards/waitlist/waitlist.component';
+import { WaitlistCardComponent } from './cards/waitlist/waitlist-card/waitlist-card.component';
+import { OfferCardComponent } from './cards/waitlist/offer-card/offer-card.component';
 
 @NgModule({
   imports: [CommonModule, DlrsAdminRoutingModule],
@@ -16,7 +19,10 @@ import { ParkingWaitlistComponent } from './landing-pages/parking-waitlist/parki
     PendingReviewsComponent,
     DlrsComponent,
     PrintingOrdersComponent,
-    ParkingWaitlistComponent
+    ParkingWaitlistComponent,
+    WaitlistComponent,
+    WaitlistCardComponent,
+    OfferCardComponent
   ]
 })
 export class DlrsAdminModule {}

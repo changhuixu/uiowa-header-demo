@@ -1,0 +1,43 @@
+.waitlist-card {
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  width: 16rem;
+}
+
+.waitlist-card:hover {
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+}
+
+.waitlist-card-header {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.waitlist-card-header-tag {
+  height: 0.3rem;
+  background: #689bff;
+}
+
+.waitlist-card-body {
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+.waitlist-place {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.waitlist-card-footer {
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn-success {
+  background-color: #168839 !important;
+  border-color: #168839 !important;
+}
+.btn-success:hover {
+  background-color: #1d7231 !important;
+  border-color: #1d7231 !important;
+}

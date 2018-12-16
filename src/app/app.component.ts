@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
       new InternalRoute('Wait List', 'admin/waitlist'),
       new InternalRoute('DLRS', 'admin/dlrs'),
       new InternalRoute('', ''),
+      new InternalRoute('My Wait Lists', 'admin/my-waitlists'),
       new InternalRoute('Pending Reviews', 'admin/pendingReviews'),
       new InternalRoute('', ''),
       new InternalRoute('Invalid Link', 'admin/firstGrid')

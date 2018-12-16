@@ -5,6 +5,7 @@ import { PendingReviewsComponent } from './reviews/pending-reviews/pending-revie
 import { PrintingOrdersComponent } from './landing-pages/printing-orders/printing-orders.component';
 import { ParkingWaitlistComponent } from './landing-pages/parking-waitlist/parking-waitlist.component';
 import { DlrsComponent } from './landing-pages/dlrs/dlrs.component';
+import { WaitlistComponent } from './cards/waitlist/waitlist.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'waitlist',
         component: ParkingWaitlistComponent
+      },
+      {
+        path: 'my-waitlists',
+        component: WaitlistComponent
       }
     ]
   }
