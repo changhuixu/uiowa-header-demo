@@ -1,0 +1,20 @@
+<div class="p-3">
+  <label for="typeahead-focus">Choose a department:</label>
+  <input
+    id="org-dept"
+    type="text"
+    class="form-control"
+    [(ngModel)]="dept"
+    [ngbTypeahead]="search"
+    (focus)="focus$.next($event.target.value)"
+    (click)="click$.next($event.target.value)"
+    [inputFormatter]="formatter"
+    [resultFormatter]="formatter"
+    #instance="ngbTypeahead"
+    placeholder="Type to choose a department"
+    style="max-width: 400px;"
+  />
+  <hr />
+  <p>Department:</p>
+  <pre>{{ dept | json }}</pre>
+</div>

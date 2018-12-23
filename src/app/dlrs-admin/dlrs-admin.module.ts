@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { DlrsAdminRoutingModule } from './dlrs-admin-routing.module';
 
@@ -13,7 +14,7 @@ import { WaitlistCardComponent } from './cards/waitlist/waitlist-card/waitlist-c
 import { OfferCardComponent } from './cards/waitlist/offer-card/offer-card.component';
 
 @NgModule({
-  imports: [CommonModule, DlrsAdminRoutingModule],
+  imports: [CommonModule, NgbModule, DlrsAdminRoutingModule],
   declarations: [
     HomeComponent,
     PendingReviewsComponent,

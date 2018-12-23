@@ -10,17 +10,16 @@ interface InternalRoute {
   selector: 'app-home',
   template: `
     <div class="container d-flex flex-column h-100 py-2">
-      <ul class="nav nav-tabs">
-        <li class="nav-item" *ngFor="let item of menus">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            [routerLink]="item.route"
-            style="color: #0372e8;"
-            >{{ item.text }}</a
-          >
-        </li>
-      </ul>
+      <nav class="nav nav-tabs flex-column flex-sm-row">
+        <a
+          *ngFor="let item of menus"
+          class="nav-item nav-link"
+          routerLinkActive="active"
+          [routerLink]="item.route"
+          style="color: #0372e8;"
+          >{{ item.text }}</a
+        >
+      </nav>
       <router-outlet></router-outlet>
     </div>
   `,

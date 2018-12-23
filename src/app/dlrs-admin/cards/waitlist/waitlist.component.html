@@ -6,7 +6,7 @@
           <i class="fa fa-bookmark" aria-hidden="true"></i> Current Offer(s)
         </p>
       </div>
-      <div class="d-flex flex-wrap">
+      <div class="d-flex flex-wrap justify-content-center justify-content-sm-start">
         <div *ngFor="let item of offers" class="m-3">
           <app-offer-card [offer]="item"></app-offer-card>
         </div>
@@ -19,7 +19,7 @@
           <i class="fa fa-spinner" aria-hidden="true"></i> Wait List
         </p>
       </div>
-      <div class="d-flex flex-wrap">
+      <div class="d-flex flex-wrap justify-content-center justify-content-sm-start">
         <div *ngFor="let item of waitlists" class="m-3">
           <app-waitlist-card [waitlist]="item"></app-waitlist-card>
         </div>
