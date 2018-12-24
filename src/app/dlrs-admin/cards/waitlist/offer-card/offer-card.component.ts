@@ -19,6 +19,6 @@ export class OfferCardComponent implements OnInit {
         size: 'lg',
         ariaLabelledBy: 'modal-title'
       })
-      .result.then();
+      .result.then(_ => {}, _ => {});
   }
 }

@@ -10,7 +10,7 @@ interface InternalRoute {
   selector: 'app-home',
   template: `
     <div class="container d-flex flex-column h-100 py-2">
-      <nav class="nav nav-tabs flex-column flex-sm-row">
+      <nav class="nav nav-tabs flex-column flex-sm-row flex-shrink-0">
         <a
           *ngFor="let item of menus"
           class="nav-item nav-link"

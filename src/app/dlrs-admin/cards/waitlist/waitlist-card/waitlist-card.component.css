@@ -14,7 +14,6 @@
 
 .waitlist-card-header-tag {
   height: 0.3rem;
-  background: #689bff;
 }
 
 .waitlist-card-body {
@@ -31,13 +30,4 @@
   padding: 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.btn-success {
-  background-color: #168839 !important;
-  border-color: #168839 !important;
-}
-.btn-success:hover {
-  background-color: #1d7231 !important;
-  border-color: #1d7231 !important;
 }

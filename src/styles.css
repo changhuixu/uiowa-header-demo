@@ -17,3 +17,29 @@ body {
   -ms-user-select: text;
   -webkit-user-select: text;
 }
+
+/* modify success color in Default Bootstrap scheme */
+:root {
+  --success-color: #168839;
+  --success-hover-color: #1d7231;
+}
+.btn-success {
+  background-color: var(--success-color) !important;
+  border-color: var(--success-color) !important;
+}
+.btn-success:hover {
+  background-color: var(--success-hover-color) !important;
+  border-color: var(--success-hover-color) !important;
+}
+.btn-outline-success {
+  color: var(--success-color) !important;
+  border-color: var(--success-color) !important;
+}
+.btn-outline-success:hover {
+  color: #ffffff !important;
+  background-color: var(--success-hover-color) !important;
+  border-color: var(--success-hover-color) !important;
+}
+.bg-success {
+  background-color: var(--success-color) !important;
+}

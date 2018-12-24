@@ -14,7 +14,6 @@
 
 .offer-card-header-tag {
   height: 0.3rem;
-  background: #168839;
 }
 
 .offer-card-body {
@@ -33,26 +32,6 @@
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.btn-success {
-  background-color: #168839 !important;
-  border-color: #168839 !important;
-}
-.btn-success:hover {
-  background-color: #1d7231 !important;
-  border-color: #1d7231 !important;
-}
-.btn-outline-success {
-  color: #168839 !important;
-  border-color: #168839 !important;
-}
-.btn-outline-success:hover {
-  color: #ffffff !important;
-  background-color: #1d7231 !important;
-  border-color: #1d7231 !important;
-}
-.bg-success {
-  background-color: #168839 !important;
-}
 ::ng-deep .modal-content {
   border-radius: 0;
 }
