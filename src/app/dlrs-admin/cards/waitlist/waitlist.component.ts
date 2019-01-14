@@ -39,7 +39,7 @@ export class WaitlistComponent implements OnInit {
       {
         id: 345,
         lot: 'Lot 56',
-        expirationDate: '12/28/2018 18:30'
+        expirationDate: '12/28/2018'
       }
     ];
   }

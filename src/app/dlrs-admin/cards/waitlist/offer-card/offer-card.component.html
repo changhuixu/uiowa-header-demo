@@ -9,7 +9,7 @@
     <div class="">
       <p class="offer-place">🎉Offer</p>
       <p class="m-0">
-        Expire at <time>{{ offer.expirationDate }}</time>
+        Expire on <time>{{ offer.expirationDate }}</time>
       </p>
       <p class="m-0"><a href="#" style="color: #0372e8;">Details</a></p>
     </div>
@@ -17,17 +17,17 @@
   <div class="offer-card-footer d-flex justify-content-between">
     <button
       type="button"
-      class="btn btn-success rounded-0"
-      (click)="open(acceptModal)"
-    >
-      Accept
-    </button>
-    <button
-      type="button"
       class="btn btn-danger rounded-0"
       (click)="open(declineModal)"
     >
       Decline
+    </button>
+    <button
+      type="button"
+      class="btn btn-success rounded-0"
+      (click)="open(acceptModal)"
+    >
+      Accept
     </button>
   </div>
 </div>
@@ -52,17 +52,17 @@
   <div class="modal-footer d-flex justify-content-between">
     <button
       type="button"
-      class="btn btn-outline-success rounded-0"
-      (click)="modal.close()"
-    >
-      Confirm
-    </button>
-    <button
-      type="button"
       class="btn btn-outline-dark rounded-0"
       (click)="modal.close()"
     >
       Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-success rounded-0"
+      (click)="modal.close()"
+    >
+      Confirm
     </button>
   </div>
 </ng-template>
@@ -87,17 +87,17 @@
   <div class="modal-footer d-flex justify-content-between">
     <button
       type="button"
-      class="btn btn-outline-danger rounded-0"
-      (click)="modal.close()"
-    >
-      Confirm
-    </button>
-    <button
-      type="button"
       class="btn btn-outline-dark rounded-0"
       (click)="modal.close()"
     >
       Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger rounded-0"
+      (click)="modal.close()"
+    >
+      Confirm
     </button>
   </div>
 </ng-template>
