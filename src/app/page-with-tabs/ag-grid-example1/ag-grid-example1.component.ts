@@ -15,21 +15,27 @@ export class AgGridExample1Component implements OnInit {
   filter = '';
   gridOptions = <GridOptions>{
     columnDefs: [
-      <AgGridColumn>{ headerName: 'Make', field: 'make', checkboxSelection: true },
+      <AgGridColumn>{
+        headerName: 'Make',
+        field: 'make',
+        checkboxSelection: true
+      },
       <AgGridColumn>{ headerName: 'Model', field: 'model' },
-      <AgGridColumn> { headerName: 'Price', field: 'price' }
+      <AgGridColumn>{ headerName: 'Price', field: 'price' }
     ],
     // getRowNodeId: row => row.id,
     suppressDragLeaveHidesColumns: true,
     animateRows: true,
     rowSelection: 'multiple',
-    enableFilter: true,
     floatingFilter: false,
-    enableSorting: true,
-    enableColResize: true,
     pagination: true,
     paginationAutoPageSize: true,
-    cacheQuickFilter: true
+    cacheQuickFilter: true,
+    defaultColDef: {
+      sortable: true,
+      filter: true,
+      resizable: true
+    }
   };
   @ViewChild('agGrid') agGrid: AgGridNg2;
 
