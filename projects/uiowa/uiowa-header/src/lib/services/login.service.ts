@@ -6,7 +6,11 @@ export class LoginService {
   constructor() {}
 
   login(): void {
-    const url = `account/login?returnUri=${this.returnUri}`;
+    let url = `account/login?returnUri=${this.returnUri}`;
+    if ((document as any).documentMode) {
+      const base = document.getElementsByTagName('base')[0].href;
+      url = base + url;
+    }
     try {
       window.location.replace(url);
     } catch {
@@ -15,10 +19,15 @@ export class LoginService {
   }
 
   logout(): void {
+    let url = `account/logout`;
+    if ((document as any).documentMode) {
+      const base = document.getElementsByTagName('base')[0].href;
+      url = base + url;
+    }
     try {
-      window.location.replace(`account/logout`);
+      window.location.replace(url);
     } catch {
-      window.location.href = `account/logout`;
+      window.location.href = url;
     }
   }
 }
