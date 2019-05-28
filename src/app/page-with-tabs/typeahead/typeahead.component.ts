@@ -18,7 +18,7 @@ import { OrgDeptNode } from '../models/org-dept-node';
 export class TypeaheadComponent implements OnInit {
   dept: OrgDeptNode;
   depts: OrgDeptNode[];
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     const nodes = [].concat(...orgChart.map(x => x.children));
@@ -36,7 +36,7 @@ export class TypeaheadComponent implements OnInit {
     });
   }
 
-  @ViewChild('instance') instance: NgbTypeahead;
+  @ViewChild('instance', { static: true }) instance: NgbTypeahead;
   focus$ = new Subject<string>();
   click$ = new Subject<string>();
   formatter = (result: OrgDeptNode) => result.text;
@@ -56,8 +56,8 @@ export class TypeaheadComponent implements OnInit {
         (term === ''
           ? this.depts
           : this.depts.filter(
-              v => v.text.toLowerCase().indexOf(term.toLowerCase()) > -1
-            )
+            v => v.text.toLowerCase().indexOf(term.toLowerCase()) > -1
+          )
         ).slice(0, 10)
       )
     );

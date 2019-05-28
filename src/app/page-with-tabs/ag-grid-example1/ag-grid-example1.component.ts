@@ -37,7 +37,7 @@ export class AgGridExample1Component implements OnInit {
       resizable: true
     }
   };
-  @ViewChild('agGrid') agGrid: AgGridNg2;
+  @ViewChild('agGrid', {static: true}) agGrid: AgGridNg2;
 
   rowData: any;
 

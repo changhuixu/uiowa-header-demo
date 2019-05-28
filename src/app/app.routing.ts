@@ -15,19 +15,19 @@ export const routes: Routes = [
   },
   {
     path: 'page-with-tabs',
-    loadChildren: './page-with-tabs/page-with-tabs.module#PageWithTabsModule'
+    loadChildren: () => import('./page-with-tabs/page-with-tabs.module').then(m => m.PageWithTabsModule)
   },
   {
     path: 'form-wizards',
-    loadChildren: './form-wizards/form-wizards.module#FormWizardsModule'
+    loadChildren: () => import('./form-wizards/form-wizards.module').then(m => m.FormWizardsModule)
   },
   {
     path: 'admin',
-    loadChildren: './dlrs-admin/dlrs-admin.module#DlrsAdminModule'
+    loadChildren: () => import('./dlrs-admin/dlrs-admin.module').then(m => m.DlrsAdminModule)
   },
   {
     path: 'waitlist-admin',
-    loadChildren: './waitlist-admin/waitlist-admin.module#WaitlistAdminModule'
+    loadChildren: () => import('./waitlist-admin/waitlist-admin.module').then(m => m.WaitlistAdminModule)
   },
   {
     path: 'access-denied',
@@ -45,4 +45,4 @@ export const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
