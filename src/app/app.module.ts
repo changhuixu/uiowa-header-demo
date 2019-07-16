@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
     CoreModule,
     AppRoutingModule,
     BasicUsageModule,
-    NgbModule.forRoot(),
+    NgbModule,
     HighlightModule.forRoot({ theme: 'vs2015'})
   ],
   providers: [],
