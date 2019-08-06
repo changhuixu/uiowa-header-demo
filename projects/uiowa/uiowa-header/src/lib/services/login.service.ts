@@ -6,7 +6,7 @@ export class LoginService {
   constructor() {}
 
   login(): void {
-    let url = `account/login?returnUri=${this.returnUri}`;
+    let url = `account/login?returnUri=${encodeURIComponent(this.returnUri)}`;
     if ((document as any).documentMode) {
       const base = document.getElementsByTagName('base')[0].href;
       url = base + url;
