@@ -13,8 +13,8 @@ export class Wizard1Component implements OnInit {
   currentTab = 1;
   reservation: Reservation;
 
-  @ViewChild(TabContent1Component) private tab1: TabContent1Component;
-  constructor(private readonly svc: ReservationService) {}
+  @ViewChild(TabContent1Component, { static: true }) private tab1: TabContent1Component;
+  constructor(private readonly svc: ReservationService) { }
 
   ngOnInit() {
     this.reservation = this.svc.getDefaultReservation();

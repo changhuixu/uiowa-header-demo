@@ -19,7 +19,7 @@ export class TabContent1Component implements OnInit {
   @Input() reservation: Reservation;
   @Output() next = new EventEmitter<void>();
   roomtypes: RoomType[];
-  @ViewChild('form') form: ElementRef;
+  @ViewChild('form', {static: true}) form: ElementRef;
 
   constructor(private readonly svc: ReservationService) {}
 

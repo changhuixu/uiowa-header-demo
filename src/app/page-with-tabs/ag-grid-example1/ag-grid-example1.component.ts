@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AgGridNg2 } from 'ag-grid-angular';
-import { AgGridColumn } from 'ag-grid-angular';
+import { AgGridColumn, AgGridAngular } from 'ag-grid-angular';
 import { GridApi, GridOptions } from 'ag-grid-community';
 
 @Component({
@@ -37,7 +36,7 @@ export class AgGridExample1Component implements OnInit {
       resizable: true
     }
   };
-  @ViewChild('agGrid') agGrid: AgGridNg2;
+  @ViewChild('agGrid', {static: true}) agGrid: AgGridAngular;
 
   rowData: any;
 
