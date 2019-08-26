@@ -1,6 +1,6 @@
 {
   "name": "@uiowa/uiowa-header",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "author": "Changhui Xu <changhui-xu@uiowa.edu>",
   "description": "An Angular library for uiowa website header, including a UIowa branding bar and a website nav bar.",
   "keywords": [
