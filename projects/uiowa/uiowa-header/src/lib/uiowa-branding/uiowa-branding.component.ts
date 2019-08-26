@@ -13,6 +13,7 @@ export class UiowaBrandingComponent implements OnInit {
   @Input() user?: HeaderUser;
   @Input() showStopImpersonation: boolean;
   @Output() stopImpersonation = new EventEmitter<void>();
+  @Input() showTestWarning?: boolean = false;
 
   constructor(private readonly loginService: LoginService) {}
 

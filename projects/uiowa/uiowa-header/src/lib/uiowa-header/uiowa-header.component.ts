@@ -15,6 +15,7 @@ export class UiowaHeaderComponent implements OnInit {
   @Input() internalRoutes: InternalRoute[];
   @Output() stopImpersonation = new EventEmitter<void>();
   showStopImpersonation = false;
+  @Input() showTestWarning?: boolean = false;
 
   constructor() {}
 
