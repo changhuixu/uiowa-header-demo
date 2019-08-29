@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class LoginService {
   returnUri = '';
-  constructor() {}
+  constructor() { }
 
   login(): void {
     let url = `account/login?returnUri=${encodeURIComponent(this.returnUri)}`;
