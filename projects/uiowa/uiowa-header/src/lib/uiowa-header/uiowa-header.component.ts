@@ -17,7 +17,7 @@ export class UiowaHeaderComponent implements OnInit {
   showStopImpersonation = false;
   @Input() showTestWarning?: boolean = false;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.showStopImpersonation = this.stopImpersonation.observers.length > 0;
