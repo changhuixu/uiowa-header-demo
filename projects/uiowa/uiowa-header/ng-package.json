@@ -3,13 +3,6 @@
   "dest": "../../../dist/uiowa/uiowa-header",
   "lib": {
     "entryFile": "src/public_api.ts",
-    "externals": {
-      "@angular/common": "@angular/common",
-      "@angular/core": "@angular/core",
-      "@angular/forms": "@angular/forms",
-      "@angular/router": "@angular/router",
-      "@ng-bootstrap/ng-bootstrap": "@ng-bootstrap/ng-bootstrap"
-    },
     "umdModuleIds": {
       "@ng-bootstrap/ng-bootstrap": "@ng-bootstrap/ng-bootstrap"
     }

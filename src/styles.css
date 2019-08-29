@@ -11,8 +11,7 @@ body {
   overflow: hidden;
 }
 
-.ag-body {
-  flex-direction: row;
+.ag-cell {
   user-select: initial;
   -moz-user-select: text;
   -ms-user-select: text;
