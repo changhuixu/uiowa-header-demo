@@ -2,24 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HighlightModule } from 'ngx-highlightjs';
-
 import { CoreModule } from './core/core.module';
-import { BasicUsageModule } from './basic-usage/basic-usage.module';
 
-import { AppRoutingModule } from './app.routing';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     CoreModule,
     AppRoutingModule,
-    BasicUsageModule,
-    NgbModule,
-    HighlightModule.forRoot({ theme: 'vs2015'})
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

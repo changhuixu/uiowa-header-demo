@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   ];
   applicationName = 'Your Awesome Application Name';
   internalRoutes = [
-    new InternalRoute('Basic Usage', 'basic-usage'),
+    new InternalRoute('Home', ''),
     new InternalRoute('Page with Tabs', 'page-with-tabs'),
     new InternalRoute('Form Wizards', 'form-wizards'),
     new InternalRoute('Dropdown Menus', '', [
