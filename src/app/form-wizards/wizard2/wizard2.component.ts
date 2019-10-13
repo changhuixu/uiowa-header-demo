@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+import {
+  faPlane,
+  faRoad,
+  faBed,
+  faCreditCard,
+  faUtensils
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-wizard2',
@@ -7,6 +14,11 @@ import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./wizard2.component.css']
 })
 export class Wizard2Component implements OnInit {
+  faPlane = faPlane;
+  faRoad = faRoad;
+  faBed = faBed;
+  faCreditCard = faCreditCard;
+  faUtensils = faUtensils;
   currentTab = 1;
 
   constructor() {}

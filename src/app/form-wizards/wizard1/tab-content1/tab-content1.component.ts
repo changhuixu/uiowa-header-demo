@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { RoomType, Reservation } from '../../models';
 import { ReservationService } from '../../services/reservation.service';
+import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tab-content1',
@@ -16,6 +17,7 @@ import { ReservationService } from '../../services/reservation.service';
   styleUrls: ['./tab-content1.component.css']
 })
 export class TabContent1Component implements OnInit {
+  faChevronRight = faChevronRight;
   @Input() reservation: Reservation;
   @Output() next = new EventEmitter<void>();
   roomtypes: RoomType[];

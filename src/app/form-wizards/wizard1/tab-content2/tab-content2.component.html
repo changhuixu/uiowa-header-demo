@@ -7,7 +7,9 @@
       {{ reservation.dateRange.start | date }} -
       {{ reservation.dateRange.end | date }})
     </p>
-    <p class="m-0"><strong>Total Charge:</strong> ${{ reservation.totalAmount }}</p>
+    <p class="m-0">
+      <strong>Total Charge:</strong> ${{ reservation.totalAmount }}
+    </p>
   </section>
   <div class="form-row">
     <div class="form-group col-md-4">
@@ -130,9 +132,9 @@
   <br />
 
   <button type="button" class="btn btn-default mr-2" (click)="back()">
-    <i class="fa fa-chevron-left" aria-hidden="true"></i> Back
+    <fa-icon [icon]="faChevronLeft" aria-hidden="true"></fa-icon> Back
   </button>
   <button type="button" class="btn btn-primary" (click)="continue()">
-    Continue <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    Continue <fa-icon [icon]="faChevronRight" aria-hidden="true"></fa-icon>
   </button>
 </section>

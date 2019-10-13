@@ -6,8 +6,12 @@ import { AccessDeniedComponent } from './core';
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'page-with-tabs',
@@ -24,16 +28,16 @@ export const routes: Routes = [
       )
   },
   {
-    path: 'admin',
+    path: 'admin1',
     loadChildren: () =>
-      import('./dlrs-admin/dlrs-admin.module').then(m => m.DlrsAdminModule)
+      import('./dropdown-menus/dropdown-menus.module').then(
+        m => m.DropdownMenusModule
+      )
   },
   {
-    path: 'waitlist-admin',
+    path: 'admin2',
     loadChildren: () =>
-      import('./waitlist-admin/waitlist-admin.module').then(
-        m => m.WaitlistAdminModule
-      )
+      import('./side-menus/side-menus.module').then(m => m.SideMenusModule)
   },
   {
     path: 'access-denied',

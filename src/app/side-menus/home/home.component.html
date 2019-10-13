@@ -1,0 +1,92 @@
+<div class="d-flex flex-column h-100 w-100">
+  <header>
+    <h2 class="my-1 text-primary">
+      Admin Dashboard
+      <div ngbDropdown class="d-inline-block d-lg-none">
+        <button class="btn btn-link" id="admin-menu" ngbDropdownToggle>
+          More
+        </button>
+        <div ngbDropdownMenu aria-labelledby="admin-menu">
+          <ng-container *ngFor="let item of linkItems">
+            <a class="dropdown-item" routerLink="../{{ item.path }}">
+              <fa-icon
+                [icon]="item.icon"
+                [fixedWidth]="true"
+                aria-hidden="true"
+              ></fa-icon>
+              {{ item.text }}
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </h2>
+    <hr class="mt-0" />
+  </header>
+  <section class="row mb-5">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
+      <app-tile
+        type="warning"
+        [icon]="faHourglassStart"
+        title="Pending Offers"
+        n="28"
+        path="../pending-offers"
+      >
+      </app-tile>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
+      <app-tile
+        type="success"
+        [icon]="faFire"
+        title="Current Offers"
+        n="170"
+        path="../current-offers"
+      ></app-tile>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
+      <app-tile
+        type="primary"
+        [icon]="faHandPaper"
+        title="Active Requests"
+        n="2289"
+        path="../pending-offers"
+      >
+      </app-tile>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
+      <app-tile
+        type="danger"
+        [icon]="faFrown"
+        title="Email Failures"
+        n="5"
+        path="../pending-offers"
+      ></app-tile>
+    </div>
+  </section>
+  <section id="charts" class="row">
+    <div class="col-12 col-xl-6 my-5">
+      <canvas
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+      ></canvas>
+    </div>
+    <div class="col-12 col-xl-6 my-5">
+      <canvas
+        baseChart
+        width="500"
+        height="200"
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [options]="pieChartOptions"
+        [chartType]="pieChartType"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+      ></canvas>
+    </div>
+  </section>
+</div>

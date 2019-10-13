@@ -10,7 +10,7 @@
         <div class="step-tab-item" [ngClass]="{ active: currentTab >= 1 }">
           <span class="flex-grow-1"></span>
           <div class="step-icon">
-            <i class="fa fa-bed fa-2x" aria-hidden="true"></i>
+            <fa-icon [icon]="faBed" size="2x" aria-hidden="true"></fa-icon>
           </div>
           <span class="divider" [ngClass]="{ active: currentTab > 1 }"></span>
           <div class="w-100"></div>
@@ -18,7 +18,10 @@
         </div>
       </ng-template>
       <ng-template ngbTabContent>
-        <app-tab-content1 [reservation]="reservation" (next)="t.select('tab2')"></app-tab-content1>
+        <app-tab-content1
+          [reservation]="reservation"
+          (next)="t.select('tab2')"
+        ></app-tab-content1>
       </ng-template>
     </ngb-tab>
     <ngb-tab id="tab2">
@@ -26,7 +29,11 @@
         <div class="step-tab-item" [ngClass]="{ active: currentTab >= 2 }">
           <span class="divider" [ngClass]="{ active: currentTab > 1 }"></span>
           <div class="step-icon">
-            <i class="fa fa-credit-card fa-2x" aria-hidden="true"></i>
+            <fa-icon
+              [icon]="faCreditCard"
+              size="2x"
+              aria-hidden="true"
+            ></fa-icon>
           </div>
           <span class="divider" [ngClass]="{ active: currentTab > 2 }"></span>
           <div class="w-100"></div>
@@ -34,7 +41,11 @@
         </div>
       </ng-template>
       <ng-template ngbTabContent>
-        <app-tab-content2 [reservation]="reservation" (next)="t.select('tab3')" (prev)="t.select('tab1')"></app-tab-content2>
+        <app-tab-content2
+          [reservation]="reservation"
+          (next)="t.select('tab3')"
+          (prev)="t.select('tab1')"
+        ></app-tab-content2>
       </ng-template>
     </ngb-tab>
     <ngb-tab id="tab3">
@@ -42,7 +53,11 @@
         <div class="step-tab-item" [ngClass]="{ active: currentTab === 3 }">
           <span class="divider" [ngClass]="{ active: currentTab > 2 }"></span>
           <div class="step-icon">
-            <i class="fa fa-clipboard fa-2x" aria-hidden="true"></i>
+            <fa-icon
+              [icon]="faClipboard"
+              size="2x"
+              aria-hidden="true"
+            ></fa-icon>
           </div>
           <span class="flex-grow-1"></span>
           <div class="w-100"></div>
@@ -50,7 +65,10 @@
         </div>
       </ng-template>
       <ng-template ngbTabContent>
-        <app-tab-content3 [reservation]="reservation" (prev)="t.select('tab2')"></app-tab-content3>
+        <app-tab-content3
+          [reservation]="reservation"
+          (prev)="t.select('tab2')"
+        ></app-tab-content3>
       </ng-template>
     </ngb-tab>
   </ngb-tabset>

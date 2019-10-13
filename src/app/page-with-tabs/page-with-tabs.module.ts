@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 import { AgGridModule } from 'ag-grid-angular';
 
 import { PageWithTabsRoutingModule } from './page-with-tabs-routing.module';
@@ -14,9 +12,7 @@ import { TypeaheadComponent } from './typeahead/typeahead.component';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    NgbModule,
+    SharedModule,
     PageWithTabsRoutingModule,
     AgGridModule.withComponents([])
   ],

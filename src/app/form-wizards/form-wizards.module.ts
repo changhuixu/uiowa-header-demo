@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 import { DateRangePickerModule } from '@uiowa/date-range-picker';
 
 import { FormWizardsRoutingModule } from './form-wizards-routing.module';
@@ -21,6 +19,6 @@ import { Wizard2Component } from './wizard2/wizard2.component';
     Wizard1Component,
     Wizard2Component
   ],
-  imports: [CommonModule, FormsModule, NgbModule, FormWizardsRoutingModule, DateRangePickerModule]
+  imports: [SharedModule, FormWizardsRoutingModule, DateRangePickerModule]
 })
 export class FormWizardsModule {}

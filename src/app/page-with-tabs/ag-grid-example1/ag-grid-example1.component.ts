@@ -1,7 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  Inject,
+  HostListener
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AgGridColumn, AgGridAngular } from 'ag-grid-angular';
 import { GridApi, GridOptions } from 'ag-grid-community';
+import { DOCUMENT } from '@angular/common';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-ag-grid-example1',
@@ -9,6 +17,7 @@ import { GridApi, GridOptions } from 'ag-grid-community';
   styleUrls: ['./ag-grid-example1.component.css']
 })
 export class AgGridExample1Component implements OnInit {
+  faFilter = faFilter;
   private gridApi: GridApi;
   private gridColumnApi;
   filter = '';
@@ -36,11 +45,21 @@ export class AgGridExample1Component implements OnInit {
       resizable: true
     }
   };
-  @ViewChild('agGrid', {static: true}) agGrid: AgGridAngular;
+  @ViewChild('agGrid', { static: true }) agGrid: AgGridAngular;
 
   rowData: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(DOCUMENT) private document: Document
+  ) {
+    this.loadStyle(
+      'https://cdnjs.cloudflare.com/ajax/libs/ag-grid/21.2.1/styles/ag-grid.css'
+    );
+    this.loadStyle(
+      'https://cdnjs.cloudflare.com/ajax/libs/ag-grid/21.2.1/styles/ag-theme-balham.css'
+    );
+  }
 
   ngOnInit() {
     this.rowData = this.http.get('https://api.myjson.com/bins/15psn9');
@@ -71,5 +90,29 @@ export class AgGridExample1Component implements OnInit {
       allColumnIds.push(column.colId);
     });
     this.gridColumnApi.autoSizeColumns(allColumnIds);
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (this.gridApi) {
+      this.gridApi.sizeColumnsToFit();
+    }
+  }
+
+  loadStyle(url: string) {
+    const tagId = url.replace(/^.*[\\\/]/, '');
+    const el = this.document.getElementById(tagId) as HTMLLinkElement;
+    if (el) {
+      el.href = url;
+    } else {
+      const style = this.document.createElement('link');
+      style.id = tagId;
+      style.type = 'text/css';
+      style.href = url;
+      style.rel = 'stylesheet';
+
+      const head = this.document.getElementsByTagName('head')[0];
+      head.appendChild(style);
+    }
   }
 }

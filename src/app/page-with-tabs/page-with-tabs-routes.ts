@@ -16,13 +16,13 @@ export const childRoutes: Routes = [
     data: { title: 'ag-grid' }
   },
   {
-    path: 'tree',
-    component: TreeExample1Component,
-    data: { title: 'Tree' }
-  },
-  {
     path: 'typeahead',
     component: TypeaheadComponent,
     data: { title: 'Typeahead' }
+  },
+  {
+    path: 'tree',
+    component: TreeExample1Component,
+    data: { title: 'Tree' }
   }
 ];

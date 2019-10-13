@@ -9,24 +9,27 @@ import { InternalRoute, ExternalLink, HeaderUser } from '@uiowa/uiowa-header';
 export class AppComponent implements OnInit {
   externalLinks = [
     new ExternalLink('Employee Self Service', 'https://hris.uiowa.edu'),
-    new ExternalLink('GitHub Repo', 'https://github.com/changhuixu/uiowa-header-demo')
+    new ExternalLink(
+      'GitHub Repo',
+      'https://github.com/changhuixu/uiowa-header-demo'
+    )
   ];
   applicationName = 'Your Awesome Application Name';
   internalRoutes = [
-    new InternalRoute('Home', ''),
+    new InternalRoute('Home', 'home'),
     new InternalRoute('Page with Tabs', 'page-with-tabs'),
     new InternalRoute('Form Wizards', 'form-wizards'),
     new InternalRoute('Dropdown Menus', '', [
-      new InternalRoute('Printing Orders', 'admin/printingorders'),
-      new InternalRoute('Wait List', 'admin/waitlist'),
-      new InternalRoute('DLRS', 'admin/dlrs'),
+      new InternalRoute('Printing Orders', 'admin1/printingorders'),
+      new InternalRoute('Wait List', 'admin1/waitlist'),
+      new InternalRoute('DLRS', 'admin1/dlrs'),
       new InternalRoute('', ''),
-      new InternalRoute('My Wait Lists', 'admin/my-waitlists'),
-      new InternalRoute('Pending Reviews', 'admin/pendingReviews'),
+      new InternalRoute('My Wait Lists', 'admin1/my-waitlists'),
+      new InternalRoute('Pending Reviews', 'admin1/pendingReviews'),
       new InternalRoute('', ''),
-      new InternalRoute('Invalid Link', 'admin/firstGrid')
+      new InternalRoute('Invalid Link', 'admin1/firstGrid')
     ]),
-    new InternalRoute('Side Nav Menus', 'waitlist-admin')
+    new InternalRoute('Side Nav Menus', 'admin2')
   ];
   headerUser: HeaderUser = {
     userName: 'abc',

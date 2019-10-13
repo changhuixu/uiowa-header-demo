@@ -8,7 +8,7 @@
         [ngClass]="{ active: currentTab === 1 }"
         (click)="select(1); $event.preventDefault()"
       >
-        <i class="fa fa-2x fa-plane" aria-hidden="true"></i>
+        <fa-icon [icon]="faPlane" size="2x" aria-hidden="true"></fa-icon>
         <p class="m-0">Flight</p>
       </a>
       <a
@@ -18,7 +18,7 @@
         [ngClass]="{ active: currentTab === 2 }"
         (click)="select(2); $event.preventDefault()"
       >
-        <i class="fa fa-2x fa-road" aria-hidden="true"></i>
+        <fa-icon [icon]="faRoad" size="2x" aria-hidden="true"></fa-icon>
         <p class="m-0">Train</p>
       </a>
       <a
@@ -28,7 +28,7 @@
         [ngClass]="{ active: currentTab === 3 }"
         (click)="select(3); $event.preventDefault()"
       >
-        <i class="fa fa-2x fa-bed" aria-hidden="true"></i>
+        <fa-icon [icon]="faBed" size="2x" aria-hidden="true"></fa-icon>
         <p class="m-0">Hotel</p>
       </a>
       <a
@@ -38,7 +38,7 @@
         [ngClass]="{ active: currentTab === 4 }"
         (click)="select(4); $event.preventDefault()"
       >
-        <i class="fa fa-2x fa-cutlery" aria-hidden="true"></i>
+        <fa-icon [icon]="faUtensils" size="2x" aria-hidden="true"></fa-icon>
         <p class="m-0">Restaurant</p>
       </a>
       <a
@@ -48,35 +48,28 @@
         [ngClass]="{ active: currentTab === 5 }"
         (click)="select(5); $event.preventDefault()"
       >
-        <i class="fa fa-2x fa-credit-card" aria-hidden="true"></i>
+        <fa-icon [icon]="faCreditCard" size="2x" aria-hidden="true"></fa-icon>
         <p class="m-0">Credit Card</p>
       </a>
     </div>
     <div class="tab-contents">
       <div class="tab-content" *ngIf="currentTab === 1">
-        <p class="h1"><i class="fa fa-2x fa-plane" aria-hidden="true"></i></p>
         <p class="h2">Flight Reservation</p>
         <p class="h3 mt-5">Coming Soon</p>
       </div>
       <div class="tab-content" *ngIf="currentTab === 2">
-        <p class="h1"><i class="fa fa-2x fa-road" aria-hidden="true"></i></p>
         <p class="h2">Train Reservation</p>
         <p class="h3 mt-5">Coming Soon</p>
       </div>
       <div class="tab-content" *ngIf="currentTab === 3">
-        <p class="h1"><i class="fa fa-2x fa-bed" aria-hidden="true"></i></p>
         <p class="h2">Hotel Directory</p>
         <p class="h3 mt-5">Coming Soon</p>
       </div>
       <div class="tab-content" *ngIf="currentTab === 4">
-        <p class="h1"><i class="fa fa-2x fa-cutlery" aria-hidden="true"></i></p>
         <p class="h2">Restaurant Directory</p>
         <p class="h3 mt-5">Coming Soon</p>
       </div>
       <div class="tab-content" *ngIf="currentTab === 5">
-        <p class="h1">
-          <i class="fa fa-2x fa-credit-card" aria-hidden="true"></i>
-        </p>
         <p class="h2">Credit Card</p>
         <p class="h3 mt-5">Coming Soon</p>
       </div>

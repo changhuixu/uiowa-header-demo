@@ -1,0 +1,35 @@
+<div class="h-100 w-100 bg-light" style="overflow-y: auto;">
+  <div class="container">
+    <section class="my-4 bg-white shadow">
+      <div class="py-2 px-3 bg-success">
+        <p class="h4 text-white m-0">
+          <fa-icon [icon]="faBookmark" aria-hidden="true"></fa-icon>
+          Current Offer(s)
+        </p>
+      </div>
+      <div
+        class="d-flex flex-wrap justify-content-center justify-content-sm-start"
+      >
+        <div *ngFor="let item of offers" class="m-3">
+          <app-offer-card [offer]="item"></app-offer-card>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-4 bg-white shadow">
+      <div class="bg-primary py-2 px-3">
+        <p class="h4 text-white m-0">
+          <fa-icon [icon]="faSpinner" aria-hidden="true"></fa-icon>
+          Wait List
+        </p>
+      </div>
+      <div
+        class="d-flex flex-wrap justify-content-center justify-content-sm-start"
+      >
+        <div *ngFor="let item of waitlists" class="m-3">
+          <app-waitlist-card [waitlist]="item"></app-waitlist-card>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

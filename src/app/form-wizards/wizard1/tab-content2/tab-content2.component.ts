@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Reservation } from '../../models';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tab-content2',
@@ -7,6 +8,8 @@ import { Reservation } from '../../models';
   styleUrls: ['./tab-content2.component.css']
 })
 export class TabContent2Component implements OnInit {
+  faChevronRight = faChevronRight;
+  faChevronLeft = faChevronLeft;
   @Input() reservation: Reservation;
   @Output() next = new EventEmitter<void>();
   @Output() prev = new EventEmitter<void>();

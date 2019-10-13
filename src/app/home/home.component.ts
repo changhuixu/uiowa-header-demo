@@ -9,6 +9,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
   html = null;
   ts = null;
+  showHtml = false;
+  showTs = false;
 
   constructor(private sanitizer: DomSanitizer) {}
 
