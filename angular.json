@@ -40,14 +40,16 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/manifest.webmanifest",
               "src/robots.txt",
               "src/assets"
             ],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -63,7 +65,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -81,6 +82,12 @@
               ]
             },
             "es5": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "tsConfig": "./tsconfig.es5.json"
             }
           }
@@ -118,6 +125,11 @@
           "options": {
             "tsConfig": "projects/uiowa/uiowa-header/tsconfig.lib.json",
             "project": "projects/uiowa/uiowa-header/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/uiowa/uiowa-header/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -135,11 +147,16 @@
               "projects/uiowa/uiowa-header/tsconfig.lib.json",
               "projects/uiowa/uiowa-header/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "uiowa-header-demo"
+  "defaultProject": "uiowa-header-demo",
+  "cli": {
+    "analytics": "a9b011b2-a6d3-4d30-9f77-a3fbf8ec6169"
+  }
 }
