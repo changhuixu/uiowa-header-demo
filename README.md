@@ -12,7 +12,9 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
 ![Application Screenshots](apps.png)
 
-Dependencies: Angular >=6, ng-bootstrap >=2, Bootstrap >=4 (css)
+**v6 ~ v8** Dependencies: Angular >=6, ng-bootstrap >=2, Bootstrap >=4 (css)
+
+**v9** Dependencies: Angular >=9, ng-bootstrap >=6, Bootstrap >=4 (css)
 
 ## Library Details
 
