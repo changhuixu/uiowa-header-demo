@@ -1,13 +1,13 @@
 <section class="mx-4">
   <section class="p-2" style="background: #e7ffec;">
-    <p><strong>Reservation:</strong> {{ reservation.roomType.name }}</p>
-    <p><strong>Quantity:</strong> {{ reservation.quantity }}</p>
-    <p>
+    <p class="mb-1"><strong>Reservation:</strong> {{ reservation.roomType.name }}</p>
+    <p class="mb-1"><strong>Quantity:</strong> {{ reservation.quantity }}</p>
+    <p class="mb-1">
       <strong>Nights:</strong> {{ days }} (
       {{ reservation.dateRange.start | date }} -
       {{ reservation.dateRange.end | date }})
     </p>
-    <p class="m-0">
+    <p class="mb-1">
       <strong>Total Charge:</strong> ${{ reservation.totalAmount }}
     </p>
   </section>

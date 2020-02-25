@@ -1,75 +1,63 @@
 <section class="form-wizard">
-  <ngb-tabset
-    (tabChange)="beforeChange($event)"
-    type="custom"
-    justify="justified"
-    #t="ngbTabset"
+  <ul
+    ngbNav
+    #nav="ngbNav"
+    [(activeId)]="activeId"
+    (navChange)="onNavChange($event)"
+    class="nav nav-justified nav-custom"
   >
-    <ngb-tab id="tab1">
-      <ng-template ngbTabTitle>
-        <div class="step-tab-item" [ngClass]="{ active: currentTab >= 1 }">
-          <span class="flex-grow-1"></span>
-          <div class="step-icon">
-            <fa-icon [icon]="faBed" size="2x" aria-hidden="true"></fa-icon>
-          </div>
-          <span class="divider" [ngClass]="{ active: currentTab > 1 }"></span>
-          <div class="w-100"></div>
-          <p class="mx-auto m-0">Room Reservation</p>
+    <li [ngbNavItem]="1">
+      <div class="step-tab-item" [ngClass]="{ active: activeId >= 1 }">
+        <span class="flex-grow-1"></span>
+        <div class="step-icon" (click)="nav.select(1)">
+          <fa-icon [icon]="faBed" size="2x" aria-hidden="true"></fa-icon>
         </div>
-      </ng-template>
-      <ng-template ngbTabContent>
+        <span class="divider" [ngClass]="{ active: activeId > 1 }"></span>
+        <div class="w-100"></div>
+        <p class="mx-auto m-0">Room Reservation</p>
+      </div>
+      <ng-template ngbNavContent>
         <app-tab-content1
           [reservation]="reservation"
-          (next)="t.select('tab2')"
+          (next)="nav.select(2)"
         ></app-tab-content1>
       </ng-template>
-    </ngb-tab>
-    <ngb-tab id="tab2">
-      <ng-template ngbTabTitle>
-        <div class="step-tab-item" [ngClass]="{ active: currentTab >= 2 }">
-          <span class="divider" [ngClass]="{ active: currentTab > 1 }"></span>
-          <div class="step-icon">
-            <fa-icon
-              [icon]="faCreditCard"
-              size="2x"
-              aria-hidden="true"
-            ></fa-icon>
-          </div>
-          <span class="divider" [ngClass]="{ active: currentTab > 2 }"></span>
-          <div class="w-100"></div>
-          <p class="mx-auto m-0">Payment</p>
+    </li>
+    <li [ngbNavItem]="2">
+      <div class="step-tab-item" [ngClass]="{ active: activeId >= 2 }">
+        <span class="divider" [ngClass]="{ active: activeId > 1 }"></span>
+        <div class="step-icon" (click)="navToPaymentTab()">
+          <fa-icon [icon]="faCreditCard" size="2x" aria-hidden="true"></fa-icon>
         </div>
-      </ng-template>
-      <ng-template ngbTabContent>
+        <span class="divider" [ngClass]="{ active: activeId > 2 }"></span>
+        <div class="w-100"></div>
+        <p class="mx-auto m-0">Payment</p>
+      </div>
+      <ng-template ngbNavContent>
         <app-tab-content2
           [reservation]="reservation"
-          (next)="t.select('tab3')"
-          (prev)="t.select('tab1')"
+          (next)="nav.select(3)"
+          (prev)="nav.select(1)"
         ></app-tab-content2>
       </ng-template>
-    </ngb-tab>
-    <ngb-tab id="tab3">
-      <ng-template ngbTabTitle>
-        <div class="step-tab-item" [ngClass]="{ active: currentTab === 3 }">
-          <span class="divider" [ngClass]="{ active: currentTab > 2 }"></span>
-          <div class="step-icon">
-            <fa-icon
-              [icon]="faClipboard"
-              size="2x"
-              aria-hidden="true"
-            ></fa-icon>
-          </div>
-          <span class="flex-grow-1"></span>
-          <div class="w-100"></div>
-          <p class="mx-auto m-0">Review</p>
+    </li>
+    <li [ngbNavItem]="3">
+      <div class="step-tab-item" [ngClass]="{ active: activeId === 3 }">
+        <span class="divider" [ngClass]="{ active: activeId > 2 }"></span>
+        <div class="step-icon" (click)="nav.select(3)">
+          <fa-icon [icon]="faClipboard" size="2x" aria-hidden="true"></fa-icon>
         </div>
-      </ng-template>
-      <ng-template ngbTabContent>
-        <app-tab-content3
+        <span class="flex-grow-1"></span>
+        <div class="w-100"></div>
+        <p class="mx-auto m-0">Review</p>
+      </div>
+      <ng-template ngbNavContent>
+        <app-tab-content2
           [reservation]="reservation"
-          (prev)="t.select('tab2')"
-        ></app-tab-content3>
+          (prev)="nav.select(2)"
+        ></app-tab-content2>
       </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav" class="tab-pane"></div>
 </section>

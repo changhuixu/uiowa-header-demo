@@ -1,26 +1,17 @@
-::ng-deep .nav-custom {
+.nav-custom {
   border: 1px solid #b1c8ff;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   overflow: auto;
 }
-::ng-deep .nav-custom .nav-item {
-  background: #fcfff0;
-  padding: 1rem 0;
-}
-::ng-deep .nav-custom .nav-link {
-  padding: 0 !important;
-}
-::ng-deep .nav-custom li a {
-  color: #b1c8ff !important;
-}
-::ng-deep .tab-pane {
+
+.tab-pane {
   border: 1px solid #b1c8ff;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   overflow: auto;
   padding: 1rem;
-  min-height: 550px;
+  min-height: 600px;
 }
 
 .step-tab-item {
@@ -28,6 +19,9 @@
   flex-wrap: wrap !important;
   align-items: center !important;
   justify-content: space-between !important;
+  background: #fcfff0;
+  padding: 1rem 0;
+  color: #b1c8ff !important;
 }
 .step-icon {
   display: inline-flex !important;
@@ -38,6 +32,7 @@
   border-radius: 50% !important;
   border-width: 2px !important;
   border-style: solid;
+  cursor: pointer;
 }
 
 .step-tab-item.active {
