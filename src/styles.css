@@ -7,13 +7,6 @@ body {
   overflow: hidden;
 }
 
-.ag-cell {
-  user-select: initial;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  -webkit-user-select: text;
-}
-
 /* modify success color in Default Bootstrap scheme */
 :root {
   --success-color: #168839;
