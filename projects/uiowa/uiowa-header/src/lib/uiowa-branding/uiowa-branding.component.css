@@ -2,16 +2,12 @@
   background-color: black;
   font-family: sans-serif;
   box-sizing: border-box;
-  height: 41px;
+  height: 40px;
 }
 
-.uiowa-bar .wordmark-link {
-  margin-left: 0.125rem;
-}
-
-.uiowa-bar .wordmark-link .wordmark-svg {
-  width: 221px;
-  height: 27px;
+.uiowa-bar .wordmark-link svg {
+  width: auto;
+  height: 28px;
   fill: #ffcd00;
 }
 
@@ -25,7 +21,7 @@
 
 .user-name {
   margin-left: 3px;
-  max-width: calc(100vw - 300px);
+  max-width: calc(100vw - 150px);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;

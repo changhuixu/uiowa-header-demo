@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { InternalRoute, ExternalLink, HeaderUser } from '@uiowa/uiowa-header';
+import {
+  InternalRoute,
+  ExternalLink,
+  HeaderUser,
+} from 'projects/uiowa/uiowa-header/src/public-api';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   externalLinks = [
@@ -15,9 +19,9 @@ export class AppComponent implements OnInit {
     new ExternalLink(
       'GitHub Repo',
       'https://github.com/changhuixu/uiowa-header-demo'
-    )
+    ),
   ];
-  applicationName = 'Your Awesome Application Name';
+  applicationName = 'Awesome Application Name';
   internalRoutes = [
     new InternalRoute('Home', 'home'),
     new InternalRoute('Page with Tabs', 'page-with-tabs'),
@@ -30,13 +34,13 @@ export class AppComponent implements OnInit {
       new InternalRoute('My Wait Lists', 'admin1/my-waitlists'),
       new InternalRoute('Pending Reviews', 'admin1/pendingReviews'),
       new InternalRoute('', ''),
-      new InternalRoute('Invalid Link', 'admin1/firstGrid')
+      new InternalRoute('Invalid Link', 'admin1/firstGrid'),
     ]),
-    new InternalRoute('Side Nav Menus', 'admin2')
+    new InternalRoute('Side Nav Menus', 'admin2'),
   ];
   headerUser: HeaderUser = {
     userName: 'abc',
-    originalUserName: 'changhxu'
+    originalUserName: 'changhxu',
   } as HeaderUser;
   constructor() {}
 
@@ -45,7 +49,7 @@ export class AppComponent implements OnInit {
   stopImpersonation() {
     this.headerUser = {
       userName: 'changhxu',
-      originalUserName: ''
+      originalUserName: '',
     };
     console.log(`impersonation stopped`);
   }

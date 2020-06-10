@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoginService } from '@uiowa/uiowa-header';
+import { LoginService } from 'projects/uiowa/uiowa-header/src/public-api';
 
 @Injectable()
 export class HawkidLoginService extends LoginService {
