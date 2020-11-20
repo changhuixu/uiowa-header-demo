@@ -7,52 +7,52 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'page-with-tabs',
     loadChildren: () =>
       import('./page-with-tabs/page-with-tabs.module').then(
-        m => m.PageWithTabsModule
-      )
+        (m) => m.PageWithTabsModule
+      ),
   },
   {
     path: 'form-wizards',
     loadChildren: () =>
       import('./form-wizards/form-wizards.module').then(
-        m => m.FormWizardsModule
-      )
+        (m) => m.FormWizardsModule
+      ),
   },
   {
     path: 'admin1',
     loadChildren: () =>
       import('./dropdown-menus/dropdown-menus.module').then(
-        m => m.DropdownMenusModule
-      )
+        (m) => m.DropdownMenusModule
+      ),
   },
   {
     path: 'admin2',
     loadChildren: () =>
-      import('./side-menus/side-menus.module').then(m => m.SideMenusModule)
+      import('./side-menus/side-menus.module').then((m) => m.SideMenusModule),
   },
   {
     path: 'access-denied',
-    component: AccessDeniedComponent
+    component: AccessDeniedComponent,
   },
   {
     path: '**',
-    redirectTo: ''
-  }
+    redirectTo: '',
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
