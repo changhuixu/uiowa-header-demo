@@ -55,7 +55,7 @@
     </div>
     <div class="">
       <div #otherContent>
-        <ng-content></ng-content>
+        <ng-content  select="[slot=userMenu]"></ng-content>
       </div>
       <ul class="navbar-nav pt-2" *ngIf="otherContent.children.length==0">
         <li

@@ -1,4 +1,15 @@
-<uiowa-branding [externalLinks]="externalLinks" [user]="user" (stopImpersonation)="stopImpersonation.emit()" [showStopImpersonation]="showStopImpersonation" [showTestWarning]="showTestWarning">
-    <ng-content></ng-content>
+<uiowa-branding
+  [externalLinks]="externalLinks"
+  [user]="user"
+  (stopImpersonation)="stopImpersonation.emit()"
+  [showStopImpersonation]="showStopImpersonation"
+  [showTestWarning]="showTestWarning"
+>
+  <ng-content select="[slot=userMenu]" slot="userMenu"></ng-content>
 </uiowa-branding>
-<uiowa-app-nav-bar [applicationName]="applicationName" [internalRoutes]="internalRoutes"></uiowa-app-nav-bar>
+<uiowa-app-nav-bar
+  [applicationName]="applicationName"
+  [internalRoutes]="internalRoutes"
+>
+  <ng-content select="[slot=extraMenuItem]" slot="extraMenuItem"></ng-content>
+</uiowa-app-nav-bar>
