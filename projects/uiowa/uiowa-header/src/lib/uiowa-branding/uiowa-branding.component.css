@@ -33,6 +33,7 @@
   color: #b0b0b0;
   font-size: 0.9rem;
   align-self: center;
+  white-space: nowrap;
 }
 
 .logout-dropdown {

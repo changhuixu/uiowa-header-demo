@@ -47,28 +47,29 @@
     <div class="mx-auto">
       <span
         *ngIf="showTestWarning"
-        class="d-none d-xl-block font-weight-bold p-1"
-        style="color: #ce0000; background-color: #ffff00;"
+        class="d-none d-xl-block font-weight-bold p-1 white-space-nowrap"
+        style="color: #ce0000; background-color: #ffff00"
       >
         WARNING: THIS IS A TEST SYSTEM. NOT PRODUCTION!
       </span>
     </div>
     <div class="">
       <div #otherContent>
-        <ng-content  select="[slot=userMenu]"></ng-content>
+        <ng-content select="[slot=userMenu]"></ng-content>
       </div>
-      <ul class="navbar-nav pt-2" *ngIf="otherContent.children.length==0">
+      <ul class="navbar-nav pt-2" *ngIf="otherContent.children.length == 0">
         <li
           class="nav-item text-white mr-4 d-none d-md-flex"
           *ngFor="let item of externalLinks"
         >
           <a
-            href="{{item.url}}"
+            href="{{ item.url }}"
             class="external-link"
-            target="{{item.target}}"
+            target="{{ item.target }}"
             rel="noopener"
-            >{{item.text}}</a
           >
+            {{ item.text }}
+          </a>
         </li>
         <li class="nav-item dropdown ml-3" *ngIf="user && user.userName">
           <div ngbDropdown role="menu">
@@ -82,7 +83,7 @@
                 role="icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
-                style="height: 0.8rem; width: 1rem; vertical-align: baseline;"
+                style="height: 0.8rem; width: 1rem; vertical-align: baseline"
               >
                 <path
                   fill="currentColor"
@@ -90,11 +91,11 @@
                 ></path>
               </svg>
               <span class="user-name"
-                >{{user.userName}}
+                >{{ user.userName }}
                 <span
                   *ngIf="user.originalUserName"
                   class="text-danger font-weight-bold"
-                  >({{user.originalUserName}})</span
+                  >({{ user.originalUserName }})</span
                 >
               </span>
             </button>
@@ -108,21 +109,21 @@
                 *ngIf="user.originalUserName && showStopImpersonation"
                 href="javascript:void(0)"
                 (click)="stopImpersonation.emit()"
-                style="white-space: nowrap;"
+                style="white-space: nowrap"
               >
                 <svg
                   aria-hidden="true"
                   role="icon"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
-                  style="height: 1rem; width: 1rem;"
+                  style="height: 1rem; width: 1rem"
                 >
                   <path
                     fill="currentColor"
                     d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm96 328c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h160c8.8 0 16 7.2 16 16v160z"
                   ></path>
                 </svg>
-                <span style="vertical-align: middle;"> Stop Impersonation</span>
+                <span style="vertical-align: middle"> Stop Impersonation</span>
               </a>
               <div
                 *ngIf="user.originalUserName && showStopImpersonation"
@@ -134,14 +135,14 @@
                   role="icon"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
-                  style="height: 1rem; width: 1rem;"
+                  style="height: 1rem; width: 1rem"
                 >
                   <path
                     fill="currentColor"
                     d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z"
                   ></path>
                 </svg>
-                <span style="vertical-align: middle;"> Logout</span>
+                <span style="vertical-align: middle"> Logout</span>
               </a>
             </div>
           </div>
