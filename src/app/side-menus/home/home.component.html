@@ -66,11 +66,12 @@
     <div class="col-12 col-xl-6 my-5">
       <canvas
         baseChart
+        width="600"
+        height="400"
+        type="bar"
         [datasets]="barChartData"
         [labels]="barChartLabels"
         [options]="barChartOptions"
-        [legend]="barChartLegend"
-        [chartType]="barChartType"
         (chartHover)="chartHovered($event)"
         (chartClick)="chartClicked($event)"
       ></canvas>
@@ -78,12 +79,12 @@
     <div class="col-12 col-xl-6 my-5">
       <canvas
         baseChart
-        width="500"
-        height="200"
-        [data]="pieChartData"
+        width="400"
+        height="250"
+        type="pie"
+        [datasets]="pieChartData"
         [labels]="pieChartLabels"
         [options]="pieChartOptions"
-        [chartType]="pieChartType"
         (chartHover)="chartHovered($event)"
         (chartClick)="chartClicked($event)"
       ></canvas>

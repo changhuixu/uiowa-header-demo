@@ -12,6 +12,8 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
 ![Application Screenshots](apps.png)
 
+**v12** Dependencies: Angular >=12, ng-bootstrap >=10, Bootstrap >=4.5 (css)
+
 **v10** Dependencies: Angular >=10, ng-bootstrap >=7, Bootstrap >=4.5 (css)
 
 **v9** Dependencies: Angular >=9, ng-bootstrap >=6, Bootstrap >=4 (css)
@@ -32,11 +34,11 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 - Support custom "top-right" part of Uiowa branding bar. By default, "top-right" part of Uiowa branding bar shows External Links (if any) and Login link or User dropdown button. If you want to customize the "top-right" part, you can provide your content inside of `uiowa-header` tag. eg,
 
   ```html
-  <uiowa-header [applicationName]="'My Awesome App'"
-                [internalRoutes]="myInternalRoutes">
-    <div class="text-white">
-      my content
-    </div>
+  <uiowa-header
+    [applicationName]="'My Awesome App'"
+    [internalRoutes]="myInternalRoutes"
+  >
+    <div class="text-white">my content</div>
   </uiowa-header>
   ```
 
