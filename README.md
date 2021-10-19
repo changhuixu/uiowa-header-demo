@@ -1,6 +1,6 @@
 # UIowa Header
 
-An Angular library for common website header, including a UIOWA branding bar and a website nav bar. This library also handles impersonation use case.
+An Angular library for common website header, including a UIowa branding bar and a website nav bar. This library also handles impersonation use case.
 
 You might also want to check out libraries [@uiowa/spinner](https://github.com/changhuixu/spinner), [session-expiration-alert](https://github.com/changhuixu/session-expiration-alert), [@uiowa/date-range-picker](https://github.com/changhuixu/date-range-picker), [@uiowa/digit-only](https://github.com/changhuixu/ngx-digit-only) and [@uiowa/uiowa-mfk](https://github.com/changhuixu/uiowa-mfk-project).
 
@@ -10,7 +10,7 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
 ## [Demo](https://uiowa-header.firebaseapp.com)
 
-![Application Screenshots](apps.png)
+**v12.1.1** Dependencies: Angular >=12
 
 **v12** Dependencies: Angular >=12, ng-bootstrap >=10, Bootstrap >=4.5 (css)
 
@@ -35,7 +35,7 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
   ```html
   <uiowa-header
-    [applicationName]="'My Awesome App'"
+    applicationName="My Awesome App"
     [internalRoutes]="myInternalRoutes"
   >
     <div class="text-white">my content</div>
@@ -51,7 +51,7 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
   @NgModule({
     imports: [CommonModule, UiowaHeaderModule],
     declarations: [...],
-    providers: [{ provide: LoginService, useClass: HawkidLoginService }],
+    providers: [{ provide: LoginService, useClass: HawkIdLoginService }],
     exports: [UiowaHeaderModule, ...]
   })
   export class CoreModule {
@@ -65,6 +65,4 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
 - When user is impersonating and wants to stop impersonation, user dropdown will show a link which would emit a `stopImpersonation` event. You can handle this event accordingly.
 
-- Follow web content accessibility guidelines. Below is Google Lighthouse audit report of the [demo site](https://uiowa-header.firebaseapp.com).
-
-  ![Google Lighthouse Audit Result](lighthouse.png)
+- Follow web content accessibility guidelines.

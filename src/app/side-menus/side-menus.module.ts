@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { ChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
 
 import { SideMenusRoutingModule } from './side-menus-routing.module';
 import { LayoutComponent } from './layout/layout.component';
@@ -25,8 +25,8 @@ import { TileComponent } from './home/tile/tile.component';
     EmailTemplatesComponent,
     ReportsComponent,
     HomeComponent,
-    TileComponent
+    TileComponent,
   ],
-  imports: [SharedModule, SideMenusRoutingModule, ChartsModule]
+  imports: [SharedModule, SideMenusRoutingModule, NgChartsModule],
 })
 export class SideMenusModule {}

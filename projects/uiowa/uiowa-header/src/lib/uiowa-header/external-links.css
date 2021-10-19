@@ -1,0 +1,36 @@
+.iowa-external-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 0.5rem 0;
+  margin-left: auto;
+}
+.iowa-external-links a {
+  color: #656565;
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+  margin: 0 0.5rem;
+  white-space: nowrap;
+  text-decoration: none;
+  position: relative;
+}
+.iowa-external-links a:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffcd00;
+  transform-origin: center;
+  transform: translate(-50%, 0) scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.iowa-external-links a:hover::after,
+.iowa-external-links a:focus::after {
+  transform: translate(-50%, 0) scaleX(1);
+}
+
+.iowa-external-link-spacer {
+  border-right: #656565 1px solid;
+}

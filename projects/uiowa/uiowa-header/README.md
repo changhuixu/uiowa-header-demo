@@ -10,6 +10,8 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
 ## [Demo](https://uiowa-header.firebaseapp.com)
 
+**v12.1.1** Dependencies: Angular >=12
+
 **v12** Dependencies: Angular >=12, ng-bootstrap >=10, Bootstrap >=4.5 (css)
 
 **v10** Dependencies: Angular >=10, ng-bootstrap >=7, Bootstrap >=4.5 (css)
@@ -22,26 +24,26 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
 ### Models
 
-* `ExternalLink`: static link listed in Uiowa branding bar. eg, Employee Self Service site link.
-* `InternalRoute`: route for pages in your app.
-* `HeaderUser`: used to display user name and/or original user name when impersonation.
+- `ExternalLink`: static link listed in Uiowa branding bar. eg, Employee Self Service site link.
+- `InternalRoute`: route for pages in your app.
+- `HeaderUser`: used to display user name and/or original user name when impersonation.
 
 ### Features
 
-* Responsive header layout with Hawkeye color styles
-* Support custom "top-right" part of Uiowa branding bar. By default, "top-right" part of Uiowa branding bar shows External Links (if any) and Login link or User dropdown button. If you want to customize the "top-right" part, you can provide your content inside of `uiowa-header` tag. eg,
+- Responsive header layout with Hawkeye color styles
+- Support custom "top-right" part of Uiowa branding bar. By default, "top-right" part of Uiowa branding bar shows External Links (if any) and Login link or User dropdown button. If you want to customize the "top-right" part, you can provide your content inside of `uiowa-header` tag. eg,
 
   ```html
-  <uiowa-header [applicationName]="'My Awesome App'"
-                [internalRoutes]="myInternalRoutes">
-    <div class="text-white">
-      my content
-    </div>
+  <uiowa-header
+    applicationName="My Awesome App"
+    [internalRoutes]="myInternalRoutes"
+  >
+    <div class="text-white">my content</div>
   </uiowa-header>
   ```
 
-* Support application Nav menus with dropdown sub menus, as well as dividers in dropdown menu.
-* Provide `LoginService` with default implementations for `login()` and `logout()` methods which correspond to click event from login and logout buttons. By default, you don't need to do extra work for login/logout. The two methods follow .NET Core convention redirect to routes `account\login` and `account\logout`, respectively. `LoginService` has a public member `returnUri` (string, default empty), which is the return uri after login.
+- Support application Nav menus with dropdown sub menus, as well as dividers in dropdown menu.
+- Provide `LoginService` with default implementations for `login()` and `logout()` methods which correspond to click event from login and logout buttons. By default, you don't need to do extra work for login/logout. The two methods follow .NET Core convention redirect to routes `account\login` and `account\logout`, respectively. `LoginService` has a public member `returnUri` (string, default empty), which is the return uri after login.
 
   If you want to customize login and/or logout process, you can provide your customized service via dependency injection. eg,
 
@@ -49,7 +51,7 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
   @NgModule({
     imports: [CommonModule, UiowaHeaderModule],
     declarations: [...],
-    providers: [{ provide: LoginService, useClass: HawkidLoginService }],
+    providers: [{ provide: LoginService, useClass: HawkIdLoginService }],
     exports: [UiowaHeaderModule, ...]
   })
   export class CoreModule {
@@ -61,6 +63,6 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
   }
   ```
 
-* When user is impersonating and wants to stop impersonation, user dropdown will show a link which would emit a `stopImpersonation` event. You can handle this event accordingly.
+- When user is impersonating and wants to stop impersonation, user dropdown will show a link which would emit a `stopImpersonation` event. You can handle this event accordingly.
 
-* Follow web content accessibility guidelines.
+- Follow web content accessibility guidelines.

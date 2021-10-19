@@ -1,0 +1,39 @@
+.iowa-submenu-dropdown {
+  position: relative;
+}
+
+.iowa-submenu-dropdown-content {
+  display: none;
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  background-color: #f9f9f9;
+  z-index: 900;
+}
+
+.iowa-submenu-dropdown-content.show {
+  display: flex !important;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+.iowa-submenu-dropdown-item {
+  font-size: 1rem !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.iowa-dropdown-item-arrow {
+  display: inline-block;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+}
+
+.iowa-dropdown-item-arrow.down {
+  transform-origin: right;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.iowa-dropdown-item-arrow.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
