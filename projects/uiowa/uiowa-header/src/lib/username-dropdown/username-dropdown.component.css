@@ -61,7 +61,7 @@
   box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
-.iowa-user-button::after {
+.iowa-user-button.has-dropdown::after {
   margin: 0 0 2px 4px;
   display: inline-block;
   content: '';

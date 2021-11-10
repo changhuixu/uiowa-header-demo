@@ -1,6 +1,6 @@
-<div role="menu" *ngIf="user" class="iowa-username-dropdown-menu">
+<div role="menu" *ngIf="user?.userName" class="iowa-username-dropdown-menu">
   <button
-    class="iowa-user-button"
+    class="iowa-user-button has-dropdown"
     id="username-dropdown"
     (click)="showMenu = !showMenu"
     [attr.aria-expanded]="showMenu"
@@ -74,7 +74,7 @@
 </div>
 
 <button
-  *ngIf="!user"
+  *ngIf="!user?.userName"
   class="iowa-user-button"
   id="username-dropdown"
   (click)="login()"
