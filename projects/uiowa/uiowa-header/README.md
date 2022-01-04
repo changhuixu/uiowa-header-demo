@@ -10,6 +10,8 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
 ## [Demo](https://uiowa-header.firebaseapp.com)
 
+**v13** Dependencies: Angular >=13
+
 **v12.1.1** Dependencies: Angular >=12
 
 **v12** Dependencies: Angular >=12, ng-bootstrap >=10, Bootstrap >=4.5 (css)
