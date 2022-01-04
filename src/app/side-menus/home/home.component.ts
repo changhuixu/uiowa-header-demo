@@ -6,6 +6,7 @@ import {
   faHandPaper,
 } from '@fortawesome/free-solid-svg-icons';
 import { faFrown } from '@fortawesome/free-regular-svg-icons';
+import { ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
   faFire = faFire;
   faHandPaper = faHandPaper;
   faFrown = faFrown;
-  linkItems: LinkItem[];
+  linkItems: LinkItem[] = [];
 
   barChartOptions: any = {
     scaleShowVerticalLines: false,
@@ -57,7 +58,7 @@ export class HomeComponent implements OnInit {
       backgroundColor: ['#FFA1B5', '#00A1F1', '#4CAF50'],
     },
   ];
-  pieChartOptions = {
+  pieChartOptions: ChartOptions = {
     maintainAspectRatio: true,
     aspectRatio: 1.5,
     plugins: {

@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   Input
 } from '@angular/core';
-import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-tile',
@@ -13,11 +13,11 @@ import { FaIconComponent } from '@fortawesome/angular-fontawesome';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TileComponent implements OnInit {
-  @Input() type: 'primary' | 'success' | 'warning' | 'danger';
-  @Input() icon: FaIconComponent;
-  @Input() title: string;
-  @Input() n: number;
-  @Input() path: string;
+  @Input() type!: 'primary' | 'success' | 'warning' | 'danger';
+  @Input() icon!: IconDefinition;
+  @Input() title!: string;
+  @Input() n!: number;
+  @Input() path!: string;
   number = '';
   constructor() {}
 

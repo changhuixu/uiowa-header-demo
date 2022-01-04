@@ -5,28 +5,28 @@ import {
   EventEmitter,
   Output,
   ViewChild,
-  ElementRef
+  ElementRef,
 } from '@angular/core';
 import { RoomType, Reservation } from '../../models';
 import { ReservationService } from '../../services/reservation.service';
-import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tab-content1',
   templateUrl: './tab-content1.component.html',
-  styleUrls: ['./tab-content1.component.css']
+  styleUrls: ['./tab-content1.component.css'],
 })
 export class TabContent1Component implements OnInit {
   faChevronRight = faChevronRight;
-  @Input() reservation: Reservation;
+  @Input() reservation!: Reservation;
   @Output() next = new EventEmitter<void>();
-  roomtypes: RoomType[];
-  @ViewChild('form', {static: true}) form: ElementRef;
+  roomtypes: RoomType[] = [];
+  @ViewChild('form', { static: true }) form!: ElementRef;
 
   constructor(private readonly svc: ReservationService) {}
 
   ngOnInit() {
-    this.svc.getAllRoomTypes().subscribe(x => (this.roomtypes = x));
+    this.svc.getAllRoomTypes().subscribe((x) => (this.roomtypes = x));
   }
 
   isSameRoomType(a: RoomType, b: RoomType): boolean {

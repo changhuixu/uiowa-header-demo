@@ -18,9 +18,9 @@
       ></path>
     </svg>
     <span class="iowa-user-name ml-1">
-      {{ user.userName }}
-      <span *ngIf="user.originalUserName" class="iowa-original-username">
-        ({{ user.originalUserName }})
+      {{ user!.userName }}
+      <span *ngIf="user!.originalUserName" class="iowa-original-username">
+        ({{ user!.originalUserName }})
       </span>
     </span>
   </button>
@@ -32,7 +32,7 @@
   >
     <button
       type="button"
-      *ngIf="user.originalUserName"
+      *ngIf="user!.originalUserName"
       class="iowa-username-dropdown-button"
       (click)="stopImpersonation.emit(); showMenu = false"
     >
@@ -50,7 +50,7 @@
       </svg>
       <span class="ml-1">Stop Impersonation</span>
     </button>
-    <div *ngIf="user.originalUserName" class="dropdown-divider"></div>
+    <div *ngIf="user!.originalUserName" class="dropdown-divider"></div>
     <button
       type="button"
       class="iowa-username-dropdown-button"

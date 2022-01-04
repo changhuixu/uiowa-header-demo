@@ -18,7 +18,7 @@ export class Wizard1Component implements OnInit {
   faBed = faBed;
   faCreditCard = faCreditCard;
   faClipboard = faClipboard;
-  reservation: Reservation;
+  reservation!: Reservation;
   activeId = 1;
 
   @ViewChild(TabContent1Component)

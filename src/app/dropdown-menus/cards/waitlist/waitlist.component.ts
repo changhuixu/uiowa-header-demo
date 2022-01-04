@@ -10,8 +10,8 @@ import { faBookmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 export class WaitlistComponent implements OnInit {
   faBookmark = faBookmark;
   faSpinner = faSpinner;
-  waitlists: Waitlist[];
-  offers: Offer[];
+  waitlists: Waitlist[] = [];
+  offers: Offer[] = [];
   constructor() {}
 
   ngOnInit() {

@@ -10,7 +10,7 @@ import { faCheck, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 export class TabContent3Component implements OnInit {
   faCheck = faCheck;
   faChevronLeft = faChevronLeft;
-  @Input() reservation: Reservation;
+  @Input() reservation!: Reservation;
   @Output() prev = new EventEmitter<void>();
   constructor() {}
 

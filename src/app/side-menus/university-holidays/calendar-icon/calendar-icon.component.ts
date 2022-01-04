@@ -2,18 +2,18 @@ import {
   Component,
   OnInit,
   Input,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 
 @Component({
   selector: 'app-calendar-icon',
   templateUrl: './calendar-icon.component.html',
   styleUrls: ['./calendar-icon.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarIconComponent implements OnInit {
   @Input() date?: Date;
-  month: string;
+  month = '';
   monthNames = [
     'January',
     'February',
@@ -26,10 +26,10 @@ export class CalendarIconComponent implements OnInit {
     'September',
     'October',
     'November',
-    'December'
+    'December',
   ];
-  day: number;
-  weekday: string;
+  day = 0;
+  weekday = '';
   weekdays = [
     'Sunday',
     'Monday',
@@ -37,7 +37,7 @@ export class CalendarIconComponent implements OnInit {
     'Wednesday',
     'Thursday',
     'Friday',
-    'Saturday'
+    'Saturday',
   ];
   dateString = '';
   constructor() {}

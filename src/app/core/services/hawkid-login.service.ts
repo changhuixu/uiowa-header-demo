@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { LoginService } from 'projects/uiowa/uiowa-header/src/public-api';
 
 @Injectable()
-export class HawkidLoginService extends LoginService {
+export class HawkIdLoginService extends LoginService {
   a = 'hello';
   constructor() {
     super();
   }
-  login() {
-    console.log('hawkId login');
+  override login() {
+    console.log('HawkID login');
   }
 
-  logout() {
-    console.log('hawkid logout');
+  override logout() {
+    console.log('HawkID logout');
   }
 }

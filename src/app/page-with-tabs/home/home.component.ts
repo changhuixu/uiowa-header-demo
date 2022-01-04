@@ -32,12 +32,12 @@ interface InternalRoute {
   ]
 })
 export class HomeComponent implements OnInit {
-  menus: InternalRoute[];
+  menus: InternalRoute[] = [];
   constructor() {}
 
   ngOnInit() {
     this.menus = childRoutes.map(
-      x => <InternalRoute>{ text: x.data.title, route: x.path }
+      x => <InternalRoute>{ text: x.data!['title'], route: x.path }
     );
   }
 }

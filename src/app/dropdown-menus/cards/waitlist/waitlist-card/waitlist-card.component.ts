@@ -7,7 +7,7 @@ import { Waitlist } from '../../../models';
   styleUrls: ['./waitlist-card.component.css']
 })
 export class WaitlistCardComponent implements OnInit {
-  @Input() waitlist: Waitlist;
+  @Input() waitlist!: Waitlist;
   constructor() {}
 
   ngOnInit() {}

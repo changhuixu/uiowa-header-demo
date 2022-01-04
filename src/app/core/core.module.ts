@@ -1,6 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HawkidLoginService } from './services/hawkid-login.service';
+import { HawkIdLoginService } from './services/hawkid-login.service';
 import {
   UiowaHeaderModule,
   LoginService,
@@ -12,8 +12,8 @@ import { AppFooterComponent } from './components/app-footer/app-footer.component
   imports: [CommonModule, UiowaHeaderModule],
   declarations: [AccessDeniedComponent, AppFooterComponent],
   providers: [
-    { provide: LoginService, useClass: HawkidLoginService },
-    HawkidLoginService,
+    { provide: LoginService, useClass: HawkIdLoginService },
+    HawkIdLoginService,
   ],
   exports: [UiowaHeaderModule, AccessDeniedComponent, AppFooterComponent],
 })
