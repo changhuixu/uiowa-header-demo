@@ -16,7 +16,6 @@ interface InternalRoute {
           class="nav-item nav-link"
           routerLinkActive="active"
           [routerLink]="item.route"
-          style="color: #0372e8;"
           >{{ item.text }}</a
         >
       </nav>
@@ -25,11 +24,16 @@ interface InternalRoute {
   `,
   styles: [
     `
-      .active {
-        border-top: 3px #0372e8 solid !important;
+      .nav-tabs .nav-link {
+        color: #066cd9;
+        border: 1px #e7eaed solid !important;
       }
-    `
-  ]
+      .nav-tabs .nav-link.active {
+        border-top: 3px #0372e8 solid !important;
+        background: #eef8ff !important;
+      }
+    `,
+  ],
 })
 export class HomeComponent implements OnInit {
   menus: InternalRoute[] = [];
@@ -37,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.menus = childRoutes.map(
-      x => <InternalRoute>{ text: x.data!['title'], route: x.path }
+      (x) => <InternalRoute>{ text: x.data!['title'], route: x.path }
     );
   }
 }
