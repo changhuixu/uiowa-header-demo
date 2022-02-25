@@ -3,7 +3,7 @@ import {
   InternalRoute,
   ExternalLink,
   HeaderUser,
-  BannerLinks
+  BannerLinks,
 } from 'projects/uiowa/uiowa-header/src/public-api';
 
 @Component({
@@ -37,22 +37,15 @@ export class AppComponent implements OnInit {
       new InternalRoute('', ''),
       new InternalRoute('Invalid Link', 'admin1/firstGrid'),
     ]),
-    new InternalRoute('Dropdown Menus 2', '', [
-      new InternalRoute('Printing Orders', 'admin1/printingorders'),
-      new InternalRoute('Wait List', 'admin1/waitlist'),
-      new InternalRoute('DLRS', 'admin1/dlrs'),
-      new InternalRoute('', ''),
-      new InternalRoute('My Wait Lists', 'admin1/my-waitlists'),
-      new InternalRoute('Pending Reviews', 'admin1/pendingReviews'),
-      new InternalRoute('', ''),
-      new InternalRoute('Invalid Link', 'admin1/firstGrid'),
-    ]),
     new InternalRoute('Side Nav Menus', 'admin2'),
   ];
   bannerLinks = new BannerLinks(
-    new ExternalLink("Self Service", "https://www.uiowa.edu"),
-    new ExternalLink("Test", "https://www.uiowa.edu"),
-  )
+    new ExternalLink(
+      'Employee Self Service',
+      'https://hris.uiowa.edu/portal18'
+    ),
+    new ExternalLink('Test', 'https://www.uiowa.edu')
+  );
   headerUser: HeaderUser = {
     userName: 'abc',
     originalUserName: 'changhxu',

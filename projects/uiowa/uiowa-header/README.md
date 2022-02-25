@@ -26,9 +26,10 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
 ### Models
 
-- `ExternalLink`: static link listed in Uiowa branding bar. eg, Employee Self Service site link.
+- `ExternalLink`: static link listed in navigation menu bar. eg, Employee Self Service site link. (Optional)
 - `InternalRoute`: route for pages in your app.
 - `HeaderUser`: used to display user name and/or original user name when impersonation.
+- `BannerLinks`: static link listed in Uiowa branding bar. eg, Employee Self Service site link. Maximum two links. (Optional)
 
 ### Features
 

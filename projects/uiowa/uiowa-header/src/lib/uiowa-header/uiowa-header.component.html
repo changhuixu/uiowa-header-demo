@@ -58,8 +58,20 @@
         WARNING: TEST SYSTEM
       </div>
       <div *ngIf="bannerLinks" class="iowa-banner-links">
-        <a *ngIf="bannerLinks.link1" [href]="bannerLinks.link1.url">{{ bannerLinks.link1.text }}</a>
-        <a *ngIf="bannerLinks.link2" [href]="bannerLinks.link2.url">{{ bannerLinks.link2.text }}</a>
+        <a
+          *ngIf="bannerLinks.link1"
+          [href]="bannerLinks.link1.url"
+          [target]="bannerLinks.link1.target"
+        >
+          {{ bannerLinks.link1.text }}
+        </a>
+        <a
+          *ngIf="bannerLinks.link2"
+          [href]="bannerLinks.link2.url"
+          [target]="bannerLinks.link1.target"
+        >
+          {{ bannerLinks.link2.text }}
+        </a>
       </div>
       <username-dropdown
         [user]="user"
@@ -141,7 +153,7 @@
     </ul>
     <div class="iowa-external-links">
       <ng-container *ngFor="let item of externalLinks; last as isLast">
-        <a [href]="item.url">{{ item.text }}</a>
+        <a [href]="item.url" [target]="item.target">{{ item.text }}</a>
         <span *ngIf="!isLast" class="iowa-external-link-spacer"></span>
       </ng-container>
     </div>

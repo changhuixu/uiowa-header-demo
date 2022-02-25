@@ -1,21 +1,20 @@
 .iowa-banner-links {
+  display: none;
+}
+.iowa-banner-links a {
+  color: #494949;
+  font-size: 0.9rem;
+  margin: 0 0.5rem;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.iowa-banner-links a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 84.375em) {
+  .iowa-banner-links {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    padding: 0.57rem 0.5rem;
-    margin-left: auto;
+    padding: 0 0.5rem;
   }
-  .iowa-banner-links a {
-    color: #151515;
-    font-size: 1rem;
-    font-weight: 300;
-    padding: 0.25rem 0;
-    margin: 0 0.5rem;
-    white-space: nowrap;
-    text-decoration: none;
-    position: relative;
-    font-family: 'Roboto', sans-serif;
-  }
-  .iowa-banner-links a:hover {
-    text-decoration: underline;
-  }
+}

@@ -5,6 +5,7 @@
 .iowa-username-bar {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   flex-grow: 2;
   padding-right: 1.25rem;
   order: 2;
@@ -21,6 +22,7 @@
   display: none;
   color: #ffcd00;
   background-color: #ad0000;
+  white-space: nowrap;
   font-weight: bold;
   font-family: sans-serif;
   margin: auto;
