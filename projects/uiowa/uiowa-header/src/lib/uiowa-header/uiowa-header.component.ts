@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ExternalLink } from '../models/external-link';
+import { BannerLinks } from '../models/banner-links';
 import { HeaderUser } from '../models/header-user';
 import { InternalRoute } from '../models/internal-route';
 import { LoginService } from '../services/login.service';
@@ -15,11 +16,13 @@ import { LoginService } from '../services/login.service';
     './main-menu.css',
     './menu-item.css',
     './external-links.css',
+    './banner-links.css'
   ],
 })
 export class UiowaHeaderComponent implements OnInit {
   @Input('applicationName') siteName = 'Awesome Site Name';
   @Input() externalLinks?: ExternalLink[];
+  @Input() bannerLinks?: BannerLinks;
   @Input() internalRoutes?: InternalRoute[];
   @Input() user?: HeaderUser;
   @Output() stopImpersonation = new EventEmitter<void>();
@@ -40,6 +43,10 @@ export class UiowaHeaderComponent implements OnInit {
         this.showMenuDropdown[index] = false;
       }
     });
+  }
+
+  collapseMenu(i: number){
+    this.showMenuDropdown[i] = false;
   }
 
   logout() {
