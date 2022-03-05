@@ -9,6 +9,17 @@ import {
 } from 'rxjs/operators';
 import { orgChart } from '../models/org-chart';
 import { OrgDeptNode } from '../models/org-dept-node';
+import { HttpClient } from '@angular/common/http';
+
+interface City {
+  state: string;
+  cities: string[];
+}
+
+interface CityScore {
+  city: string;
+  score: number;
+}
 
 @Component({
   selector: 'app-typeahead',
@@ -18,7 +29,16 @@ import { OrgDeptNode } from '../models/org-dept-node';
 export class TypeaheadComponent implements OnInit {
   dept!: OrgDeptNode;
   depts: OrgDeptNode[] = [];
-  constructor() {}
+  allCities: City[] = [];
+  cities: CityScore[] = [];
+  destination = '';
+
+  states: string[] = [];
+  citiesFiltered: string[] = [];
+  state = '';
+  city = '';
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
     const nodes = orgChart
@@ -35,6 +55,19 @@ export class TypeaheadComponent implements OnInit {
         text: x.id + ' - ' + name,
         state: 0,
       } as OrgDeptNode;
+    });
+
+    this.http.get<City[]>('assets/cities.json').subscribe((x) => {
+      this.allCities = x;
+      x.forEach((s) => {
+        this.states.push(s.state);
+        s.cities.forEach((c) => {
+          this.cities.push({
+            city: `${c}, ${s.state}`,
+            score: 0,
+          });
+        });
+      });
     });
   }
 
@@ -64,4 +97,62 @@ export class TypeaheadComponent implements OnInit {
       )
     );
   };
+
+  formatter2 = (city: string) => city;
+
+  search2 = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      filter((term) => term.trim().length >= 2),
+      map((term) => {
+        const terms = [
+          ...new Set(
+            term
+              .toLocaleLowerCase()
+              .replace(/[^a-z]+/gi, ' ')
+              .split(' ')
+              .filter((s) => s)
+          ),
+        ];
+        this.cities.forEach((x) => {
+          x.score = 0;
+          terms.forEach((t) => {
+            x.city
+              .replace(/[^a-z]+/gi, ' ')
+              .split(' ')
+              .map((cp) => cp.toLocaleLowerCase())
+              .forEach((cp) => {
+                if (t === cp) {
+                  x.score += 20 * t.length;
+                } else {
+                  const i = cp.indexOf(t);
+                  if (i >= 0 && i < 10) {
+                    x.score += (10 - i) * t.length;
+                  }
+                }
+              });
+          });
+        });
+        return this.cities
+          .filter((x) => x.score > 0)
+          .sort((a, b) => b.score - a.score)
+          .map((x) => x.city)
+          .slice(0, 10);
+      })
+    );
+
+  validate(el: HTMLInputElement) {
+    if (!this.destination) {
+      el.classList.add('is-invalid');
+    } else {
+      el.classList.remove('is-invalid');
+    }
+  }
+
+  filter() {
+    this.city = '';
+    this.citiesFiltered =
+      this.allCities.find((x) => x.state === this.state)?.cities ?? [];
+  }
 }
