@@ -51,7 +51,9 @@
           <title id="navbar-toggler">Toggle navigation</title>
         </svg>
       </button>
-      <h1 class="site-name">{{ siteName }}</h1>
+      <h1 class="site-name">
+        <a routerLink="">{{ siteName }}</a>
+      </h1>
     </div>
     <div class="iowa-username-bar">
       <div *ngIf="showTestWarning" class="test-warning">

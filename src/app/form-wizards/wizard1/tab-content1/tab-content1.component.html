@@ -15,13 +15,11 @@
         [compareWith]="isSameRoomType"
         required
       >
-        <option *ngFor="let item of roomtypes" [ngValue]="item">{{
-          item.name
-        }}</option>
+        <option *ngFor="let item of roomtypes" [ngValue]="item">
+          {{ item.name }}
+        </option>
       </select>
-      <div class="invalid-feedback">
-        Please choose a room type.
-      </div>
+      <div class="invalid-feedback">Please choose a room type.</div>
     </div>
     <div class="form-group col-6 col-sm-2 col-lg-1">
       <label for="quantity">Quantity</label>
@@ -41,47 +39,47 @@
   <div class="form-group">
     <label for="extras">Extras</label>
     <div>
-      <div class="btn-group btn-group-toggle flex-wrap" id="extras">
-        <label class="btn-light" ngbButtonLabel>
+      <div class="btn-group" id="extras">
+        <label class="btn btn-outline-primary">
           <input
             type="checkbox"
-            ngbButton
+            class="btn-check"
             [(ngModel)]="reservation.extras.breakfast"
             name="breakfast"
           />
           Breakfast
         </label>
-        <label class="btn-light" ngbButtonLabel>
+        <label class="btn btn-outline-primary">
           <input
             type="checkbox"
-            ngbButton
+            class="btn-check"
             [(ngModel)]="reservation.extras.tv"
             name="tv"
           />
           TV
         </label>
-        <label class="btn-light" ngbButtonLabel>
+        <label class="btn btn-outline-primary">
           <input
             type="checkbox"
-            ngbButton
+            class="btn-check"
             [(ngModel)]="reservation.extras.wifi"
             name="wifi"
           />
           WiFi
         </label>
-        <label class="btn-light" ngbButtonLabel>
+        <label class="btn btn-outline-primary">
           <input
             type="checkbox"
-            ngbButton
+            class="btn-check"
             [(ngModel)]="reservation.extras.parking"
             name="parking"
           />
           Parking Lot
         </label>
-        <label class="btn-light" ngbButtonLabel>
+        <label class="btn btn-outline-primary">
           <input
             type="checkbox"
-            ngbButton
+            class="btn-check"
             [(ngModel)]="reservation.extras.balcony"
             name="balcony"
           />
