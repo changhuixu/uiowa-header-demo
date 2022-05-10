@@ -3,6 +3,7 @@
     class="iowa-user-button has-dropdown"
     id="username-dropdown"
     (click)="showMenu = !showMenu"
+    (clickOutside)="showMenu = false"
     [attr.aria-expanded]="showMenu"
   >
     <svg
