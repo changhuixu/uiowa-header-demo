@@ -1,109 +1,122 @@
 <section class="mx-4 needs-validation" novalidate #form>
-  <div class="form-group">
-    <label for="daterange">Check in / Check out</label>
-    <date-range-picker [dateRange]="reservation.dateRange"></date-range-picker>
-  </div>
+  <label for="daterange">Check in / Check out</label>
+  <date-range-picker [dateRange]="reservation.dateRange"></date-range-picker>
 
-  <div class="form-row">
-    <div class="from-group col-12 col-sm-8 col-md-6 col-lg-4">
-      <label for="room-type">Room Type</label>
-      <select
-        class="form-control"
-        id="room-type"
-        name="room-type"
-        [(ngModel)]="reservation.roomType"
-        [compareWith]="isSameRoomType"
-        required
-      >
-        <option *ngFor="let item of roomtypes" [ngValue]="item">
-          {{ item.name }}
-        </option>
-      </select>
-      <div class="invalid-feedback">Please choose a room type.</div>
-    </div>
-    <div class="form-group col-6 col-sm-2 col-lg-1">
-      <label for="quantity">Quantity</label>
-      <input
-        type="number"
-        class="form-control"
-        id="quantity"
-        name="quantity"
-        [(ngModel)]="reservation.quantity"
-        max="20"
-        min="1"
-        step="1"
-      />
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="extras">Extras</label>
-    <div>
-      <div class="btn-group" id="extras">
-        <label class="btn btn-outline-primary">
-          <input
-            type="checkbox"
-            class="btn-check"
-            [(ngModel)]="reservation.extras.breakfast"
-            name="breakfast"
-          />
-          Breakfast
-        </label>
-        <label class="btn btn-outline-primary">
-          <input
-            type="checkbox"
-            class="btn-check"
-            [(ngModel)]="reservation.extras.tv"
-            name="tv"
-          />
-          TV
-        </label>
-        <label class="btn btn-outline-primary">
-          <input
-            type="checkbox"
-            class="btn-check"
-            [(ngModel)]="reservation.extras.wifi"
-            name="wifi"
-          />
-          WiFi
-        </label>
-        <label class="btn btn-outline-primary">
-          <input
-            type="checkbox"
-            class="btn-check"
-            [(ngModel)]="reservation.extras.parking"
-            name="parking"
-          />
-          Parking Lot
-        </label>
-        <label class="btn btn-outline-primary">
-          <input
-            type="checkbox"
-            class="btn-check"
-            [(ngModel)]="reservation.extras.balcony"
-            name="balcony"
-          />
-          Balcony
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="arrival-time">Estimate Arrival Time</label>
-    <div>
-      <ngb-timepicker
-        id="arrival-time"
-        [(ngModel)]="reservation.estimatedArrivalTime"
-        name="arrivaltime"
-        [meridian]="true"
-        [spinners]="false"
-      ></ngb-timepicker>
-    </div>
-    <small id="arrival-time-help" class="form-text text-muted"
-      >NOTE: The earlist check-in time is 3:00 PM.</small
+  <div class="from-group col-12 col-sm-8 col-md-6 col-lg-4">
+    <label for="room-type">Room Type</label>
+    <select
+      class="form-control"
+      id="room-type"
+      arrivalTime="room-type"
+      [(ngModel)]="reservation.roomType"
+      [compareWith]="isSameRoomType"
+      required
     >
+      <option *ngFor="let item of roomTypes" [ngValue]="item">
+        {{ item.name }}
+      </option>
+    </select>
+    <div class="invalid-feedback">Please choose a room type.</div>
   </div>
+  <div class="form-group col-6 col-sm-2 col-lg-1">
+    <label for="quantity">Quantity</label>
+    <input
+      type="number"
+      class="form-control"
+      id="quantity"
+      arrivalTime="quantity"
+      [(ngModel)]="reservation.quantity"
+      max="20"
+      min="1"
+      step="1"
+    />
+  </div>
+
+  <label for="extras">Extras</label>
+  <div class="d-flex btn-group" id="extras">
+    <label
+      class="btn"
+      [ngClass]="
+        reservation.extras.breakfast ? 'btn-primary' : 'btn-outline-primary'
+      "
+    >
+      <input
+        type="checkbox"
+        class="btn-check"
+        [(ngModel)]="reservation.extras.breakfast"
+        arrivalTime="breakfast"
+      />
+      Breakfast
+    </label>
+    <label
+      class="btn"
+      [ngClass]="reservation.extras.tv ? 'btn-primary' : 'btn-outline-primary'"
+    >
+      <input
+        type="checkbox"
+        class="btn-check"
+        [(ngModel)]="reservation.extras.tv"
+        arrivalTime="tv"
+      />
+      TV
+    </label>
+    <label
+      class="btn"
+      [ngClass]="
+        reservation.extras.wifi ? 'btn-primary' : 'btn-outline-primary'
+      "
+    >
+      <input
+        type="checkbox"
+        class="btn-check"
+        [(ngModel)]="reservation.extras.wifi"
+        arrivalTime="wifi"
+      />
+      WiFi
+    </label>
+    <label
+      class="btn"
+      [ngClass]="
+        reservation.extras.parking ? 'btn-primary' : 'btn-outline-primary'
+      "
+    >
+      <input
+        type="checkbox"
+        class="btn-check"
+        [(ngModel)]="reservation.extras.parking"
+        arrivalTime="parking"
+      />
+      Parking Lot
+    </label>
+    <label
+      class="btn"
+      [ngClass]="
+        reservation.extras.balcony ? 'btn-primary' : 'btn-outline-primary'
+      "
+    >
+      <input
+        type="checkbox"
+        class="btn-check"
+        [(ngModel)]="reservation.extras.balcony"
+        arrivalTime="balcony"
+      />
+      Balcony
+    </label>
+  </div>
+
+  <label for="arrival-time">Estimate Arrival Time</label>
+  <div>
+    <ngb-timepicker
+      id="arrival-time"
+      [(ngModel)]="reservation.estimatedArrivalTime"
+      name="arrivalTime"
+      [meridian]="true"
+      [spinners]="false"
+    ></ngb-timepicker>
+  </div>
+  <small id="arrival-time-help" class="form-text text-muted">
+    NOTE: The earliest check-in time is 3:00 PM.
+  </small>
 
   <br />
 

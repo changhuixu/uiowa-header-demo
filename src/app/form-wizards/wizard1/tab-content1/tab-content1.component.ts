@@ -20,13 +20,13 @@ export class TabContent1Component implements OnInit {
   faChevronRight = faChevronRight;
   @Input() reservation!: Reservation;
   @Output() next = new EventEmitter<void>();
-  roomtypes: RoomType[] = [];
+  roomTypes: RoomType[] = [];
   @ViewChild('form', { static: true }) form!: ElementRef;
 
   constructor(private readonly svc: ReservationService) {}
 
   ngOnInit() {
-    this.svc.getAllRoomTypes().subscribe((x) => (this.roomtypes = x));
+    this.svc.getAllRoomTypes().subscribe((x) => (this.roomTypes = x));
   }
 
   isSameRoomType(a: RoomType, b: RoomType): boolean {

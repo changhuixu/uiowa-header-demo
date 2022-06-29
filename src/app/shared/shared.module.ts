@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
-  NgbButtonsModule,
   NgbModalModule,
   NgbNavModule,
   NgbTimepickerModule,
@@ -16,7 +15,6 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     NgbModalModule,
-    NgbButtonsModule,
     NgbTypeaheadModule,
     NgbNavModule,
     NgbTimepickerModule,
@@ -26,7 +24,6 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     NgbModalModule,
-    NgbButtonsModule,
     NgbTypeaheadModule,
     NgbNavModule,
     NgbTimepickerModule,

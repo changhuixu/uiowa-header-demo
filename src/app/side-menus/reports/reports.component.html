@@ -9,5 +9,33 @@
     </h2>
     <hr class="mt-0" />
   </header>
-  <section class="row m-0"></section>
+  <section class="row m-0">
+    <div class="btn-group w-100" role="group" aria-label="Basic example">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="selectedType = 'medium'"
+      >
+        Medium
+      </button>
+      <button
+        type="button"
+        class="btn btn-sucess"
+        (click)="selectedType = 'linkedIn'"
+      >
+        LinkedIn
+      </button>
+      <button
+        type="button"
+        class="btn btn-warning"
+        (click)="selectedType = 'scoop'"
+      >
+        Scoop
+      </button>
+    </div>
+    <!-- Media starts here -->
+    <app-scoop *ngIf="selectedType === 'scoop'"></app-scoop>
+    <app-medium *ngIf="selectedType === 'medium'"></app-medium>
+    <app-linkedin *ngIf="selectedType === 'linkedIn'"></app-linkedin>
+  </section>
 </div>

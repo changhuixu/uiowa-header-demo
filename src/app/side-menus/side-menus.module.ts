@@ -13,6 +13,10 @@ import { EmailTemplatesComponent } from './email-templates/email-templates.compo
 import { ReportsComponent } from './reports/reports.component';
 import { HomeComponent } from './home/home.component';
 import { TileComponent } from './home/tile/tile.component';
+import { ArticleComponent } from './reports/article/article.component';
+import { ScoopComponent } from './reports/article/scoop/scoop.component';
+import { MediumComponent } from './reports/article/medium/medium.component';
+import { LinkedinComponent } from './reports/article/linkedin/linkedin.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { TileComponent } from './home/tile/tile.component';
     ReportsComponent,
     HomeComponent,
     TileComponent,
+    ArticleComponent,
+    ScoopComponent,
+    MediumComponent,
+    LinkedinComponent,
   ],
   imports: [SharedModule, SideMenusRoutingModule, NgChartsModule],
 })
