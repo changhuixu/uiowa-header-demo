@@ -11,20 +11,21 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'dash-board'
+        redirectTo: 'dash-board',
+        pathMatch: 'full',
       },
       {
         path: 'dash-board',
         component: HomeComponent,
-        data: { linkText: 'Admin Home', iconClass: 'fa-home' }
+        data: { linkText: 'Admin Home', iconClass: 'fa-home' },
       },
-      ...childRoutes
-    ]
-  }
+      ...childRoutes,
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class SideMenusRoutingModule {}

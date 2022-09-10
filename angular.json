@@ -24,11 +24,11 @@
         "@schematics/angular:pipe": {
           "skipTests": true
         },
-        "@schematics/angular:service": {
+        "@schematics/angular:resolver": {
           "skipTests": true
         },
-        "@schematics/angular:application": {
-          "strict": true
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -132,7 +132,6 @@
       }
     }
   },
-  "defaultProject": "uiowa-header-demo",
   "cli": {
     "analytics": "a9b011b2-a6d3-4d30-9f77-a3fbf8ec6169"
   }
