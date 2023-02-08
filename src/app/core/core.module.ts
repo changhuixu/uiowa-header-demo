@@ -7,15 +7,22 @@ import {
 } from 'projects/uiowa/uiowa-header/src/public-api';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
+import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppToastsComponent } from './components/app-toasts/app-toasts.component';
 
 @NgModule({
-  imports: [CommonModule, UiowaHeaderModule],
-  declarations: [AccessDeniedComponent, AppFooterComponent],
+  imports: [CommonModule, UiowaHeaderModule, NgbToastModule],
+  declarations: [AccessDeniedComponent, AppFooterComponent, AppToastsComponent],
   providers: [
     { provide: LoginService, useClass: HawkIdLoginService },
     HawkIdLoginService,
   ],
-  exports: [UiowaHeaderModule, AccessDeniedComponent, AppFooterComponent],
+  exports: [
+    UiowaHeaderModule,
+    AccessDeniedComponent,
+    AppFooterComponent,
+    AppToastsComponent,
+  ],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() core: CoreModule) {
