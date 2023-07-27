@@ -30,7 +30,7 @@ export class ToastService {
       className: className,
       delay: delay * 1000,
     } as Toast;
-    if (message instanceof TemplateRef<any>) {
+    if (message instanceof TemplateRef) {
       toast.contentTemplate = message;
     } else {
       toast.contentTemplate = null;

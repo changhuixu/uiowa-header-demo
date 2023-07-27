@@ -4,11 +4,11 @@ An Angular library for common website header, including a UIowa branding bar and
 
 You might also want to check out libraries [@uiowa/spinner](https://github.com/changhuixu/spinner), [session-expiration-alert](https://github.com/changhuixu/session-expiration-alert), [@uiowa/date-range-picker](https://github.com/changhuixu/date-range-picker), [@uiowa/digit-only](https://github.com/changhuixu/ngx-digit-only) and [@uiowa/uiowa-mfk](https://github.com/changhuixu/uiowa-mfk-project).
 
-[![Build Status](https://img.shields.io/travis/changhuixu/uiowa-header-demo/master.svg?label=Travis%20CI&style=flat-square)](https://travis-ci.org/changhuixu/uiowa-header-demo)
+[![Build Status](https://github.com/changhuixu/uiowa-header-demo/actions/workflows/main.yml/badge.svg)](https://github.com/changhuixu/uiowa-header-demo/actions)
 [![npm](https://img.shields.io/npm/v/@uiowa/uiowa-header.svg?style=flat-square)](https://www.npmjs.com/package/@uiowa/uiowa-header)
 ![Web Content Accessibility](https://img.shields.io/badge/Accessibility-100-brightgreen.svg?longCache=true&style=flat-square)
 
-## [Demo](https://uiowa-header.firebaseapp.com)
+## [Demo](https://changhuixu.github.io/uiowa-header-demo/)
 
 **v13** Dependencies: Angular >=13
 
