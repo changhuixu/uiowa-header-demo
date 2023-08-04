@@ -1,6 +1,8 @@
 <section class="mx-4">
-  <section class="p-2" style="background: #e7ffec;">
-    <p class="mb-1"><strong>Reservation:</strong> {{ reservation.roomType.name }}</p>
+  <section class="p-2 mb-3" style="background: #e7ffec">
+    <p class="mb-1">
+      <strong>Reservation:</strong> {{ reservation.roomType.name }}
+    </p>
     <p class="mb-1"><strong>Quantity:</strong> {{ reservation.quantity }}</p>
     <p class="mb-1">
       <strong>Nights:</strong> {{ days }} (
@@ -11,9 +13,9 @@
       <strong>Total Charge:</strong> ${{ reservation.totalAmount }}
     </p>
   </section>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="first">First</label>
+  <div class="d-flex mb-3">
+    <div class="me-2">
+      <label for="first" class="form-label">First</label>
       <input
         type="text"
         class="form-control"
@@ -22,8 +24,8 @@
         [(ngModel)]="reservation.payment.first"
       />
     </div>
-    <div class="form-group col-md-2">
-      <label for="mi">MI</label>
+    <div class="me-2">
+      <label for="mi" class="form-label">MI</label>
       <input
         type="text"
         class="form-control"
@@ -32,8 +34,8 @@
         [(ngModel)]="reservation.payment.mi"
       />
     </div>
-    <div class="form-group col-md-4">
-      <label for="last">Last</label>
+    <div class="me-4">
+      <label for="last" class="form-label">Last</label>
       <input
         type="text"
         class="form-control"
@@ -43,9 +45,9 @@
       />
     </div>
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="email">Email</label>
+  <div class="d-flex mb-3">
+    <div class="me-2">
+      <label for="email" class="form-label">Email</label>
       <input
         type="email"
         class="form-control"
@@ -54,8 +56,8 @@
         [(ngModel)]="reservation.payment.email"
       />
     </div>
-    <div class="form-group col-md-6">
-      <label for="phone">Phone</label>
+    <div class="me-2">
+      <label for="phone" class="form-label">Phone</label>
       <input
         type="tel"
         class="form-control"
@@ -65,29 +67,31 @@
       />
     </div>
   </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
+  <div class="mb-3">
+    <label for="inputAddress" class="form-label">Address</label>
     <input
       type="text"
       class="form-control"
       id="inputAddress"
+      style="max-width: 300px"
       placeholder="1234 Main St"
       [(ngModel)]="reservation.payment.street1"
     />
   </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
+  <div class="mb-3">
+    <label for="inputAddress2" class="form-label">Address 2</label>
     <input
       type="text"
       class="form-control"
       id="inputAddress2"
+      style="max-width: 300px"
       placeholder="Apartment, studio, or floor"
       [(ngModel)]="reservation.payment.street2"
     />
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
+  <div class="d-flex mb-3">
+    <div class="me-2">
+      <label for="inputCity" class="form-label">City</label>
       <input
         type="text"
         class="form-control"
@@ -95,8 +99,8 @@
         [(ngModel)]="reservation.payment.city"
       />
     </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
+    <div class="me-2">
+      <label for="inputState" class="form-label">State</label>
       <select
         id="inputState"
         class="form-control"
@@ -107,17 +111,17 @@
         <option>Other</option>
       </select>
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
+    <div class="me-2">
+      <label for="inputZip" class="form-label">Zip</label>
       <input
         type="text"
         class="form-control"
         id="inputZip"
-        [(ngModel)]="reservation.payment.zipcode"
+        [(ngModel)]="reservation.payment.zipCode"
       />
     </div>
   </div>
-  <div class="form-group">
+  <div class="mb-3">
     <div class="form-check">
       <input
         class="form-check-input"

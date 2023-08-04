@@ -30,7 +30,7 @@ export class WaitlistComponent implements OnInit {
       },
       {
         id: 18,
-        lot: 'CJYR',
+        lot: 'CR',
         place: 58,
         total: 357
       }

@@ -26,6 +26,7 @@ jobs:
           npm ci
           npm run build:lib
           npm run build:gh-pages
+          cp ./dist/uiowa-header-demo/index.html ./dist/uiowa-header-demo/404.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

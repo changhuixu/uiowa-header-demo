@@ -8,6 +8,6 @@ export interface Payment {
   street2: string;
   city: string;
   state: string;
-  zipcode: string;
+  zipCode: string;
   remember: boolean;
 }
