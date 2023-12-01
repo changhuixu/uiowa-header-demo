@@ -4,7 +4,7 @@ import {
   ExternalLink,
   HeaderUser,
   BannerLinks,
-} from 'projects/uiowa/uiowa-header/src/public-api';
+} from '../../projects/uiowa/uiowa-header/src/public-api';
 
 @Component({
   selector: 'app-root',

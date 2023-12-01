@@ -1,11 +1,14 @@
 <section class="mx-4 needs-validation" novalidate #form>
   <div class="mb-3">
-    <label for="daterange" class="form-label">Check in / Check out</label>
-    <date-range-picker [dateRange]="reservation.dateRange"></date-range-picker>
+    <label for="dateRange" class="label">Check in / Check out</label>
+    <date-range-picker
+      [id]="'dateRange'"
+      [dateRange]="reservation.dateRange"
+    ></date-range-picker>
   </div>
 
   <div class="mb-3">
-    <label for="room-type" class="form-label">Room Type</label>
+    <label for="room-type" class="label">Room Type</label>
     <select
       class="form-select"
       style="max-width: 300px"
@@ -23,7 +26,7 @@
   </div>
 
   <div class="mb-3">
-    <label for="quantity" class="form-label">Quantity</label>
+    <label for="quantity" class="label">Quantity</label>
     <input
       type="number"
       class="form-control"
@@ -38,7 +41,7 @@
   </div>
 
   <div class="mb-3">
-    <label for="extras" class="form-label">Extras</label>
+    <div class="label mb-2">Extras</div>
     <div class="d-block btn-group" id="extras">
       <label
         class="btn"
@@ -114,10 +117,9 @@
   </div>
 
   <div class="mb-3">
-    <label for="arrival-time" class="form-label">Estimate Arrival Time</label>
+    <div class="label">Estimate Arrival Time</div>
     <div>
       <ngb-timepicker
-        id="arrival-time"
         [(ngModel)]="reservation.estimatedArrivalTime"
         name="name"
         [meridian]="true"

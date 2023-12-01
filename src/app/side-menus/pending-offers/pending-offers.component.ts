@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { faHome, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { ToastService } from 'src/app/core';
+import { ToastService } from '../../core';
 
 @Component({
   selector: 'app-pending-offers',

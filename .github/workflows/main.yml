@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout 🛎️
@@ -26,9 +26,9 @@ jobs:
           npm ci
           npm run build:lib
           npm run build:gh-pages
-          cp ./dist/uiowa-header-demo/index.html ./dist/uiowa-header-demo/404.html
+          cp ./dist/uiowa-header-demo/browser/index.html ./dist/uiowa-header-demo/browser/404.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/uiowa-header-demo
+          folder: dist/uiowa-header-demo/browser

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 import { UniversityHolidaysRoutingModule } from './university-holidays-routing.module';
 import { HomeComponent } from './home/home.component';

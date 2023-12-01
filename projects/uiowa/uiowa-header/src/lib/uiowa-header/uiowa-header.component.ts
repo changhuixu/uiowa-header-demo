@@ -15,8 +15,9 @@ import { LoginService } from '../services/login.service';
     './iowa-bar.css',
     './main-menu.css',
     './menu-item.css',
+    './internal-routes.css',
     './external-links.css',
-    './banner-links.css'
+    './banner-links.css',
   ],
 })
 export class UiowaHeaderComponent implements OnInit {
@@ -45,7 +46,7 @@ export class UiowaHeaderComponent implements OnInit {
     });
   }
 
-  collapseMenu(i: number){
+  collapseMenu(i: number) {
     this.showMenuDropdown[i] = false;
   }
 

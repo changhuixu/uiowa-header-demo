@@ -1,5 +1,5 @@
 :host {
-  background: #2980b9;
+  background: #9aafee;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -7,12 +7,12 @@
 
 #curveUpColor path,
 #curveDownColor path {
-  fill: #3498db;
+  fill: #bad2f8;
   stroke: none;
 }
 
 .color {
-  background: #3498db;
+  background: #bad2f8;
   z-index: 2;
   align-items: center !important;
   justify-content: center !important;
@@ -21,9 +21,10 @@
 }
 
 .title {
-  font-family: monospace;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 5rem;
+  width: 600px;
+  color: #045dee;
 }
 
 .university {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { NgChartsModule } from 'ng2-charts';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SideMenusRoutingModule } from './side-menus-routing.module';
 import { LayoutComponent } from './layout/layout.component';
@@ -35,6 +36,11 @@ import { LinkedinComponent } from './reports/article/linkedin/linkedin.component
     MediumComponent,
     LinkedinComponent,
   ],
-  imports: [SharedModule, SideMenusRoutingModule, NgChartsModule],
+  imports: [
+    SharedModule,
+    NgbDropdownModule,
+    SideMenusRoutingModule,
+    NgChartsModule,
+  ],
 })
 export class SideMenusModule {}
