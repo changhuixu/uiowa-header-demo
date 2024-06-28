@@ -64,30 +64,10 @@
   </section>
   <section id="charts" class="row">
     <div class="col-12 col-xl-6 my-5">
-      <canvas
-        baseChart
-        width="600"
-        height="400"
-        type="bar"
-        [datasets]="barChartData"
-        [labels]="barChartLabels"
-        [options]="barChartOptions"
-        (chartHover)="chartHovered($event)"
-        (chartClick)="chartClicked($event)"
-      ></canvas>
+      <canvas id="barChart" width="600" height="400">{{ barChart }}</canvas>
     </div>
     <div class="col-12 col-xl-6 my-5">
-      <canvas
-        baseChart
-        width="400"
-        height="250"
-        type="pie"
-        [datasets]="pieChartData"
-        [labels]="pieChartLabels"
-        [options]="pieChartOptions"
-        (chartHover)="chartHovered($event)"
-        (chartClick)="chartClicked($event)"
-      ></canvas>
+      <canvas id="pieChart" width="400" height="250">{{ pieChart }}</canvas>
     </div>
   </section>
 </div>
