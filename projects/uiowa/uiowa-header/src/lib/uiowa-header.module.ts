@@ -9,7 +9,11 @@ import { ClickOutsideDirective } from './uiowa-header/click-outside.directive';
 
 @NgModule({
   imports: [CommonModule, FormsModule, RouterModule],
-  declarations: [UiowaHeaderComponent, UsernameDropdownComponent, ClickOutsideDirective],
+  declarations: [
+    UiowaHeaderComponent,
+    UsernameDropdownComponent,
+    ClickOutsideDirective,
+  ],
   exports: [UiowaHeaderComponent],
 })
 export class UiowaHeaderModule {}

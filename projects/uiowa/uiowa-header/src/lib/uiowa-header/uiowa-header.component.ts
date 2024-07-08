@@ -27,7 +27,8 @@ export class UiowaHeaderComponent implements OnInit {
   @Input() internalRoutes?: InternalRoute[];
   @Input() user?: HeaderUser;
   @Output() stopImpersonation = new EventEmitter<void>();
-  @Input() showTestWarning = false;
+  @Input() showWarning = false;
+  @Input() warningMessage = 'WARNING: TEST SYSTEM';
   showNavBar = false;
   showMenuDropdown: boolean[] = [];
 

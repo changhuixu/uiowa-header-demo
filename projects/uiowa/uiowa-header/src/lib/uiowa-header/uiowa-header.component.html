@@ -56,9 +56,7 @@
       </h1>
     </div>
     <div class="iowa-username-bar">
-      <div *ngIf="showTestWarning" class="test-warning">
-        WARNING: TEST SYSTEM
-      </div>
+      <div *ngIf="showWarning" class="test-warning">{{ warningMessage }}</div>
       <div *ngIf="bannerLinks" class="iowa-banner-links">
         <a
           *ngIf="bannerLinks.link1"
