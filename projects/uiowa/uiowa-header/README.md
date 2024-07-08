@@ -10,6 +10,8 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 
 ## [Demo](https://changhuixu.github.io/uiowa-header-demo/)
 
+**v17** Dependencies: Angular >=17
+
 **v13** Dependencies: Angular >=13
 
 **v12.1.1** Dependencies: Angular >=12
@@ -37,10 +39,7 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 - Support custom "top-right" part of Uiowa branding bar. By default, "top-right" part of Uiowa branding bar shows External Links (if any) and Login link or User dropdown button. If you want to customize the "top-right" part, you can provide your content inside of `uiowa-header` tag. eg,
 
   ```html
-  <uiowa-header
-    applicationName="My Awesome App"
-    [internalRoutes]="myInternalRoutes"
-  >
+  <uiowa-header applicationName="My Awesome App" [internalRoutes]="myInternalRoutes">
     <div class="text-white">my content</div>
   </uiowa-header>
   ```

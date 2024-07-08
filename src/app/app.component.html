@@ -6,12 +6,11 @@
   [user]="headerUser"
   (stopImpersonation)="stopImpersonation()"
   [showWarning]="true"
->
-</uiowa-header>
+/>
 <main role="main" class="w-100 h-100 flex-fill p-0 overflow-auto">
   <router-outlet></router-outlet>
 </main>
 <footer role="contentinfo">
-  <app-footer></app-footer>
+  <app-footer />
 </footer>
-<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+<app-toasts aria-live="polite" aria-atomic="true" />
