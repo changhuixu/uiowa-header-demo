@@ -93,6 +93,7 @@
         class="menu-item"
         *ngFor="let item of internalRoutes; let i = index"
         routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: !item.route }"
       >
         <a
           *ngIf="!item.subMenus"

@@ -15,34 +15,34 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'pendingReviews',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'pendingReviews',
-        component: PendingReviewsComponent
+        component: PendingReviewsComponent,
       },
       {
         path: 'dlrs',
-        component: DlrsComponent
+        component: DlrsComponent,
       },
       {
-        path: 'printingorders',
-        component: PrintingOrdersComponent
+        path: 'printingOrders',
+        component: PrintingOrdersComponent,
       },
       {
         path: 'waitlist',
-        component: ParkingWaitlistComponent
+        component: ParkingWaitlistComponent,
       },
       {
         path: 'my-waitlists',
-        component: WaitlistComponent
-      }
-    ]
-  }
+        component: WaitlistComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class DropdownMenusRoutingModule {}

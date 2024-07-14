@@ -24,11 +24,11 @@ export class AppComponent implements OnInit {
   ];
   applicationName = 'Awesome Application Name';
   internalRoutes = [
-    new InternalRoute('Home', 'home'),
+    new InternalRoute('Home', ''),
     new InternalRoute('Page with Tabs', 'page-with-tabs'),
     new InternalRoute('Form Wizards', 'form-wizards'),
     new InternalRoute('Dropdown Menus', '', [
-      new InternalRoute('Printing Orders', 'admin1/printingorders'),
+      new InternalRoute('Printing Orders', 'admin1/printingOrders'),
       new InternalRoute('Wait List', 'admin1/waitlist'),
       new InternalRoute('DLRS', 'admin1/dlrs'),
       new InternalRoute('', ''),

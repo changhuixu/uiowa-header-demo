@@ -5,7 +5,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-offer-card',
   templateUrl: './offer-card.component.html',
-  styleUrls: ['./offer-card.component.css']
+  styleUrls: ['./offer-card.component.css'],
 })
 export class OfferCardComponent implements OnInit {
   @Input() offer!: Offer;
@@ -14,11 +14,9 @@ export class OfferCardComponent implements OnInit {
 
   ngOnInit() {}
   open(content: any) {
-    this.modalService
-      .open(content, {
-        size: 'lg',
-        ariaLabelledBy: 'modal-title'
-      })
-      .result.then(_ => {}, _ => {});
+    this.modalService.open(content, {
+      size: 'lg',
+      ariaLabelledBy: 'modal-title',
+    });
   }
 }
