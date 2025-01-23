@@ -1,23 +1,24 @@
-import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';
-    
+import { Directive, ElementRef, output } from '@angular/core';
+
 @Directive({
-    selector: '[clickOutside]'
+  selector: '[clickOutside]',
+  standalone: false,
+  host: {
+    '(document:click)': 'onClick($event)',
+  },
 })
 export class ClickOutsideDirective {
-    constructor(private _elementRef: ElementRef) {
-    }
+  clickOutside = output<MouseEvent>();
+  constructor(private _elementRef: ElementRef) {}
 
-    @Output()
-    public clickOutside = new EventEmitter<MouseEvent>();
-
-    @HostListener('document:click', ['$event', '$event.target'])
-    public onClick(event: MouseEvent, targetElement: HTMLElement): void {
-        if (!targetElement) {
-            return;
-        }
-        const clickedInside = this._elementRef.nativeElement.contains(targetElement);
-        if (!clickedInside) {
-            this.clickOutside.emit(event);
-        }
+  onClick(event: MouseEvent): void {
+    const target = event.target;
+    if (!target) {
+      return;
     }
+    const clickedInside = this._elementRef.nativeElement.contains(target);
+    if (!clickedInside) {
+      this.clickOutside.emit(event);
+    }
+  }
 }

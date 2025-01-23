@@ -7,10 +7,11 @@ import {
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
-  selector: 'app-tile',
-  templateUrl: './tile.component.html',
-  styleUrls: ['./tile.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-tile',
+    templateUrl: './tile.component.html',
+    styleUrls: ['./tile.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class TileComponent implements OnInit {
   @Input() type!: 'primary' | 'success' | 'warning' | 'danger';

@@ -1,12 +1,9 @@
 :host {
   display: flex;
-}
-
-.iowa-username-dropdown-menu {
-  display: flex;
   font-family: sans-serif;
   position: relative;
 }
+
 .iowa-user-button {
   color: #ffcd00;
   cursor: pointer;

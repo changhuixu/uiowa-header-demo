@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { ToastService } from '../../services/toast.service';
 
 @Component({
-  selector: 'app-toasts',
-  template: `
+    selector: 'app-toasts',
+    template: `
     <ngb-toast
       *ngFor="let toast of toastService.toasts"
       [class]="toast.className"
@@ -21,10 +21,11 @@ import { ToastService } from '../../services/toast.service';
       <ng-template #text>{{ toast.content }}</ng-template>
     </ngb-toast>
   `,
-  host: {
-    class: 'toast-container position-fixed top-0 end-0 p-3',
-    style: 'z-index: 1200',
-  },
+    host: {
+        class: 'toast-container position-fixed top-0 end-0 p-3',
+        style: 'z-index: 1200',
+    },
+    standalone: false
 })
 export class AppToastsComponent {
   autoHide = true;

@@ -3,9 +3,10 @@ import { Reservation } from '../../models';
 import { faCheck, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-tab-content3',
-  templateUrl: './tab-content3.component.html',
-  styleUrls: ['./tab-content3.component.css'],
+    selector: 'app-tab-content3',
+    templateUrl: './tab-content3.component.html',
+    styleUrls: ['./tab-content3.component.css'],
+    standalone: false
 })
 export class TabContent3Component implements OnInit {
   faCheck = faCheck;

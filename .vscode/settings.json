@@ -14,5 +14,8 @@
     "uiowa",
     "waitlist",
     "waitlists"
-  ]
+  ],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  }
 }

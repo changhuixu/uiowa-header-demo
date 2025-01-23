@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { ArticleContent } from '../../models/article';
 
 @Component({
-  selector: 'app-scoop',
-  templateUrl: './scoop.component.html',
+    selector: 'app-scoop',
+    templateUrl: './scoop.component.html',
+    standalone: false
 })
 export class ScoopComponent {
   contents: ArticleContent[] = [

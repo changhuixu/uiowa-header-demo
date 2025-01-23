@@ -2,13 +2,15 @@
 
 An Angular library for common website header, including a UIowa branding bar and a website nav bar. This library also handles impersonation use case.
 
-You might also want to check out libraries [@uiowa/spinner](https://github.com/changhuixu/spinner), [session-expiration-alert](https://github.com/changhuixu/session-expiration-alert), [@uiowa/date-range-picker](https://github.com/changhuixu/date-range-picker), [@uiowa/digit-only](https://github.com/changhuixu/ngx-digit-only) and [@uiowa/uiowa-mfk](https://github.com/changhuixu/uiowa-mfk-project).
+You might also want to check out libraries [@uiowa/universal-workflow](https://github.com/changhuixu/uiowa-universal-workflow), [@uiowa/spinner](https://github.com/changhuixu/spinner), [session-expiration-alert](https://github.com/changhuixu/session-expiration-alert), [@uiowa/date-range-picker](https://github.com/changhuixu/date-range-picker), [@uiowa/digit-only](https://github.com/changhuixu/ngx-digit-only) and [@uiowa/uiowa-mfk](https://github.com/changhuixu/uiowa-mfk-project).
 
 [![Build Status](https://github.com/changhuixu/uiowa-header-demo/actions/workflows/main.yml/badge.svg)](https://github.com/changhuixu/uiowa-header-demo/actions)
 [![npm](https://img.shields.io/npm/v/@uiowa/uiowa-header.svg?style=flat-square)](https://www.npmjs.com/package/@uiowa/uiowa-header)
 ![Web Content Accessibility](https://img.shields.io/badge/Accessibility-100-brightgreen.svg?longCache=true&style=flat-square)
 
 ## [Demo](https://changhuixu.github.io/uiowa-header-demo/)
+
+**v19** Dependencies: Angular >=19
 
 **v17** Dependencies: Angular >=17
 
@@ -39,7 +41,10 @@ You might also want to check out libraries [@uiowa/spinner](https://github.com/c
 - Support custom "top-right" part of Uiowa branding bar. By default, "top-right" part of Uiowa branding bar shows External Links (if any) and Login link or User dropdown button. If you want to customize the "top-right" part, you can provide your content inside of `uiowa-header` tag. eg,
 
   ```html
-  <uiowa-header applicationName="My Awesome App" [internalRoutes]="myInternalRoutes">
+  <uiowa-header
+    applicationName="My Awesome App"
+    [internalRoutes]="myInternalRoutes"
+  >
     <div class="text-white">my content</div>
   </uiowa-header>
   ```

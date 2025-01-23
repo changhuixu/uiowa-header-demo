@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { ArticleContent } from '../../models/article';
 
 @Component({
-  selector: 'app-medium',
-  templateUrl: './medium.component.html',
+    selector: 'app-medium',
+    templateUrl: './medium.component.html',
+    standalone: false
 })
 export class MediumComponent {
   contents: ArticleContent[] = [

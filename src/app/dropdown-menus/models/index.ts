@@ -1,2 +1,2 @@
-export { Waitlist } from './waitlist';
-export { Offer } from './offer';
+export * from './waitlist';
+export * from './offer';

@@ -1,6 +1,23 @@
-.btn-link {
-  color: #046ddd !important;
+::ng-deep .bg {
+  color: #d1d1d1;
+  background: #000000;
 }
-.btn-link:hover {
-  color: #043d7b !important;
+::ng-deep .element {
+  color: #f34677;
+}
+::ng-deep .attr {
+  color: #f6c1d0;
+}
+::ng-deep .eq {
+  color: #d2cd86;
+}
+::ng-deep .qt {
+  color: #00c4c4;
+}
+::ng-deep .kw {
+  color: #e66170;
+  font-weight: bold;
+}
+::ng-deep .brace {
+  color: #b060b0;
 }

@@ -3,9 +3,10 @@ import { faHome, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { ToastService } from '../../core';
 
 @Component({
-  selector: 'app-pending-offers',
-  templateUrl: './pending-offers.component.html',
-  styleUrls: ['./pending-offers.component.css'],
+    selector: 'app-pending-offers',
+    templateUrl: './pending-offers.component.html',
+    styleUrls: ['./pending-offers.component.css'],
+    standalone: false
 })
 export class PendingOffersComponent implements OnInit {
   faHome = faHome;

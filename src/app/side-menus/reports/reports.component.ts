@@ -3,9 +3,10 @@ import { faHome, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { MediaType } from './models/article';
 
 @Component({
-  selector: 'app-reports',
-  templateUrl: './reports.component.html',
-  styleUrls: ['./reports.component.css'],
+    selector: 'app-reports',
+    templateUrl: './reports.component.html',
+    styleUrls: ['./reports.component.css'],
+    standalone: false
 })
 export class ReportsComponent implements OnInit {
   faHome = faHome;

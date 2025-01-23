@@ -4,14 +4,15 @@ import {
   faHourglassStart,
   faFire,
   faHandPaper,
+  faFrown,
 } from '@fortawesome/free-solid-svg-icons';
-import { faFrown } from '@fortawesome/free-regular-svg-icons';
 import { Chart, ChartEvent } from 'chart.js/auto';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  standalone: false,
 })
 export class HomeComponent implements OnInit {
   faHourglassStart = faHourglassStart;

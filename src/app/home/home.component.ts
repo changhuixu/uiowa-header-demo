@@ -5,6 +5,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  standalone: false,
 })
 export class HomeComponent implements OnInit {
   html: SafeHtml = '';
@@ -16,38 +17,32 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.html = this.sanitizer.bypassSecurityTrustHtml(`
-  <pre style='color:#d1d1d1;background:#000000;'><span style='color:#ff8906; '>&lt;</span><span style='color:#f6c1d0; '>uiowa-header</span>
-    [externalLinks]<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"externalLinks"</span>
-    [applicationName]<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"applicationName"</span>
-    [internalRoutes]<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"internalRoutes"</span>
-    [user]<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"headerUser"</span>
-    (stopImpersonation)<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"stopImpersonation()"</span>
-    [showTestWarning]<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"true"</span>
-  <span style='color:#ff8906; '>></span>
-<span style='color:#ff8906; '>&lt;/</span><span style='color:#f6c1d0; '>uiowa-header</span><span style='color:#ff8906; '>></span>
-  </pre>
-  <!--Created using ToHtml.com on 2021-10-20 13:13:54 UTC -->
-`);
+  <pre class='bg'><span class='element'>&lt;uiowa-header</span>
+    [externalLinks]<span class='eq'>=</span><span class='qt'>"externalLinks"</span>
+    [applicationName]<span class='eq'>=</span><span class='qt'>"applicationName"</span>
+    [internalRoutes]<span class='eq'>=</span><span class='qt'>"internalRoutes"</span>
+    [user]<span class='eq'>=</span><span class='qt'>"headerUser"</span>
+    (stopImpersonation)<span class='eq'>=</span><span class='qt'>"stopImpersonation()"</span>
+    [showTestWarning]<span class='eq'>=</span><span class='qt'>"true"</span>
+  <span class='element'>/></span>
+  </pre>`);
     this.ts = this.sanitizer.bypassSecurityTrustHtml(`
-<pre style='color:#d1d1d1;background:#000000;'><span style='color:#e66170; font-weight:bold; '>import</span> <span style='color:#b060b0; '>{</span> Component<span style='color:#d2cd86; '>,</span> OnInit <span style='color:#b060b0; '>}</span> from <span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>@angular/core</span><span style='color:#02d045; '>'</span><span style='color:#b060b0; '>;</span>
-<span style='color:#e66170; font-weight:bold; '>import</span> <span style='color:#b060b0; '>{</span> InternalRoute<span style='color:#d2cd86; '>,</span> ExternalLink<span style='color:#d2cd86; '>,</span> HeaderUser <span style='color:#b060b0; '>}</span> from <span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>@uiowa/uiowa-header</span><span style='color:#02d045; '>'</span><span style='color:#b060b0; '>;</span>
-<span style='color:#e66170; font-weight:bold; '>export</span> <span style='color:#e66170; font-weight:bold; '>class</span> AppComponent <span style='color:#e66170; font-weight:bold; '>implements</span> OnInit <span style='color:#b060b0; '>{</span>
-  externalLinks <span style='color:#d2cd86; '>=</span> <span style='color:#d2cd86; '>[</span><span style='color:#e66170; font-weight:bold; '>new</span> ExternalLink<span style='color:#d2cd86; '>(</span><span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>Self Service</span><span style='color:#02d045; '>'</span><span style='color:#d2cd86; '>,</span> <span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>https://hris.uiowa.edu</span><span style='color:#02d045; '>'</span><span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>]</span><span style='color:#b060b0; '>;</span>
-  applicationName <span style='color:#d2cd86; '>=</span> <span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>Awesome Application Name</span><span style='color:#02d045; '>'</span><span style='color:#b060b0; '>;</span>
-  internalRoutes <span style='color:#d2cd86; '>=</span> <span style='color:#d2cd86; '>[</span>
-    <span style='color:#e66170; font-weight:bold; '>new</span> InternalRoute<span style='color:#d2cd86; '>(</span><span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>Home</span><span style='color:#02d045; '>'</span><span style='color:#d2cd86; '>,</span> <span style='color:#02d045; '>'</span><span style='color:#02d045; '>'</span><span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>,</span>
-    <span style='color:#e66170; font-weight:bold; '>new</span> InternalRoute<span style='color:#d2cd86; '>(</span><span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>Page with Tabs</span><span style='color:#02d045; '>'</span><span style='color:#d2cd86; '>,</span> <span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>page-with-tabs</span><span style='color:#02d045; '>'</span><span style='color:#d2cd86; '>)</span>
-  <span style='color:#d2cd86; '>]</span><span style='color:#b060b0; '>;</span>
-  headerUser <span style='color:#d2cd86; '>=</span> <span style='color:#b060b0; '>{</span>
-    userName<span style='color:#b060b0; '>:</span> <span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>abc</span><span style='color:#02d045; '>'</span><span style='color:#d2cd86; '>,</span>
-    originalUserName<span style='color:#b060b0; '>:</span> <span style='color:#02d045; '>'</span><span style='color:#00c4c4; '>changhxu</span><span style='color:#02d045; '>'</span>
-  <span style='color:#b060b0; '>}</span> as HeaderUser<span style='color:#b060b0; '>;</span>
-  ngOnInit<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span><span style='color:#b060b0; '>}</span>
-  stopImpersonation<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
-  <span style='color:#b060b0; '>}</span>
-<span style='color:#b060b0; '>}</span>
-</pre>
-<!--Created using ToHtml.com on 2019-10-10 13:40:12 UTC -->
-`);
+<pre class='bg'><span class='kw'>import</span> <span class='brace'>{</span> Component<span class='eq'>,</span> OnInit <span class='brace'>}</span> from <span class='qt'>'@angular/core'</span><span class='brace'>;</span>
+<span class='kw'>import</span> <span class='brace'>{</span> InternalRoute<span class='eq'>,</span> ExternalLink<span class='eq'>,</span> HeaderUser <span class='brace'>}</span> from <span class='qt'>'@uiowa/uiowa-header'</span><span class='brace'>;</span>
+<br><span class='kw'>export</span> <span class='kw'>class</span> AppComponent <span class='kw'>implements</span> OnInit <span class='brace'>{</span>
+  externalLinks <span class='eq'>=</span> <span class='eq'>[</span><span class='kw'>new</span> ExternalLink<span class='eq'>(</span><span class='qt'>'Self Service</span><span class=eq'>'</span><span class='eq'>,</span> <span class='qt'>'https://hris.uiowa.edu'</span><span class='eq'>)]</span><span class='brace'>;</span>
+  applicationName <span class='eq'>=</span> <span class='qt'>'Awesome Application Name</span><span class=eq'>'</span><span class='brace'>;</span>
+  internalRoutes <span class='eq'>=</span> <span class='eq'>[</span>
+    <span class='kw'>new</span> InternalRoute<span class='eq'>(</span><span class='qt'>'Home</span><span class=eq'>'</span><span class='eq'>,</span> <span class=eq'>''</span><span class='eq'>),</span>
+    <span class='kw'>new</span> InternalRoute<span class='eq'>(</span><span class='qt'>'Page with Tabs</span><span class=eq'>'</span><span class='eq'>,</span> <span class='qt'>'page-with-tabs'</span><span class='eq'>)</span>
+  <span class='eq'>]</span><span class='brace'>;</span>
+  headerUser <span class='eq'>=</span> <span class='brace'>{</span>
+    userName<span class='brace'>:</span> <span class='qt'>'abc</span><span class=eq'>'</span><span class='eq'>,</span>
+    originalUserName<span class='brace'>:</span> <span class='qt'>'changhxu</span><span class=eq'>'</span>
+  <span class='brace'>}</span> as HeaderUser<span class='brace'>;</span>
+  ngOnInit<span class='eq'>(</span><span class='eq'>)</span> <span class='brace'>{ }</span>
+  stopImpersonation<span class='eq'>(</span><span class='eq'>)</span> <span class='brace'>{ }</span>
+<span class='brace'>}</span>
+</pre>`);
   }
 }

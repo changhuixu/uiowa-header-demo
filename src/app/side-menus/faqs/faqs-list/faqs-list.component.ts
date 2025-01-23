@@ -7,9 +7,10 @@ interface Movie {
 }
 
 @Component({
-  selector: 'app-faqs-list',
-  templateUrl: './faqs-list.component.html',
-  styleUrls: ['./faqs-list.component.css'],
+    selector: 'app-faqs-list',
+    templateUrl: './faqs-list.component.html',
+    styleUrls: ['./faqs-list.component.css'],
+    standalone: false
 })
 export class FaqsListComponent implements OnInit {
   movies: Movie[] = [

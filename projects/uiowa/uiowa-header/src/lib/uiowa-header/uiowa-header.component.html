@@ -56,23 +56,21 @@
       </h1>
     </div>
     <div class="iowa-username-bar">
-      <div *ngIf="showWarning" class="test-warning">{{ warningMessage }}</div>
-      <div *ngIf="bannerLinks" class="iowa-banner-links">
-        <a
-          *ngIf="bannerLinks.link1"
-          [href]="bannerLinks.link1.url"
-          [target]="bannerLinks.link1.target"
-        >
+      @if(showWarning){
+      <div class="test-warning">{{ warningMessage }}</div>
+      } @if(bannerLinks){
+      <div class="iowa-banner-links">
+        @if(bannerLinks.link1){
+        <a [href]="bannerLinks.link1.url" [target]="bannerLinks.link1.target">
           {{ bannerLinks.link1.text }}
         </a>
-        <a
-          *ngIf="bannerLinks.link2"
-          [href]="bannerLinks.link2.url"
-          [target]="bannerLinks.link1.target"
-        >
+        } @if(bannerLinks.link2){
+        <a [href]="bannerLinks.link2.url" [target]="bannerLinks.link1.target">
           {{ bannerLinks.link2.text }}
         </a>
+        }
       </div>
+      }
       <username-dropdown
         [user]="user"
         (stopImpersonation)="stopImpersonation.emit()"
@@ -89,9 +87,9 @@
 >
   <div class="iowa-main-menu">
     <ul class="iowa-internal-routes">
+      @for(item of internalRoutes;track $index; let i=$index){
       <li
         class="menu-item"
-        *ngFor="let item of internalRoutes; let i = index"
         routerLinkActive="is-active"
         [routerLinkActiveOptions]="{ exact: !item.route }"
       >
@@ -102,9 +100,10 @@
         >
           {{ item.text }}
         </a>
-        <div *ngIf="item.subMenus" class="iowa-submenu-dropdown">
+        @if(item.subMenus){
+        <div class="iowa-submenu-dropdown">
+          @if(item.route){
           <a
-            *ngIf="item.route"
             [attr.id]="'menuDropdown_' + i"
             [routerLink]="item.route"
             (click)="toggleMenuCollapse(i)"
@@ -118,8 +117,8 @@
               [ngClass]="showMenuDropdown[i] ? 'up' : 'down'"
             ></span>
           </a>
+          } @else {
           <a
-            *ngIf="!item.route"
             [attr.id]="'menuDropdown_' + i"
             href="javascript:void(0)"
             (click)="toggleMenuCollapse(i)"
@@ -133,30 +132,32 @@
               [ngClass]="showMenuDropdown[i] ? 'up' : 'down'"
             ></span>
           </a>
+          }
+
           <div
             class="iowa-submenu-dropdown-content"
             [attr.aria-labelledby]="'menuDropdown_' + i"
             [ngClass]="{ show: showMenuDropdown[i] }"
           >
-            <ng-container *ngFor="let subitem of item.subMenus">
-              <a
-                *ngIf="subitem.route"
-                class="iowa-submenu-dropdown-item"
-                [routerLink]="subitem.route"
-                (click)="showMenuDropdown[i] = false; showNavBar = false"
-              >
-                {{ subitem.text }}
-              </a>
-            </ng-container>
+            @for( subitem of item.subMenus; track $index){ @if(subitem.route){
+            <a
+              class="iowa-submenu-dropdown-item"
+              [routerLink]="subitem.route"
+              (click)="showMenuDropdown[i] = false; showNavBar = false"
+            >
+              {{ subitem.text }}
+            </a>
+            } }
           </div>
         </div>
+        }
       </li>
+      }
     </ul>
     <div class="iowa-external-links">
-      <ng-container *ngFor="let item of externalLinks; last as isLast">
-        <a [href]="item.url" [target]="item.target">{{ item.text }}</a>
-        <span *ngIf="!isLast" class="iowa-external-link-spacer"></span>
-      </ng-container>
+      @for(item of externalLinks; track $index; let isLast = $last){
+      <a [href]="item.url" [target]="item.target">{{ item.text }}</a>
+      @if(!isLast){<span class="iowa-external-link-spacer"></span>} }
     </div>
   </div>
 </nav>

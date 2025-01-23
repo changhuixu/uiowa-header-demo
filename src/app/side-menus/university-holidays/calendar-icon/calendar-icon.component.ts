@@ -6,10 +6,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-calendar-icon',
-  templateUrl: './calendar-icon.component.html',
-  styleUrls: ['./calendar-icon.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-calendar-icon',
+    templateUrl: './calendar-icon.component.html',
+    styleUrls: ['./calendar-icon.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CalendarIconComponent implements OnInit {
   @Input() date?: Date;

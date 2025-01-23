@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ExternalLink } from '../models/external-link';
+import { Component, Input, OnInit, output } from '@angular/core';
 import { BannerLinks } from '../models/banner-links';
+import { ExternalLink } from '../models/external-link';
 import { HeaderUser } from '../models/header-user';
 import { InternalRoute } from '../models/internal-route';
 import { LoginService } from '../services/login.service';
@@ -19,6 +19,7 @@ import { LoginService } from '../services/login.service';
     './external-links.css',
     './banner-links.css',
   ],
+  standalone: false,
 })
 export class UiowaHeaderComponent implements OnInit {
   @Input('applicationName') siteName = 'Awesome Site Name';
@@ -26,7 +27,7 @@ export class UiowaHeaderComponent implements OnInit {
   @Input() bannerLinks?: BannerLinks;
   @Input() internalRoutes?: InternalRoute[];
   @Input() user?: HeaderUser;
-  @Output() stopImpersonation = new EventEmitter<void>();
+  stopImpersonation = output();
   @Input() showWarning = false;
   @Input() warningMessage = 'WARNING: TEST SYSTEM';
   showNavBar = false;

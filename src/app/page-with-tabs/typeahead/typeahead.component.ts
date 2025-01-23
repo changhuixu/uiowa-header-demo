@@ -22,9 +22,10 @@ interface CityScore {
 }
 
 @Component({
-  selector: 'app-typeahead',
-  templateUrl: './typeahead.component.html',
-  styleUrls: ['./typeahead.component.css'],
+    selector: 'app-typeahead',
+    templateUrl: './typeahead.component.html',
+    styleUrls: ['./typeahead.component.css'],
+    standalone: false
 })
 export class TypeaheadComponent implements OnInit {
   dept!: OrgDeptNode;

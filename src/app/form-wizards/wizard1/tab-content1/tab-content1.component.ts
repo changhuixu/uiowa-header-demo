@@ -12,9 +12,10 @@ import { ReservationService } from '../../services/reservation.service';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-tab-content1',
-  templateUrl: './tab-content1.component.html',
-  styleUrls: ['./tab-content1.component.css'],
+    selector: 'app-tab-content1',
+    templateUrl: './tab-content1.component.html',
+    styleUrls: ['./tab-content1.component.css'],
+    standalone: false
 })
 export class TabContent1Component implements OnInit {
   faChevronRight = faChevronRight;

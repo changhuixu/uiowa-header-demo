@@ -3,9 +3,10 @@ import { Offer } from '../../../models';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-offer-card',
-  templateUrl: './offer-card.component.html',
-  styleUrls: ['./offer-card.component.css'],
+    selector: 'app-offer-card',
+    templateUrl: './offer-card.component.html',
+    styleUrls: ['./offer-card.component.css'],
+    standalone: false
 })
 export class OfferCardComponent implements OnInit {
   @Input() offer!: Offer;

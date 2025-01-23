@@ -1,11 +1,20 @@
 <div class="container d-flex flex-column">
   <p class="h3 mt-2">Example Usage</p>
-  <button type="button" class="btn btn-link me-auto" (click)="showHtml = !showHtml">
+  <button
+    type="button"
+    class="btn btn-link me-auto"
+    (click)="showHtml = !showHtml"
+  >
     app.component.html
   </button>
-  <div *ngIf="showHtml" [innerHTML]="html"></div>
+  @if(showHtml){
+  <div [innerHTML]="html"></div>
+  }
+
   <button type="button" class="btn btn-link me-auto" (click)="showTs = !showTs">
     app.component.ts
   </button>
-  <div *ngIf="showTs" [innerHTML]="ts"></div>
+  @if(showTs){
+  <div [innerHTML]="ts"></div>
+  }
 </div>

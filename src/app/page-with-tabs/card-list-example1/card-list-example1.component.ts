@@ -7,9 +7,10 @@ interface Car {
 }
 
 @Component({
-  selector: 'app-card-list-example1',
-  templateUrl: './card-list-example1.component.html',
-  styleUrls: ['./card-list-example1.component.css']
+    selector: 'app-card-list-example1',
+    templateUrl: './card-list-example1.component.html',
+    styleUrls: ['./card-list-example1.component.css'],
+    standalone: false
 })
 export class CardListExample1Component implements OnInit {
   cars: Car[] = [

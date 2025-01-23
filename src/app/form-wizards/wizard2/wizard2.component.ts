@@ -8,9 +8,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-wizard2',
-  templateUrl: './wizard2.component.html',
-  styleUrls: ['./wizard2.component.css'],
+    selector: 'app-wizard2',
+    templateUrl: './wizard2.component.html',
+    styleUrls: ['./wizard2.component.css'],
+    standalone: false
 })
 export class Wizard2Component implements OnInit {
   faPlane = faPlane;

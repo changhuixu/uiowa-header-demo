@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { ArticleContent } from '../../models/article';
 
 @Component({
-  selector: 'app-linkedin',
-  templateUrl: './linkedin.component.html',
+    selector: 'app-linkedin',
+    templateUrl: './linkedin.component.html',
+    standalone: false
 })
 export class LinkedinComponent {
   contents: ArticleContent[] = [

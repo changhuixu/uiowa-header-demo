@@ -6,7 +6,10 @@ import { AccessDeniedComponent } from './components/access-denied/access-denied.
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppToastsComponent } from './components/app-toasts/app-toasts.component';
-import { LoginService, UiowaHeaderModule } from '../../../projects/uiowa/uiowa-header/src/public-api';
+import {
+  LoginService,
+  UiowaHeaderModule,
+} from '../../../projects/uiowa/uiowa-header/src/public-api';
 
 @NgModule({
   imports: [CommonModule, UiowaHeaderModule, NgbToastModule],

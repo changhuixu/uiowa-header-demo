@@ -3,9 +3,10 @@ import { Reservation } from '../../models';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-tab-content2',
-  templateUrl: './tab-content2.component.html',
-  styleUrls: ['./tab-content2.component.css']
+    selector: 'app-tab-content2',
+    templateUrl: './tab-content2.component.html',
+    styleUrls: ['./tab-content2.component.css'],
+    standalone: false
 })
 export class TabContent2Component implements OnInit {
   faChevronRight = faChevronRight;

@@ -7,8 +7,8 @@ interface InternalRoute {
 }
 
 @Component({
-  selector: 'app-home',
-  template: `
+    selector: 'app-home',
+    template: `
     <div class="container d-flex flex-column h-100 py-2">
       <nav class="nav nav-tabs flex-column flex-sm-row flex-shrink-0">
         <a
@@ -22,8 +22,8 @@ interface InternalRoute {
       <router-outlet></router-outlet>
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .nav-tabs .nav-link {
         color: #066cd9;
         border: 1px #e7eaed solid !important;
@@ -33,7 +33,8 @@ interface InternalRoute {
         background: #eef8ff !important;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   menus: InternalRoute[] = [];

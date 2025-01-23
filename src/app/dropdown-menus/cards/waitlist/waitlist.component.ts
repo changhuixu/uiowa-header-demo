@@ -3,9 +3,10 @@ import { Waitlist, Offer } from '../../models';
 import { faBookmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-waitlist',
-  templateUrl: './waitlist.component.html',
-  styleUrls: ['./waitlist.component.css']
+    selector: 'app-waitlist',
+    templateUrl: './waitlist.component.html',
+    styleUrls: ['./waitlist.component.css'],
+    standalone: false
 })
 export class WaitlistComponent implements OnInit {
   faBookmark = faBookmark;
