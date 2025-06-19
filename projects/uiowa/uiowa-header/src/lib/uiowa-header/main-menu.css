@@ -38,3 +38,12 @@
     margin: 0 auto;
   }
 }
+
+.sub-site-name {
+  font-weight: 500;
+  font-size: 1.75rem;
+  margin-right: 3rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: flex-end;
+}

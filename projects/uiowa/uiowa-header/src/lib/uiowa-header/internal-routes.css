@@ -27,17 +27,15 @@
   width: 100%;
   padding: 0.75rem;
 }
-.iowa-internal-routes .is-active {
-  font-weight: bold;
-}
 @media (max-width: 855px) {
   .iowa-internal-routes .is-active {
+    font-weight: bold;
     background-color: #ffffff;
   }
 }
 .iowa-internal-routes .is-active:after {
   background: #ffcd00;
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -64,10 +62,10 @@
     width: auto;
     font-size: 1.125rem;
     font-weight: 500;
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
   }
   .iowa-internal-routes li a:after {
-    content: "";
+    content: '';
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -84,9 +82,9 @@
     transform: translate(-50%, 0) scaleX(1);
   }
 
-  .iowa-internal-routes .is-active:after {
+  .iowa-internal-routes li a.is-active:after {
     background: #ffcd00;
-    content: "";
+    content: '';
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -96,18 +94,14 @@
     transition: transform 0.3s ease-in-out;
     transform: translate(-50%, 0) scaleX(1);
   }
-  .iowa-internal-routes li:before {
+  .iowa-internal-routes li:not(:last-child) a:before {
     position: absolute;
     right: 0;
     top: 25%;
     height: 50%;
     width: 1px;
-    content: "";
+    content: '';
     background: #ffcd00;
-  }
-
-  .iowa-internal-routes li:last-of-type:before {
-    width: 0;
   }
 }
 

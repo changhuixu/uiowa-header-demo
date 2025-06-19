@@ -23,6 +23,7 @@ import { LoginService } from '../services/login.service';
 })
 export class UiowaHeaderComponent implements OnInit {
   @Input('applicationName') siteName = 'Awesome Site Name';
+  @Input() siteUrl = '';
   @Input() externalLinks?: ExternalLink[];
   @Input() bannerLinks?: BannerLinks;
   @Input() internalRoutes?: InternalRoute[];
@@ -30,6 +31,7 @@ export class UiowaHeaderComponent implements OnInit {
   stopImpersonation = output();
   @Input() showWarning = false;
   @Input() warningMessage = 'WARNING: TEST SYSTEM';
+  @Input() subSiteName = '';
   showNavBar = false;
   showMenuDropdown: boolean[] = [];
 

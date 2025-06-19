@@ -52,7 +52,11 @@
         </svg>
       </button>
       <h1 class="site-name">
-        <a routerLink="">{{ siteName }}</a>
+        @if(siteUrl){
+        <a [href]="siteUrl">{{ siteName }}</a>
+        }@else{
+        <a routerLink="">{{ siteName }}</a
+        >}
       </h1>
     </div>
     <div class="iowa-username-bar">
@@ -87,19 +91,16 @@
 >
   <div class="iowa-main-menu">
     <ul class="iowa-internal-routes">
-      @for(item of internalRoutes;track $index; let i=$index){
+      @if(subSiteName){
+      <li class="sub-site-name">
+        {{ subSiteName }}
+      </li>
+      } @for(item of internalRoutes;track $index; let i=$index){
       <li
         class="menu-item"
         routerLinkActive="is-active"
         [routerLinkActiveOptions]="{ exact: !item.route }"
       >
-        <a
-          *ngIf="!item.subMenus"
-          [routerLink]="item.route"
-          (click)="showNavBar = false"
-        >
-          {{ item.text }}
-        </a>
         @if(item.subMenus){
         <div class="iowa-submenu-dropdown">
           @if(item.route){
@@ -150,6 +151,10 @@
             } }
           </div>
         </div>
+        }@else {
+        <a [routerLink]="item.route" (click)="showNavBar = false">
+          {{ item.text }}
+        </a>
         }
       </li>
       }
