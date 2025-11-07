@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 interface UnivHolidays {
   year: number;
@@ -7,14 +6,12 @@ interface UnivHolidays {
 }
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css'],
-    standalone: false
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  standalone: false,
 })
 export class HomeComponent implements OnInit {
-  faHome = faHome;
-  faAngleRight = faAngleRight;
   univHolidays: UnivHolidays[] = [];
   constructor() {}
 
@@ -31,8 +28,8 @@ export class HomeComponent implements OnInit {
           new Date(2019, 10, 28),
           new Date(2019, 10, 29),
           new Date(2019, 11, 24),
-          new Date(2019, 11, 25)
-        ]
+          new Date(2019, 11, 25),
+        ],
       },
       {
         year: 2020,
@@ -45,8 +42,8 @@ export class HomeComponent implements OnInit {
           new Date(2020, 10, 26),
           new Date(2020, 10, 27),
           new Date(2020, 11, 24),
-          new Date(2020, 11, 25)
-        ]
+          new Date(2020, 11, 25),
+        ],
       },
       {
         year: 2021,
@@ -59,8 +56,8 @@ export class HomeComponent implements OnInit {
           new Date(2021, 10, 25),
           new Date(2021, 10, 26),
           new Date(2021, 11, 23),
-          new Date(2021, 11, 24)
-        ]
+          new Date(2021, 11, 24),
+        ],
       },
       {
         year: 2022,
@@ -73,8 +70,8 @@ export class HomeComponent implements OnInit {
           new Date(2022, 10, 24),
           new Date(2022, 10, 25),
           new Date(2022, 11, 26),
-          new Date(2022, 11, 27)
-        ]
+          new Date(2022, 11, 27),
+        ],
       },
       {
         year: 2023,
@@ -82,9 +79,9 @@ export class HomeComponent implements OnInit {
           new Date(2023, 0, 1),
           new Date(2023, 0, 16),
           new Date(2023, 4, 29),
-          new Date(2023, 6, 4)
-        ]
-      }
-    ];
+          new Date(2023, 6, 4),
+        ],
+      },
+    ].sort((a, b) => b.year - a.year);
   }
 }

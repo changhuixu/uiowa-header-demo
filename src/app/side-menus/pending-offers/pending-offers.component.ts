@@ -1,16 +1,13 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { faHome, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { ToastService } from '../../core';
 
 @Component({
-    selector: 'app-pending-offers',
-    templateUrl: './pending-offers.component.html',
-    styleUrls: ['./pending-offers.component.css'],
-    standalone: false
+  selector: 'app-pending-offers',
+  templateUrl: './pending-offers.component.html',
+  styleUrls: ['./pending-offers.component.css'],
+  standalone: false,
 })
 export class PendingOffersComponent implements OnInit {
-  faHome = faHome;
-  faAngleRight = faAngleRight;
   constructor(private toastr: ToastService) {}
 
   ngOnInit() {}

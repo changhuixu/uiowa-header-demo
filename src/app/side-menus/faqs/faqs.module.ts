@@ -1,13 +1,23 @@
-import { NgModule } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../../shared/shared.module';
 
-import { FaqsRoutingModule } from './faqs-routing.module';
-import { HomeComponent } from './home/home.component';
 import { FaqsListComponent } from './faqs-list/faqs-list.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [HomeComponent, FaqsListComponent],
-  imports: [SharedModule, DragDropModule, FaqsRoutingModule]
+  imports: [
+    SharedModule,
+    DragDropModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: HomeComponent,
+        pathMatch: 'full',
+      },
+    ]),
+  ],
 })
 export class FaqsModule {}

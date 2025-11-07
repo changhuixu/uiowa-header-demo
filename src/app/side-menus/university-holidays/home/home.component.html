@@ -1,22 +1,14 @@
 <div class="d-flex flex-column">
-  <header>
-    <h2 class="my-1 text-primary">
-      <a routerLink=".." title="admin home">
-        <fa-icon [icon]="faHome"></fa-icon>
-        <fa-icon [icon]="faAngleRight" aria-hidden="true"></fa-icon>
-      </a>
-      University Holidays
-    </h2>
-    <hr class="mt-0" />
-  </header>
-  <section class="row m-0">
-    <div *ngFor="let u of univHolidays" class="d-flex mb-4">
-      <h2 class="text-center bg-secondary text-white p-3 m-0">{{ u.year }}</h2>
-      <div class="d-flex flex-wrap pt-4 bg-light">
-        <div *ngFor="let item of u.holidays" class="mx-2 mb-4">
-          <app-calendar-icon [date]="item"></app-calendar-icon>
-        </div>
+  @for(u of univHolidays; track u.year){
+  <div class="d-flex mb-4">
+    <h2 class="text-center bg-secondary text-white p-3 m-0">{{ u.year }}</h2>
+    <div class="d-flex flex-wrap pt-4 bg-light">
+      @for(item of u.holidays; track item){
+      <div class="mx-2 mb-4">
+        <app-calendar-icon [date]="item"></app-calendar-icon>
       </div>
+      }
     </div>
-  </section>
+  </div>
+  }
 </div>

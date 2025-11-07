@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { LinkItem, childRouteLinkItems } from '../side-menus-child-routes';
 import {
-  faHourglassStart,
   faFire,
-  faHandPaper,
   faFrown,
+  faHandPaper,
+  faHourglassStart,
 } from '@fortawesome/free-solid-svg-icons';
 import { Chart, ChartEvent } from 'chart.js/auto';
+import { childRouteSideNavItems, SideNavItem } from '../child-routes';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   faFire = faFire;
   faHandPaper = faHandPaper;
   faFrown = faFrown;
-  linkItems: LinkItem[] = [];
+  linkItems: SideNavItem[] = [];
 
   barChart?: Chart;
   pieChart?: any;
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.linkItems = childRouteLinkItems;
+    this.linkItems = childRouteSideNavItems;
     this.barChart = new Chart('barChart', {
       type: 'bar',
       data: {

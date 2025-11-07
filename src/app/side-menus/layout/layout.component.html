@@ -1,40 +1,57 @@
 <div class="d-flex m-0 h-100">
   <div id="side-nav" class="d-none d-lg-block flex-shrink-0 side-nav p-0 pt-1">
     <ul class="nav flex-column">
+      @for(item of sideNavItems; track item.path){
       <li class="nav-item">
         <a
           class="nav-link"
           routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLink="dash-board"
-        >
-          <fa-icon
-            [icon]="faHome"
-            [fixedWidth]="true"
-            aria-hidden="true"
-          ></fa-icon>
-          Admin Home
-        </a>
-      </li>
-      <li class="nav-item" *ngFor="let item of linkItems">
-        <a
-          class="nav-link"
-          routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }"
           routerLink="{{ item.path }}"
         >
+          @if(item.icon) {
           <fa-icon
-            *ngIf="item.icon"
             [icon]="item.icon"
             [fixedWidth]="true"
             aria-hidden="true"
           ></fa-icon>
+          }
           {{ item.text }}
         </a>
       </li>
+      }
     </ul>
   </div>
-  <div id="main-content" class="flex-fill px-3" style="overflow-y: auto;">
-    <router-outlet></router-outlet>
+  <div id="main-content" class="d-flex flex-column flex-fill px-3">
+    <div class="d-flex align-items-center justify-content-between my-2">
+      <div class="h2 m-0 text-primary">{{ heading$ | async }}</div>
+      <div class="d-inline-block d-lg-none" ngbDropdown>
+        <button type="button" id="menu" class="btn btn-link" ngbDropdownToggle>
+          More
+        </button>
+        <ul
+          ngbDropdownMenu
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="menu"
+        >
+          @for(item of sideNavItems; track item.path){
+          <li>
+            <a
+              ngbDropdownItem
+              routerLink="{{ item.path }}"
+              routerLinkActive="active disabled"
+            >
+              {{ item.text }}
+            </a>
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <hr class="mt-0 my-2" />
+
+    <section class="d-flex flex-column flex-fill" style="overflow-y: auto">
+      <router-outlet></router-outlet>
+    </section>
   </div>
 </div>

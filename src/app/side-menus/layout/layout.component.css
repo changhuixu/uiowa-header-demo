@@ -1,15 +1,17 @@
 .side-nav {
-  width: 250px;
+  width: 200px;
   overflow-y: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .side-nav .nav-item a {
-  color: #585858;
+  color: #3c3c3c;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .side-nav .nav-item:hover {
@@ -17,7 +19,7 @@
 }
 
 .side-nav .nav-item .active-link {
-  border-right: 0.5rem #ffee00 solid;
-  background-color: #3c3c3c;
-  color: #ffee00;
+  border-right: 0.5rem #ffcd00 solid;
+  background-color: #151515;
+  color: #ffcd00;
 }

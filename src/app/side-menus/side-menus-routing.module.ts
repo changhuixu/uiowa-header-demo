@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { childRoutes } from './side-menus-child-routes';
+import { childRoutes } from './child-routes';
 import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   {
@@ -14,11 +13,7 @@ export const routes: Routes = [
         redirectTo: 'dash-board',
         pathMatch: 'full',
       },
-      {
-        path: 'dash-board',
-        component: HomeComponent,
-        data: { linkText: 'Admin Home', iconClass: 'fa-home' },
-      },
+
       ...childRoutes,
     ],
   },

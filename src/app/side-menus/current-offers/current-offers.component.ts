@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { MediaType } from './models/article';
 
 @Component({
-    selector: 'app-current-offers',
-    templateUrl: './current-offers.component.html',
-    styleUrls: ['./current-offers.component.css'],
-    standalone: false
+  selector: 'app-current-offers',
+  templateUrl: './current-offers.component.html',
+  styleUrls: ['./current-offers.component.css'],
+  standalone: false,
 })
 export class CurrentOffersComponent implements OnInit {
-  faHome = faHome;
-  faAngleRight = faAngleRight;
-  constructor() { }
+  selectedType?: MediaType;
 
-  ngOnInit() {
-  }
+  constructor() {}
 
+  ngOnInit() {}
 }

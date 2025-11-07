@@ -1,27 +1,4 @@
 <div class="d-flex flex-column h-100 w-100">
-  <header>
-    <h2 class="my-1 text-primary">
-      Admin Dashboard
-      <div ngbDropdown class="d-inline-block d-lg-none">
-        <button class="btn btn-link" id="admin-menu" ngbDropdownToggle>
-          More
-        </button>
-        <div ngbDropdownMenu aria-labelledby="admin-menu">
-          <ng-container *ngFor="let item of linkItems">
-            <a class="dropdown-item" routerLink="../{{ item.path }}">
-              <fa-icon
-                [icon]="item.icon"
-                [fixedWidth]="true"
-                aria-hidden="true"
-              ></fa-icon>
-              {{ item.text }}
-            </a>
-          </ng-container>
-        </div>
-      </div>
-    </h2>
-    <hr class="mt-0" />
-  </header>
   <section class="row mb-5">
     <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-1">
       <app-tile

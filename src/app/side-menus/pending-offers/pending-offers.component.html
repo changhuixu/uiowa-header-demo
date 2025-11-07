@@ -1,53 +1,41 @@
 <div class="d-flex flex-column">
-  <header>
-    <h2 class="my-1 text-primary">
-      <a routerLink="../" title="admin home">
-        <fa-icon [icon]="faHome"></fa-icon>
-        <fa-icon [icon]="faAngleRight" aria-hidden="true"></fa-icon>
-      </a>
-      Pending Offers
-    </h2>
-    <hr class="mt-0" />
-  </header>
-  <section class="row m-0">
-    <div class="buttons">
-      <button
-        class="btn btn-primary me-2"
-        (click)="showPrimary()"
-        ngbTooltip="Will disappear in 5s"
-      >
-        Primary toast
-      </button>
-      <button
-        class="btn btn-info me-2"
-        (click)="showInfo()"
-        ngbTooltip="Will disappear in 5s"
-      >
-        Info toast
-      </button>
-      <button
-        class="btn btn-warning me-2"
-        (click)="showWarning()"
-        ngbTooltip="Will disappear in 5s"
-      >
-        Warning toast
-      </button>
-      <button
-        class="btn btn-success me-2"
-        (click)="showSuccess()"
-        ngbTooltip="Will disappear in 10s"
-      >
-        Success toast
-      </button>
-      <button
-        class="btn btn-danger me-2"
-        (click)="showDanger(dangerTpl)"
-        ngbTooltip="Will disappear in 5s"
-      >
-        Danger toast
-      </button>
-    </div>
-  </section>
+  <div class="buttons">
+    <button
+      class="btn btn-primary me-2"
+      (click)="showPrimary()"
+      ngbTooltip="Will disappear in 5s"
+    >
+      Primary toast
+    </button>
+    <button
+      class="btn btn-info me-2"
+      (click)="showInfo()"
+      ngbTooltip="Will disappear in 5s"
+    >
+      Info toast
+    </button>
+    <button
+      class="btn btn-warning me-2"
+      (click)="showWarning()"
+      ngbTooltip="Will disappear in 5s"
+    >
+      Warning toast
+    </button>
+    <button
+      class="btn btn-success me-2"
+      (click)="showSuccess()"
+      ngbTooltip="Will disappear in 10s"
+    >
+      Success toast
+    </button>
+    <button
+      class="btn btn-danger me-2"
+      (click)="showDanger(dangerTpl)"
+      ngbTooltip="Will disappear in 5s"
+    >
+      Danger toast
+    </button>
+  </div>
 </div>
 
 <ng-template #dangerTpl>
