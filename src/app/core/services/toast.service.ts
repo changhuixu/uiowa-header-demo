@@ -1,9 +1,7 @@
-import { Injectable, TemplateRef } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 export interface Toast {
-  title?: string;
   content?: string;
-  contentTemplate: TemplateRef<any> | null;
   className?: string;
   delay?: number;
 }
@@ -19,24 +17,12 @@ export class ToastService {
    * @param className custom template for the toast body
    * @param delay the duration (in seconds) of the toast displaying on the page; default: 5 seconds.
    */
-  show(
-    message: string | TemplateRef<any>,
-    title = '',
-    className = '',
-    delay = 5
-  ) {
-    const toast = {
-      title: title,
+  show(message: string, className = '', delay = 5) {
+    this.toasts.push({
       className: className,
       delay: delay * 1000,
-    } as Toast;
-    if (message instanceof TemplateRef) {
-      toast.contentTemplate = message;
-    } else {
-      toast.contentTemplate = null;
-      toast.content = message;
-    }
-    this.toasts.push(toast);
+      content: message,
+    });
   }
 
   /**
@@ -44,7 +30,7 @@ export class ToastService {
    * @param toast a reference to a Toast
    */
   remove(toast: Toast) {
-    this.toasts = this.toasts.filter((t) => t !== toast);
+    this.toasts = this.toasts.filter((t) => t.content !== toast.content);
   }
 
   /**
@@ -53,8 +39,8 @@ export class ToastService {
    * @param title plain text toast header
    * @param delay the duration (in seconds) of the toast displaying on the page; default: 5 seconds.
    */
-  primary(message: string | TemplateRef<any>, title = '', delay = 5) {
-    this.show(message, title, 'bg-primary text-white fs-6', delay);
+  primary(message: string, delay = 5) {
+    this.show(message, 'bg-primary text-white fs-6', delay);
   }
   /**
    * Display a Success Toast
@@ -62,8 +48,8 @@ export class ToastService {
    * @param title plain text toast header
    * @param delay the duration (in seconds) of the toast displaying on the page; default: 5 seconds.
    */
-  success(message: string | TemplateRef<any>, title = '', delay = 5) {
-    this.show(message, title, 'bg-success text-white fs-6', delay);
+  success(message: string, delay = 5) {
+    this.show(message, 'bg-success text-white fs-6', delay);
   }
   /**
    * Display a Info Toast
@@ -71,8 +57,8 @@ export class ToastService {
    * @param title plain text toast header
    * @param delay the duration (in seconds) of the toast displaying on the page; default: 5 seconds.
    */
-  info(message: string | TemplateRef<any>, title = '', delay = 5) {
-    this.show(message, title, 'bg-info text-dark fs-6', delay);
+  info(message: string, delay = 5) {
+    this.show(message, 'bg-info text-dark fs-6', delay);
   }
   /**
    * Display a Warning Toast
@@ -80,8 +66,8 @@ export class ToastService {
    * @param title plain text toast header
    * @param delay the duration (in seconds) of the toast displaying on the page; default: 5 seconds.
    */
-  warning(message: string | TemplateRef<any>, title = '', delay = 5) {
-    this.show(message, title, 'bg-warning text-dark fs-6', delay);
+  warning(message: string, delay = 5) {
+    this.show(message, 'bg-warning text-dark fs-6', delay);
   }
   /**
    * Display a Error Toast
@@ -89,8 +75,8 @@ export class ToastService {
    * @param title plain text toast header
    * @param delay the duration (in seconds) of the toast displaying on the page; default: 5 seconds.
    */
-  error(message: string | TemplateRef<any>, title = '', delay = 5) {
-    this.show(message, title, 'bg-danger text-white fs-6', delay);
+  error(message: string, delay = 5) {
+    this.show(message, 'bg-danger text-white fs-6', delay);
   }
 
   /**

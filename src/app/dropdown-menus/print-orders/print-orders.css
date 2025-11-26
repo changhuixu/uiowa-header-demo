@@ -1,0 +1,10 @@
+#top svg {
+  max-height: 20rem;
+}
+.card {
+  min-width: 18.75rem;
+}
+.card:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}

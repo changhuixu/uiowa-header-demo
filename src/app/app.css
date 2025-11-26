@@ -1,0 +1,17 @@
+:host {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media print {
+  uiowa-header,
+  footer {
+    display: none;
+  }
+
+  main {
+    overflow: visible !important;
+  }
+}

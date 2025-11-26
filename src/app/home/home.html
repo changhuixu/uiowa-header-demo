@@ -1,0 +1,16 @@
+<div class="container d-flex flex-column">
+  <p class="h3 mt-2">Example Usage</p>
+  <button type="button" class="btn btn-link me-auto" (click)="showHtml = !showHtml">
+    app.component.html
+  </button>
+  @if(showHtml){
+  <div [innerHTML]="html"></div>
+  }
+
+  <button type="button" class="btn btn-link me-auto" (click)="showTs = !showTs">
+    app.component.ts
+  </button>
+  @if(showTs){
+  <div [innerHTML]="ts"></div>
+  }
+</div>

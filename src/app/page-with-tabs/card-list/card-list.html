@@ -1,0 +1,18 @@
+<div class="d-flex flex-wrap w-100">
+  @for (item of cars; track $index; let i = $index) {
+  <div class="d-flex my-2" style="width: 33%">
+    <fieldset class="mx-2 px-2 border border-primary rounded bg-light position-relative w-100">
+      <legend
+        class="border border-primary rounded fw-bold m-0 p-1 w-auto bg-white text-nowrap fs-6 float-none"
+      >
+        Car {{ i + 1 }}
+      </legend>
+      <div class="py-2">
+        <div><span class="label">Make</span> {{ item.make }}</div>
+        <div><span class="label">Model</span> {{ item.model }}</div>
+        <div><span class="label">Price</span> {{ item.price }}</div>
+      </div>
+    </fieldset>
+  </div>
+  }
+</div>

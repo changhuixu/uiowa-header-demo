@@ -1,0 +1,47 @@
+<section class="d-flex flex-wrap mb-3">
+  <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-1">
+    <app-data-tile
+      type="warning"
+      [icon]="faHourglassStart"
+      title="Pending Offers"
+      [n]="28"
+      path="../pending-offers"
+    />
+  </div>
+  <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-1">
+    <app-data-tile
+      type="success"
+      [icon]="faFire"
+      title="Current Offers"
+      [n]="170"
+      path="../current-offers"
+    />
+  </div>
+  <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-1">
+    <app-data-tile
+      type="primary"
+      [icon]="faHandPaper"
+      title="Active Requests"
+      [n]="2289"
+      path="../pending-offers"
+    />
+  </div>
+  <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-1">
+    <app-data-tile
+      type="danger"
+      [icon]="faFrown"
+      title="Email Failures"
+      [n]="5"
+      path="../pending-offers"
+    />
+  </div>
+</section>
+
+<section id="charts" class="d-flex flex-wrap flex-fill">
+  <div class="col-12 col-xl-6 p-3">
+    <canvas id="barChart" width="600" height="400">{{ barChart }}</canvas>
+  </div>
+  <div class="col-12 col-xl-6 p-3">
+    <canvas id="pieChart" width="400" height="250">{{ pieChart }}</canvas>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+.copyright {
+  background-color: black;
+  font-size: 0.8rem;
+  color: #ffcd00;
+  text-align: center !important;
+  padding: 0.25rem 0;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans',
+    'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+}
+.copyright .content {
+  display: inline-flex !important;
+  align-items: center;
+  white-space: nowrap;
+}
+.copyright .me-2 {
+  margin-right: 0.5rem !important;
+}
+.copyright a {
+  color: #ffcd00;
+  text-decoration: underline;
+}
+
+.copyright .spacer {
+  display: none !important;
+}
+@media (min-width: 576px) {
+  .copyright .spacer {
+    display: inline-flex !important;
+    margin: 0 1.5rem !important;
+  }
+}
+@media (min-width: 768px) {
+  .copyright .spacer {
+    margin-right: 3rem !important;
+    margin-left: 3rem !important;
+  }
+}

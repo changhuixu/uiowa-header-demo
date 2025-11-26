@@ -1,0 +1,14 @@
+<uiowa-header
+  [externalLinks]="externalLinks"
+  [applicationName]="applicationName"
+  [internalRoutes]="internalRoutes"
+  [bannerLinks]="bannerLinks"
+  [user]="headerUser"
+  (stopImpersonation)="stopImpersonation()"
+  [showWarning]="true"
+/>
+<main role="main" class="w-100 h-100 flex-fill p-0 overflow-auto">
+  <router-outlet></router-outlet>
+</main>
+<footer uiowa-footer role="contentinfo" emailAddress="donotreplay@uiowa.edu"></footer>
+<app-toasts aria-live="polite" aria-atomic="true" />
