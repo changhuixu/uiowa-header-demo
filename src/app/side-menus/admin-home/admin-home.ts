@@ -4,12 +4,12 @@ import { Chart, ChartEvent } from 'chart.js/auto';
 import { DataTile } from './data-tile/data-tile';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-admin-home',
   imports: [DataTile],
-  templateUrl: './home.html',
-  styleUrl: './home.css',
+  templateUrl: './admin-home.html',
+  styleUrl: './admin-home.css',
 })
-export class Home implements OnInit {
+export class AdminHome implements OnInit {
   faHourglassStart = faHourglassStart;
   faFire = faFire;
   faHandPaper = faHandPaper;

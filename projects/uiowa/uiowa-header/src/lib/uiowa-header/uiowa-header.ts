@@ -8,13 +8,7 @@ import { UsernameDropdown } from './username-dropdown/username-dropdown';
   selector: 'header[uiowa-header]',
   imports: [UsernameDropdown],
   templateUrl: './uiowa-header.html',
-  styleUrls: [
-    './uiowa-header.css',
-    './logo.css',
-    './site-name.css',
-    './iowa-bar.css',
-    './banner-links.css',
-  ],
+  styleUrls: ['./uiowa-header.css', './logo.css', './site-name.css', './banner-links.css'],
 })
 export class UiowaHeader {
   @Input('applicationName') siteName = 'Awesome Site Name';

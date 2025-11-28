@@ -8,20 +8,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [23.x]
-
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Use Node.js latest version 🟢
+        uses: actions/setup-node@v5
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: latest # Or 'current' or 'node'
 
-      - name: Install dependencies and build 🔧
+      - name: Install and Build 🔧
         run: |
           npm ci
           npm run build:lib

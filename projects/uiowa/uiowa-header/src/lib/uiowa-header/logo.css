@@ -7,21 +7,17 @@
   background: #151515;
   margin-right: 10px;
 }
-
-@media (min-width: 84.375em) {
-  .logo--tab {
-    width: 188px;
-    height: 90px;
-    margin-left: -12px;
-    margin-bottom: -6px;
-    padding: 27px 20px 20px;
-  }
-}
 @media (min-width: 855px) {
-  .iowa-bar--narrow .logo--tab {
+  .logo--tab {
     height: 56px;
     width: 119px;
     padding: 15px;
+  }
+}
+@media (min-width: 84.375rem) {
+  .logo--tab {
+    margin-left: -12px;
+    margin-bottom: -6px;
   }
 }
 
@@ -32,12 +28,6 @@
 .logo-icon:hover,
 .logo-icon:focus {
   opacity: 0.7;
-}
-
-@media (min-width: 84.375em) {
-  .logo-icon {
-    height: 43px;
-  }
 }
 @media (min-width: 855px) {
   .logo-icon {

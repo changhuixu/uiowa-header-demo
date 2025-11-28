@@ -7,7 +7,6 @@ import {
   faHome,
   faHourglassStart,
 } from '@fortawesome/free-solid-svg-icons';
-import { Home } from './home/home';
 import { Layout } from './layout/layout';
 
 export interface SideNavItem {
@@ -19,7 +18,7 @@ export interface SideNavItem {
 export const childRoutes: Routes = [
   {
     path: 'dash-board',
-    component: Home,
+    loadComponent: () => import('./admin-home/admin-home').then((m) => m.AdminHome),
     data: { text: 'Admin Home', icon: faHome },
   },
   {
@@ -35,7 +34,7 @@ export const childRoutes: Routes = [
   {
     path: 'email-management',
     loadChildren: () =>
-      import('./email-management/email-management.routes').then((m) => m.EmailManagementRoutes),
+      import('./email-management/email-management.module').then((m) => m.EmailManagementModule),
     data: { text: 'Email Management', icon: faEnvelopeOpen },
   },
   {
@@ -46,7 +45,7 @@ export const childRoutes: Routes = [
   },
 ];
 
-export const SideMenuRoutes: Routes = [
+export const SideMenusModule: Routes = [
   {
     path: '',
     component: Layout,

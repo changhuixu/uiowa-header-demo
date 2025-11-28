@@ -1,6 +1,13 @@
 .iowa-banner-links {
   display: none;
 }
+@media (min-width: 84.375rem) {
+  .iowa-banner-links {
+    display: flex;
+    margin: 0 0.5rem;
+  }
+}
+
 .iowa-banner-links a {
   color: #494949;
   font-size: 0.9rem;
@@ -10,11 +17,4 @@
 }
 .iowa-banner-links a:hover {
   text-decoration: underline;
-}
-
-@media (min-width: 84.375em) {
-  .iowa-banner-links {
-    display: flex;
-    padding: 0 0.5rem;
-  }
 }

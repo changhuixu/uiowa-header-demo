@@ -10,7 +10,7 @@ import {
 } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { filter, map, Observable, startWith } from 'rxjs';
-import { childRoutes, SideNavItem } from '../side-menus.routes';
+import { childRoutes, SideNavItem } from '../side-menus.module';
 
 @Component({
   selector: 'app-layout',

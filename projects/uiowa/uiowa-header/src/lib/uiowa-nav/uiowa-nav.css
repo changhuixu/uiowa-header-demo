@@ -12,20 +12,12 @@
   flex-direction: column;
   padding: 0 0 0 1.25rem;
   width: 100%;
-  background-color: #f3f3f3;
   z-index: 900;
 }
-@media (max-width: 855px) {
-  .iowa-main-menu {
-    position: absolute;
-    box-sizing: border-box;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2) !important;
-  }
-}
+
 @media (min-width: 855px) {
   .iowa-nav-bar {
     display: flex;
-    align-items: center;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2) !important;
   }
   .iowa-main-menu {

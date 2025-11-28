@@ -6,14 +6,10 @@
 
 .iowa-user-button {
   color: #ffcd00;
-  cursor: pointer;
   padding: 0 !important;
-  font-weight: 400;
   white-space: nowrap;
   background-color: transparent;
   border: none;
-  font-size: 1rem;
-  line-height: 1.5;
 }
 
 @media (min-width: 855px) {

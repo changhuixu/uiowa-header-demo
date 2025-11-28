@@ -5,21 +5,23 @@ import {
   ExternalLink,
   HeaderUser,
   InternalRoute,
-  UiowaLayout,
+  UiowaFooter,
+  UiowaHeader,
+  UiowaNav,
 } from '../../projects/uiowa/uiowa-header/src/public-api';
-import { AppToasts } from './core';
+import { AppToasts } from './core/components/app-toasts';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UiowaLayout, AppToasts],
+  imports: [RouterOutlet, UiowaHeader, UiowaNav, UiowaFooter, AppToasts],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  applicationName = 'Awesome Application Name';
+  applicationName = 'Awesome Application';
   headerUser: HeaderUser = {
-    userName: 'abc',
-    originalUserName: 'changhxu',
+    userName: 'hawkid',
+    originalUserName: 'admin_id',
   } as HeaderUser;
   bannerLinks = new BannerLinks(
     new ExternalLink('Employee Self Service', 'https://hris.uiowa.edu/portal18'),

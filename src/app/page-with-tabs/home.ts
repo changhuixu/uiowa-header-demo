@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { InternalRoute } from '../../../projects/uiowa/uiowa-header/src/public-api';
-import { childRoutes } from './page-with-tabs.routes';
+import { childRoutes } from './page-with-tabs.module';
 
 @Component({
   imports: [RouterLink, RouterLinkActive, RouterOutlet],

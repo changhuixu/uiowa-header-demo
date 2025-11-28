@@ -9,6 +9,14 @@
   background: #ffcd00;
   order: 3;
 }
+@media (min-width: 855px) {
+  .site-name-bar {
+    width: auto;
+    padding: 0;
+    order: 2;
+  }
+}
+
 .site-name {
   margin: 0;
   font-size: 1.3rem;
@@ -18,14 +26,6 @@
 .site-name a {
   color: #151515;
   text-decoration: none;
-}
-@media (min-width: 855px) {
-  .site-name-bar {
-    width: auto;
-    background: transparent;
-    padding: 0;
-    order: 2;
-  }
 }
 
 .iowa-navbar-toggler {
