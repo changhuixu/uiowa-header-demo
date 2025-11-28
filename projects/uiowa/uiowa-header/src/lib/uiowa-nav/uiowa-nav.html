@@ -1,0 +1,76 @@
+<div class="iowa-nav-bar" [class.show]="navService.showNavBar()">
+  <div class="iowa-main-menu">
+    <ul class="iowa-internal-routes">
+      @for(item of internalRoutes;track $index; let i=$index){
+      <li
+        class="menu-item"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: !item.route }"
+      >
+        @if(item.subMenus){
+        <div class="iowa-submenu-dropdown">
+          @if(item.route){
+          <a
+            [attr.id]="'menuDropdown_' + i"
+            [routerLink]="item.route"
+            (click)="toggleMenuCollapse(i)"
+            (clickOutside)="collapseMenu(i)"
+            [attr.aria-expanded]="showMenuDropdown[i]"
+          >
+            {{ item.text }}
+            <span
+              aria-hidden="true"
+              class="iowa-dropdown-item-arrow"
+              [class.up]="showMenuDropdown[i]"
+              [class.down]="!showMenuDropdown[i]"
+            ></span>
+          </a>
+          } @else {
+          <a
+            [attr.id]="'menuDropdown_' + i"
+            href="javascript:void(0)"
+            (click)="toggleMenuCollapse(i)"
+            (clickOutside)="collapseMenu(i)"
+            [attr.aria-expanded]="showMenuDropdown[i]"
+          >
+            {{ item.text }}
+            <span
+              aria-hidden="true"
+              class="iowa-dropdown-item-arrow"
+              [class.up]="showMenuDropdown[i]"
+              [class.down]="!showMenuDropdown[i]"
+            ></span>
+          </a>
+          }
+
+          <div
+            class="iowa-submenu-dropdown-content"
+            [attr.aria-labelledby]="'menuDropdown_' + i"
+            [class.show]="showMenuDropdown[i]"
+          >
+            @for( subitem of item.subMenus; track $index){ @if(subitem.route){
+            <a
+              class="iowa-submenu-dropdown-item"
+              [routerLink]="subitem.route"
+              (click)="showMenuDropdown[i] = false; navService.hide()"
+            >
+              {{ subitem.text }}
+            </a>
+            } }
+          </div>
+        </div>
+        } @else {
+        <a [routerLink]="item.route" (click)="navService.hide()">
+          {{ item.text }}
+        </a>
+        }
+      </li>
+      }
+    </ul>
+    <div class="iowa-external-links">
+      @for(item of externalLinks; track $index; let isLast = $last){
+      <a [href]="item.url" [target]="item.target">{{ item.text }}</a>
+      @if(!isLast){<span class="iowa-external-link-spacer"></span>} }
+    </div>
+  </div>
+</div>

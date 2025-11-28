@@ -1,10 +1,11 @@
 import { Component, inject, Input, output } from '@angular/core';
+import { ClickOutside } from '../../click-outside';
 import { LoginService } from '../../login.service';
 import { HeaderUser } from '../../models';
 
 @Component({
   selector: 'uiowa-username-dropdown',
-  imports: [],
+  imports: [ClickOutside],
   templateUrl: './username-dropdown.html',
   styleUrl: './username-dropdown.css',
 })

@@ -1,12 +1,18 @@
-<uiowa-header
-  [externalLinks]="externalLinks"
+<header
+  role="banner"
+  uiowa-header
   [applicationName]="applicationName"
-  [internalRoutes]="internalRoutes"
   [bannerLinks]="bannerLinks"
   [user]="headerUser"
   (stopImpersonation)="stopImpersonation()"
   [showWarning]="true"
-/>
+></header>
+<nav
+  role="navigation"
+  uiowa-nav
+  [internalRoutes]="internalRoutes"
+  [externalLinks]="externalLinks"
+></nav>
 <main role="main" class="w-100 h-100 flex-fill p-0 overflow-auto">
   <router-outlet></router-outlet>
 </main>

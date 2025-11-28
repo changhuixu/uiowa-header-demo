@@ -5,23 +5,31 @@ import {
   ExternalLink,
   HeaderUser,
   InternalRoute,
-  UiowaFooter,
-  UiowaHeader,
+  UiowaLayout,
 } from '../../projects/uiowa/uiowa-header/src/public-api';
 import { AppToasts } from './core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UiowaHeader, UiowaFooter, AppToasts],
+  imports: [RouterOutlet, UiowaLayout, AppToasts],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
+  applicationName = 'Awesome Application Name';
+  headerUser: HeaderUser = {
+    userName: 'abc',
+    originalUserName: 'changhxu',
+  } as HeaderUser;
+  bannerLinks = new BannerLinks(
+    new ExternalLink('Employee Self Service', 'https://hris.uiowa.edu/portal18'),
+    new ExternalLink('Test', 'https://www.uiowa.edu')
+  );
+
   externalLinks = [
     new ExternalLink('Employee Self Service', 'https://hris.uiowa.edu/portal18'),
     new ExternalLink('GitHub Repo', 'https://github.com/changhuixu/uiowa-header-demo'),
   ];
-  applicationName = 'Awesome Application Name';
   internalRoutes = [
     new InternalRoute('Home', ''),
     new InternalRoute('Page with Tabs', 'page-with-tabs'),
@@ -32,14 +40,7 @@ export class App {
     ]),
     new InternalRoute('Side Nav Menus', 'admin2'),
   ];
-  bannerLinks = new BannerLinks(
-    new ExternalLink('Employee Self Service', 'https://hris.uiowa.edu/portal18'),
-    new ExternalLink('Test', 'https://www.uiowa.edu')
-  );
-  headerUser: HeaderUser = {
-    userName: 'abc',
-    originalUserName: 'changhxu',
-  } as HeaderUser;
+
   constructor() {}
 
   ngOnInit() {}

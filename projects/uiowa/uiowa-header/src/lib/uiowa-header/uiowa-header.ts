@@ -1,55 +1,30 @@
-import { Component, inject, Input, OnInit, output } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject, Input, output } from '@angular/core';
 import { LoginService } from '../login.service';
-import { BannerLinks, ExternalLink, HeaderUser, InternalRoute } from '../models';
+import { BannerLinks, HeaderUser } from '../models';
+import { NavService } from '../nav.service';
 import { UsernameDropdown } from './username-dropdown/username-dropdown';
 
 @Component({
-  selector: 'uiowa-header',
-  imports: [UsernameDropdown, RouterLink, RouterLinkActive],
+  selector: 'header[uiowa-header]',
+  imports: [UsernameDropdown],
   templateUrl: './uiowa-header.html',
   styleUrls: [
     './uiowa-header.css',
     './logo.css',
     './site-name.css',
     './iowa-bar.css',
-    './main-menu.css',
-    './menu-item.css',
-    './internal-routes.css',
-    './external-links.css',
     './banner-links.css',
   ],
 })
-export class UiowaHeader implements OnInit {
+export class UiowaHeader {
   @Input('applicationName') siteName = 'Awesome Site Name';
-  @Input() externalLinks?: ExternalLink[];
   @Input() bannerLinks?: BannerLinks;
-  @Input() internalRoutes?: InternalRoute[];
   @Input() user?: HeaderUser;
   stopImpersonation = output();
   @Input() showWarning = false;
   @Input() warningMessage = 'WARNING: TEST SYSTEM';
-  showNavBar = false;
-  showMenuDropdown: boolean[] = [];
-
+  navService = inject(NavService);
   loginService = inject(LoginService);
-
-  ngOnInit() {
-    this.showMenuDropdown = this.internalRoutes?.map((_) => false) ?? [];
-  }
-
-  toggleMenuCollapse(i: number) {
-    this.showMenuDropdown[i] = !this.showMenuDropdown[i];
-    this.showMenuDropdown.forEach((x, index) => {
-      if (x && index !== i) {
-        this.showMenuDropdown[index] = false;
-      }
-    });
-  }
-
-  collapseMenu(i: number) {
-    this.showMenuDropdown[i] = false;
-  }
 
   logout() {
     this.loginService.logout();
