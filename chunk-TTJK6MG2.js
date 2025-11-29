@@ -1,1 +1,0 @@
-var c=class{constructor(l,r,u){this.text=l;this.route=r;this.subMenus=u}},i=class{constructor(l,r,u="_blank"){this.text=l;this.url=r;this.target=u}},s=class{constructor(l,r){this.link1=l;this.link2=r}};export{c as a,i as b,s as c};
