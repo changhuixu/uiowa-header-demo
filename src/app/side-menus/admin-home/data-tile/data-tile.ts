@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
@@ -11,19 +11,19 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataTile implements OnInit {
-  @Input() type!: 'primary' | 'success' | 'warning' | 'danger';
-  @Input() icon!: IconDefinition;
-  @Input() title!: string;
-  @Input() n!: number;
-  @Input() path!: string;
+  readonly type = input.required<'primary' | 'success' | 'warning' | 'danger'>();
+  readonly icon = input.required<IconDefinition>();
+  readonly title = input.required<string>();
+  readonly n = input.required<number>();
+  readonly path = input.required<string>();
   number = '';
   constructor() {}
 
   ngOnInit() {
-    if (this.n >= 10000) {
-      this.number = (+this.n).toExponential(0);
+    if (this.n() >= 10000) {
+      this.number = (+this.n()).toExponential(0);
     } else {
-      this.number = this.n.toString();
+      this.number = this.n().toString();
     }
   }
 }

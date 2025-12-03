@@ -1,16 +1,16 @@
 <header
   role="banner"
   uiowa-header
-  [applicationName]="applicationName"
+  [appName]="applicationName"
   [bannerLinks]="bannerLinks"
-  [user]="headerUser"
+  [user]="headerUser()"
   (stopImpersonation)="stopImpersonation()"
   [showWarning]="true"
 ></header>
 <nav
   role="navigation"
   uiowa-nav
-  [internalRoutes]="internalRoutes"
+  [internalRoutes]="internalRoutes()"
   [externalLinks]="externalLinks"
 ></nav>
 <main role="main" class="w-100 h-100 flex-fill p-0 overflow-auto">

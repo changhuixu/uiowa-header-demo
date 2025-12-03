@@ -21,6 +21,10 @@ export const routes: Routes = [
     loadChildren: () => import('./side-menus/side-menus.module').then((m) => m.SideMenusModule),
   },
   {
+    path: 'impersonation',
+    loadComponent: () => import('./impersonation/impersonation').then((m) => m.Impersonation),
+  },
+  {
     path: 'access-denied',
     loadComponent: () => import('./core/components/access-denied').then((m) => m.AccessDenied),
   },

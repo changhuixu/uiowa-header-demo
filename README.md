@@ -39,34 +39,20 @@ You might also want to check out libraries [@uiowa/universal-workflow](https://g
 
 ### Features
 
-- Responsive header layout with Hawkeye color styles
-- Support custom "top-right" part of Uiowa branding bar. By default, "top-right" part of Uiowa branding bar shows External Links (if any) and Login link or User dropdown button. If you want to customize the "top-right" part, you can provide your content inside of `uiowa-header` tag. eg,
-
-  ```html
-  <uiowa-header applicationName="My Awesome App" [internalRoutes]="myInternalRoutes">
-    <div class="text-white">my content</div>
-  </uiowa-header>
-  ```
-
-- Support application Nav menus with dropdown sub menus, as well as dividers in dropdown menu.
+- Responsive header and footer layout with Hawkeye color styles
+- Support application Nav menus with dropdown sub menus.
 - Provide `LoginService` with default implementations for `login()` and `logout()` methods which correspond to click event from login and logout buttons. By default, you don't need to do extra work for login/logout. The two methods follow .NET Core convention redirect to routes `account\login` and `account\logout`, respectively. `LoginService` has a public member `returnUri` (string, default empty), which is the return uri after login.
 
   If you want to customize login and/or logout process, you can provide your customized service via dependency injection. eg,
 
   ```typescript
-  @NgModule({
-    imports: [CommonModule, UiowaHeaderModule],
-    declarations: [...],
-    providers: [{ provide: LoginService, useClass: HawkIdLoginService }],
-    exports: [UiowaHeaderModule, ...]
-  })
-  export class CoreModule {
-    constructor(@Optional() @SkipSelf() core: CoreModule) {
-      if (core) {
-        throw new Error('Core Module can only be imported to AppModule.');
-      }
-    }
-  }
+  export const appConfig: ApplicationConfig = {
+    providers: [
+      ...,
+      { provide: LoginService, useClass: HawkIdLoginService },
+      ...,
+    ],
+  };
   ```
 
 - When user is impersonating and wants to stop impersonation, user dropdown will show a link which would emit a `stopImpersonation` event. You can handle this event accordingly.

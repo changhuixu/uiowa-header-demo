@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'footer[uiowa-footer]',
@@ -7,13 +7,12 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   styleUrl: './uiowa-footer.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UiowaFooter implements OnInit {
+export class UiowaFooter {
   year = new Date().getFullYear();
-  @Input() emailLinkText = 'Business Services IT';
-  @Input() emailAddress = 'changhui-xu@uiowa.edu';
-  @Input() emailSubject = 'Questions about the uiowa-header';
-  emailHref = '';
-  ngOnInit(): void {
-    this.emailHref = `mailto:${this.emailAddress}?subject=${this.emailSubject.replace(' ', '%20')}`;
-  }
+  emailLinkText = input<string>('Business Services IT');
+  emailAddress = input<string>('changhui-xu@uiowa.edu');
+  emailSubject = input<string>('Questions about the uiowa-header');
+  emailHref = computed<string>(
+    () => `mailto:${this.emailAddress()}?subject=${this.emailSubject().replace(' ', '%20')}`
+  );
 }
