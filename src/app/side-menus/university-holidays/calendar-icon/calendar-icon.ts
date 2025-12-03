@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'app-calendar-icon',
@@ -7,9 +7,9 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   styleUrl: './calendar-icon.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CalendarIcon implements OnInit {
-  @Input() date?: Date;
-  month = '';
+export class CalendarIcon {
+  date = input.required<Date>();
+  month = computed<string>(() => this.monthNames[this.date().getMonth()]);
   monthNames = [
     'January',
     'February',
@@ -24,31 +24,8 @@ export class CalendarIcon implements OnInit {
     'November',
     'December',
   ];
-  day = 0;
-  weekday = '';
+  day = computed<number>(() => this.date().getDate());
+  weekday = computed<string>(() => this.weekdays[this.date().getDay()]);
   weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  dateString = '';
-  constructor() {}
-
-  ngOnInit(): void {
-    if (!this.date) {
-      this.date = new Date();
-    }
-    this.month = this.monthNames[this.date.getMonth()];
-    this.day = this.date.getDate();
-    this.weekday = this.weekdays[this.date.getDay()];
-    this.dateString = this.getFormattedDate(this.date);
-  }
-
-  private getFormattedDate(date: Date): string {
-    var year = date.getFullYear();
-
-    var month = (1 + date.getMonth()).toString();
-    month = month.length > 1 ? month : '0' + month;
-
-    var day = date.getDate().toString();
-    day = day.length > 1 ? day : '0' + day;
-
-    return month + '/' + day + '/' + year;
-  }
+  dateString = computed<string>(() => this.date().toLocaleDateString());
 }

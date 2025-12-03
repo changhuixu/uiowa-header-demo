@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faCalendarCheck,
   faEnvelopeOpen,
@@ -7,13 +6,6 @@ import {
   faHome,
   faHourglassStart,
 } from '@fortawesome/free-solid-svg-icons';
-import { Layout } from './layout/layout';
-
-export interface SideNavItem {
-  icon: IconDefinition;
-  text: string;
-  path: string;
-}
 
 export const childRoutes: Routes = [
   {
@@ -45,10 +37,10 @@ export const childRoutes: Routes = [
   },
 ];
 
-export const SideMenusModule: Routes = [
+export const SideMenusRoutes: Routes = [
   {
     path: '',
-    component: Layout,
+    loadComponent: () => import('./layout/layout').then((m) => m.Layout),
     children: [
       {
         path: '',

@@ -1,19 +1,16 @@
-<div class="d-flex flex-column">
-  <div class="buttons">
-    <button class="btn btn-primary me-2" (click)="showPrimary()" ngbTooltip="Will disappear in 5s">
-      Primary toast
-    </button>
-    <button class="btn btn-info me-2" (click)="showInfo()" ngbTooltip="Will disappear in 5s">
-      Info toast
-    </button>
-    <button class="btn btn-warning me-2" (click)="showWarning()" ngbTooltip="Will disappear in 5s">
-      Warning toast
-    </button>
-    <button class="btn btn-success me-2" (click)="showSuccess()" ngbTooltip="Will disappear in 10s">
-      Success toast
-    </button>
-    <button class="btn btn-danger me-2" (click)="showDanger()" ngbTooltip="Will disappear in 5s">
-      Danger toast
-    </button>
-  </div>
+<div class="d-flex flex-wrap gap-2">
+  <button class="btn btn-primary" (click)="showPrimary()" title="Will disappear in 5s">
+    Primary toast
+  </button>
+  <button class="btn btn-info" (click)="showInfo()" title="Will disappear in 5s">Info toast</button>
+  <button class="btn btn-warning" (click)="showWarning()" title="Will disappear in 5s">
+    Warning toast
+  </button>
+  <button class="btn btn-success" (click)="showSuccess()" title="Will disappear in 10s">
+    Success toast
+  </button>
+  <button class="btn btn-danger" (click)="showDanger()" title="Will disappear in 5s">
+    Danger toast
+  </button>
+  <button class="btn btn-primary" (click)="callApi()" title="Simulate API call">Call API</button>
 </div>

@@ -1,7 +1,7 @@
 <div class="iowa-nav-bar" [class.show]="navService.showNavBar()">
   <div class="iowa-main-menu">
     <ul class="iowa-internal-routes">
-      @for(item of internalRoutes;track $index; let i=$index){
+      @for(item of internalRoutes();track $index; let i=$index){
       <li
         class="menu-item"
         routerLinkActive="is-active"
@@ -68,7 +68,7 @@
       }
     </ul>
     <div class="iowa-external-links">
-      @for(item of externalLinks; track $index; let isLast = $last){
+      @for(item of externalLinks(); track $index; let isLast = $last){
       <a [href]="item.url" [target]="item.target">{{ item.text }}</a>
       @if(!isLast){<span class="iowa-external-link-spacer"></span>} }
     </div>

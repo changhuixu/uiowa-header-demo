@@ -9,8 +9,15 @@ import {
   RouterOutlet,
 } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { filter, map, Observable, startWith } from 'rxjs';
-import { childRoutes, SideNavItem } from '../side-menus.module';
+import { childRoutes } from '../side-menus.routes';
+
+interface SideNavItem {
+  icon: IconDefinition;
+  text: string;
+  path: string;
+}
 
 @Component({
   selector: 'app-layout',

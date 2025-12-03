@@ -1,20 +1,26 @@
 <header
   role="banner"
   uiowa-header
-  [applicationName]="applicationName"
+  [appName]="applicationName"
   [bannerLinks]="bannerLinks"
-  [user]="headerUser"
+  [user]="headerUser()"
   (stopImpersonation)="stopImpersonation()"
   [showWarning]="true"
 ></header>
 <nav
   role="navigation"
   uiowa-nav
-  [internalRoutes]="internalRoutes"
+  [internalRoutes]="internalRoutes()"
   [externalLinks]="externalLinks"
 ></nav>
 <main role="main" class="w-100 h-100 flex-fill p-0 overflow-auto">
   <router-outlet></router-outlet>
 </main>
-<footer role="contentinfo" uiowa-footer emailAddress="donotreplay@uiowa.edu"></footer>
+<footer
+  role="contentinfo"
+  uiowa-footer
+  emailLinkText="Business Services IT"
+  emailAddress="donotreplay@uiowa.edu"
+  emailSubject="Questions about the template"
+></footer>
 <app-toasts aria-live="polite" aria-atomic="true" />

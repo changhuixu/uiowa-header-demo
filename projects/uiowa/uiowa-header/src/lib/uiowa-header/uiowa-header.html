@@ -49,26 +49,26 @@
         </svg>
       </button>
       <h1 class="site-name">
-        <a routerLink="">{{ siteName }}</a>
+        <a routerLink="">{{ siteName() }}</a>
       </h1>
     </div>
     <div class="iowa-username-bar">
-      @if(showWarning){
-      <div class="test-warning">{{ warningMessage }}</div>
-      } @if(bannerLinks){
+      @if(showWarning()){
+      <div class="test-warning">{{ warningMessage() }}</div>
+      } @if(bannerLinks(); as bannerLinks){
       <div class="iowa-banner-links">
         @if(bannerLinks.link1){
         <a [href]="bannerLinks.link1.url" [target]="bannerLinks.link1.target">
           {{ bannerLinks.link1.text }}
         </a>
         } @if(bannerLinks.link2){
-        <a [href]="bannerLinks.link2.url" [target]="bannerLinks.link1.target">
+        <a [href]="bannerLinks.link2.url" [target]="bannerLinks.link2.target">
           {{ bannerLinks.link2.text }}
         </a>
         }
       </div>
       }
-      <uiowa-username-dropdown [user]="user" (stopImpersonation)="stopImpersonation.emit()" />
+      <uiowa-username-dropdown [user]="user()" (stopImpersonation)="stopImpersonation.emit()" />
     </div>
   </div>
 </div>

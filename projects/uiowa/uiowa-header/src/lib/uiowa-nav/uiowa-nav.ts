@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ClickOutside } from '../click-outside';
 import { ExternalLink, InternalRoute } from '../models';
@@ -17,16 +17,17 @@ import { NavService } from '../nav.service';
   host: {
     id: 'primary-navbar',
   },
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiowaNav implements OnInit {
-  @Input() externalLinks?: ExternalLink[];
-  @Input() internalRoutes?: InternalRoute[];
+  externalLinks = input<ExternalLink[]>();
+  internalRoutes = input<InternalRoute[]>();
   showMenuDropdown: boolean[] = [];
 
   navService = inject(NavService);
 
   ngOnInit(): void {
-    this.showMenuDropdown = this.internalRoutes?.map((_) => false) ?? [];
+    this.showMenuDropdown = this.internalRoutes()?.map((_) => false) ?? [];
   }
 
   toggleMenuCollapse(i: number) {

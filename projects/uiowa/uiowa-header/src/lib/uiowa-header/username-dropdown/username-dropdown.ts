@@ -1,4 +1,4 @@
-import { Component, inject, Input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { ClickOutside } from '../../click-outside';
 import { LoginService } from '../../login.service';
 import { HeaderUser } from '../../models';
@@ -8,9 +8,10 @@ import { HeaderUser } from '../../models';
   imports: [ClickOutside],
   templateUrl: './username-dropdown.html',
   styleUrl: './username-dropdown.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsernameDropdown {
-  @Input() user?: HeaderUser;
+  user = input<HeaderUser>();
   stopImpersonation = output();
   showMenu = false;
   loginService = inject(LoginService);

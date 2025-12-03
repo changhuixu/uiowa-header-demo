@@ -1,5 +1,5 @@
-<time [attr.datetime]="date" class="calendar" [attr.title]="dateString">
-  <span class="binds"></span> <span class="month">{{ month }}</span>
-  <h1 class="day">{{ day }}</h1>
-  <div class="weekday">{{ weekday }}</div>
+<time [attr.datetime]="date()" class="calendar" [attr.title]="dateString()">
+  <span class="binds"></span> <span class="month">{{ month() }}</span>
+  <h1 class="day">{{ day() }}</h1>
+  <div class="weekday">{{ weekday() }}</div>
 </time>

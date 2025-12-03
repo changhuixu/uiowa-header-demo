@@ -17,7 +17,7 @@ export const childRoutes: Routes = [
   },
 ];
 
-export const PageWithTabsModule: Routes = [
+export const PageWithTabsRoutes: Routes = [
   {
     path: '',
     component: Home,

@@ -1,4 +1,4 @@
-@if(user?.userName){
+@if(user()?.userName; as userName){
 <button
   aria-label="Click to show menu"
   class="iowa-user-button has-dropdown"
@@ -20,9 +20,9 @@
     ></path>
   </svg>
   <span class="iowa-user-name ml-1">
-    {{ user!.userName }}
-    @if(user!.originalUserName){
-    <span class="iowa-original-username"> ({{ user!.originalUserName }}) </span>
+    {{ userName }}
+    @if(user()?.originalUserName; as originalUserName){
+    <span class="iowa-original-username"> ({{ originalUserName }}) </span>
     }
   </span>
 </button>
@@ -32,7 +32,7 @@
   class="iowa-username-dropdown iowa-user-dropdown-menu-right"
   [class.show]="showMenu"
 >
-  @if(user!.originalUserName){
+  @if(user()?.originalUserName){
   <button
     type="button"
     class="iowa-username-dropdown-button"

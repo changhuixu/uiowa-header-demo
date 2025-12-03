@@ -9,16 +9,20 @@ export const routes: Routes = [
   {
     path: 'page-with-tabs',
     loadChildren: () =>
-      import('./page-with-tabs/page-with-tabs.module').then((m) => m.PageWithTabsModule),
+      import('./page-with-tabs/page-with-tabs.routes').then((m) => m.PageWithTabsRoutes),
   },
   {
     path: 'admin1',
     loadChildren: () =>
-      import('./dropdown-menus/dropdown-menus.module').then((m) => m.DropdownMenusModule),
+      import('./dropdown-menus/dropdown-menus.routes').then((m) => m.DropdownMenusRoutes),
   },
   {
     path: 'admin2',
-    loadChildren: () => import('./side-menus/side-menus.module').then((m) => m.SideMenusModule),
+    loadChildren: () => import('./side-menus/side-menus.routes').then((m) => m.SideMenusRoutes),
+  },
+  {
+    path: 'impersonation',
+    loadComponent: () => import('./impersonation/impersonation').then((m) => m.Impersonation),
   },
   {
     path: 'access-denied',
