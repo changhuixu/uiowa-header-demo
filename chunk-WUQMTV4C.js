@@ -1,1 +1,0 @@
-import{Eb as f,Ua as r,ob as n,pb as s}from"./chunk-KA7QXOCV.js";var o=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=r({type:t,selectors:[["app-current-offers"]],decls:2,vars:0,template:function(e,a){e&1&&(n(0,"p"),f(1,"current-offers works!"),s())},encapsulation:2})};export{o as CurrentOffers};
