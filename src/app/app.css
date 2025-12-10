@@ -6,7 +6,8 @@
 }
 
 @media print {
-  uiowa-header,
+  header,
+  nav,
   footer {
     display: none;
   }

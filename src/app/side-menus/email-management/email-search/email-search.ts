@@ -11,12 +11,12 @@ export class EmailSearch {
   period = 7;
   email = '';
   busy = false;
-  alertMessages: string[] = [];
+  alertMessage = '';
 
   searchEmails() {
-    this.alertMessages = [];
+    this.alertMessage = '';
     if (!this.email) {
-      this.alertMessages.push(`Please provide a valid Email Address`);
+      this.alertMessage = `Please provide a valid Email Address`;
       return;
     }
     this.email = this.email.trim();

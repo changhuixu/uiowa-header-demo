@@ -22,7 +22,7 @@ export const childRoutes: Routes = [
   },
 ];
 
-export const EmailManagementModule: Routes = [
+export const EmailManagementRoutes: Routes = [
   {
     path: '',
     component: EmailManagement,

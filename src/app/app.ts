@@ -1,4 +1,4 @@
-import { Component, inject, linkedSignal } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
   BannerLinks,
@@ -21,7 +21,6 @@ export class App {
   userService = inject(UserService);
   headerUser = this.userService.user;
 
-  applicationName = 'Awesome Application';
   bannerLinks = new BannerLinks(
     new ExternalLink('Employee Self Service', 'https://hris.uiowa.edu/portal18'),
     new ExternalLink('Test', 'https://www.uiowa.edu')
@@ -31,7 +30,7 @@ export class App {
     new ExternalLink('GitHub Repo', 'https://github.com/changhuixu/uiowa-header-demo'),
   ];
 
-  internalRoutes = linkedSignal<InternalRoute[]>(() => {
+  internalRoutes = computed(() => {
     const baseRoutes = [
       new InternalRoute('Home', ''),
       new InternalRoute('Page with Tabs', 'page-with-tabs'),
@@ -49,8 +48,6 @@ export class App {
 
     return baseRoutes;
   });
-
-  constructor() {}
 
   stopImpersonation() {
     this.userService.stopImpersonation();

@@ -8,9 +8,9 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarIcon {
-  date = input.required<Date>();
+  readonly date = input.required<Date>();
   month = computed<string>(() => this.monthNames[this.date().getMonth()]);
-  monthNames = [
+  readonly monthNames = [
     'January',
     'February',
     'March',
@@ -26,6 +26,14 @@ export class CalendarIcon {
   ];
   day = computed<number>(() => this.date().getDate());
   weekday = computed<string>(() => this.weekdays[this.date().getDay()]);
-  weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  readonly weekdays = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
   dateString = computed<string>(() => this.date().toLocaleDateString());
 }

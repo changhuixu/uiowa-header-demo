@@ -26,7 +26,7 @@ export const childRoutes: Routes = [
   {
     path: 'email-management',
     loadChildren: () =>
-      import('./email-management/email-management.module').then((m) => m.EmailManagementModule),
+      import('./email-management/email-management.routes').then((m) => m.EmailManagementRoutes),
     data: { text: 'Email Management', icon: faEnvelopeOpen },
   },
   {

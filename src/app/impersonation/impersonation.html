@@ -4,9 +4,9 @@
     This page is used to demonstrate the impersonation functionality of the UIowa Header component.
   </p>
   <p>
-    When you are impersonating another user, you should see a warning banner in the header
-    indicating that you are in impersonation mode. You can stop impersonating by clicking the "Stop
-    Impersonation" button in the username dropdown menu.
+    When you are impersonating another user, you should see your <code>originalUserName</code> in
+    the header indicating that you are in the impersonation mode. You can stop impersonating by
+    clicking the "Stop Impersonation" button in the username dropdown menu.
   </p>
   @if(userService.user().originalUserName){
   <div>

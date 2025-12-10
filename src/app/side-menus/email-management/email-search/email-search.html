@@ -1,7 +1,7 @@
 <div class="d-flex flex-column overflow-y-auto">
-  <section class="d-flex flex-wrap align-items-center shadow mb-2 p-2">
-    <div class="d-flex me-3 mb-2 mb-md-0">
-      <label for="period" class="col-form-label text-nowrap field-label me-2"> Time Period </label>
+  <section class="d-flex flex-wrap align-items-center shadow gap-3 mb-2 p-2">
+    <div class="d-flex">
+      <label for="period" class="col-form-label text-nowrap fw-medium me-2"> Time Period </label>
       <select class="form-select" id="period" [(ngModel)]="period">
         <option [ngValue]="7">Past 7 days</option>
         <option [ngValue]="30">Past 30 days</option>
@@ -11,18 +11,18 @@
         <option [ngValue]="365">Past 365 days</option>
       </select>
     </div>
-    <div class="d-flex me-3 mb-2 mb-md-0">
-      <label for="email" class="col-form-label text-nowrap field-label me-2"> Email Address </label>
+    <div class="d-flex">
+      <label for="email" class="col-form-label text-nowrap fw-medium me-2"> Email Address </label>
       <input
         id="email"
-        type="text"
+        type="email"
         maxlength="50"
         class="form-control"
         [(ngModel)]="email"
         (keydown.enter)="searchEmails()"
       />
     </div>
-    <div class="d-flex me-3 mb-2 mb-md-0">
+    <div class="d-flex">
       <button
         type="button"
         class="btn btn-primary"
