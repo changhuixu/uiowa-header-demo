@@ -1,7 +1,7 @@
-import{f}from"./chunk-SOP6FSF6.js";import"./chunk-FYA6PSJR.js";import{Aa as c,Ea as i,M as u,Pa as h,ab as o,bb as r,kb as p,lb as e,mb as m,ob as q,qb as d,rb as b,zb as t}from"./chunk-JYRHHPEW.js";import"./chunk-2NFLSA4Y.js";function k(s,l){if(s&1&&m(0,"div",3),s&2){let a=b();q("innerHTML",a.html,c)}}function _(s,l){if(s&1&&m(0,"div",3),s&2){let a=b();q("innerHTML",a.ts,c)}}var w=class s{html="";ts="";showHtml=!1;showTs=!1;sanitizer=u(f);ngOnInit(){this.html=this.sanitizer.bypassSecurityTrustHtml(`
+import{f}from"./chunk-26YUHLVG.js";import"./chunk-D5GZFXDQ.js";import{Aa as c,Ea as i,M as b,Pa as h,ab as o,bb as r,kb as p,lb as e,mb as m,ob as q,qb as d,rb as u,zb as t}from"./chunk-ASVNPE3R.js";import"./chunk-2NFLSA4Y.js";function k(s,l){if(s&1&&m(0,"div",3),s&2){let a=u();q("innerHTML",a.html,c)}}function _(s,l){if(s&1&&m(0,"div",3),s&2){let a=u();q("innerHTML",a.ts,c)}}var w=class s{html="";ts="";showHtml=!1;showTs=!1;sanitizer=b(f);ngOnInit(){this.html=this.sanitizer.bypassSecurityTrustHtml(`
   <pre class='bg'><span class='element'>&lt;uiowa-header</span>
     [externalLinks]<span class='eq'>=</span><span class='qt'>"externalLinks"</span>
-    [applicationName]<span class='eq'>=</span><span class='qt'>"applicationName"</span>
+    appName<span class='eq'>=</span><span class='qt'>"Awesome Application"</span>
     [internalRoutes]<span class='eq'>=</span><span class='qt'>"internalRoutes"</span>
     [user]<span class='eq'>=</span><span class='qt'>"headerUser"</span>
     (stopImpersonation)<span class='eq'>=</span><span class='qt'>"stopImpersonation()"</span>
@@ -12,7 +12,6 @@ import{f}from"./chunk-SOP6FSF6.js";import"./chunk-FYA6PSJR.js";import{Aa as c,Ea
 <span class='kw'>import</span> <span class='brace'>{</span> InternalRoute<span class='eq'>,</span> ExternalLink<span class='eq'>,</span> HeaderUser <span class='brace'>}</span> from <span class='qt'>'@uiowa/uiowa-header'</span><span class='brace'>;</span>
 <br><span class='kw'>export</span> <span class='kw'>class</span> AppComponent <span class='kw'>implements</span> OnInit <span class='brace'>{</span>
   externalLinks <span class='eq'>=</span> <span class='eq'>[</span><span class='kw'>new</span> ExternalLink<span class='eq'>(</span><span class='qt'>'Self Service</span><span class=eq'>'</span><span class='eq'>,</span> <span class='qt'>'https://hris.uiowa.edu'</span><span class='eq'>)]</span><span class='brace'>;</span>
-  applicationName <span class='eq'>=</span> <span class='qt'>'Awesome Application Name</span><span class=eq'>'</span><span class='brace'>;</span>
   internalRoutes <span class='eq'>=</span> <span class='eq'>[</span>
     <span class='kw'>new</span> InternalRoute<span class='eq'>(</span><span class='qt'>'Home</span><span class=eq'>'</span><span class='eq'>,</span> <span class=eq'>''</span><span class='eq'>),</span>
     <span class='kw'>new</span> InternalRoute<span class='eq'>(</span><span class='qt'>'Page with Tabs</span><span class=eq'>'</span><span class='eq'>,</span> <span class='qt'>'page-with-tabs'</span><span class='eq'>)</span>
