@@ -34,7 +34,7 @@
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-regular-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@ng-bootstrap/ng-bootstrap": "^20.0.0-rc.0",
+    "@ng-bootstrap/ng-bootstrap": "^20.0.0",
     "bootstrap": "^5.3.8",
     "chart.js": "^4.5.1",
     "rxjs": "~7.8.0",

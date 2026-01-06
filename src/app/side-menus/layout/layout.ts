@@ -10,6 +10,12 @@ import {
 } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import {
+  NgbDropdown,
+  NgbDropdownItem,
+  NgbDropdownMenu,
+  NgbDropdownToggle,
+} from '@ng-bootstrap/ng-bootstrap/dropdown';
 import { filter, map, Observable, startWith } from 'rxjs';
 import { childRoutes } from '../side-menus.routes';
 
@@ -21,7 +27,17 @@ interface SideNavItem {
 
 @Component({
   selector: 'app-layout',
-  imports: [AsyncPipe, RouterLink, RouterLinkActive, FontAwesomeModule, RouterOutlet],
+  imports: [
+    AsyncPipe,
+    RouterLink,
+    RouterLinkActive,
+    FontAwesomeModule,
+    RouterOutlet,
+    NgbDropdown,
+    NgbDropdownToggle,
+    NgbDropdownMenu,
+    NgbDropdownItem,
+  ],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })
