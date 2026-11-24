@@ -35,7 +35,7 @@
     "@fortawesome/free-regular-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@ng-bootstrap/ng-bootstrap": "^20.0.0",
-    "bootstrap": "^5.3.8",
+    "bootstrap": "^5.3.9",
     "chart.js": "^4.5.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"

@@ -4,16 +4,16 @@ import { HeaderUser } from '../../../../projects/uiowa/uiowa-header/src/public-a
 @Injectable({ providedIn: 'root' })
 export class UserService {
   private _user = signal<HeaderUser>({
-    userName: 'hawkid',
-    originalUserName: 'admin_id',
+    userName: 'hawkId',
+    originalUserName: 'adminId',
   });
   user = this._user.asReadonly();
 
   impersonate(hawkid: string) {
-    this._user.set({ userName: hawkid, originalUserName: 'admin_id' });
+    this._user.set({ userName: hawkid, originalUserName: 'adminId' });
   }
 
   stopImpersonation() {
-    this._user.set({ userName: 'admin_id', originalUserName: '' });
+    this._user.set({ userName: 'adminId', originalUserName: '' });
   }
 }

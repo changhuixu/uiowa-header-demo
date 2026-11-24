@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { InternalRoute } from '../../../../projects/uiowa/uiowa-header/src/public-api';
-import { childRoutes } from './email-management.routes';
 
 @Component({
   selector: 'app-email-management',
@@ -30,7 +29,8 @@ import { childRoutes } from './email-management.routes';
   ],
 })
 export class EmailManagement {
-  navItems = childRoutes
-    .filter((x) => x.data && x.data['title'])
+  private readonly activatedRoute = inject(ActivatedRoute);
+  navItems = this.activatedRoute.routeConfig
+    ?.children!.filter((x) => x.data && x.data['title'])
     .map((x) => new InternalRoute(x.data!['title'], x.path));
 }

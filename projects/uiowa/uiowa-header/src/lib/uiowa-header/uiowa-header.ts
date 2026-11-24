@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { LoginService } from '../login.service';
 import { BannerLinks, HeaderUser } from '../models';
 import { NavService } from '../nav.service';
@@ -6,7 +7,7 @@ import { UsernameDropdown } from './username-dropdown/username-dropdown';
 
 @Component({
   selector: 'header[uiowa-header]',
-  imports: [UsernameDropdown],
+  imports: [UsernameDropdown, RouterLink],
   templateUrl: './uiowa-header.html',
   styleUrls: ['./uiowa-header.css', './logo.css', './site-name.css', './banner-links.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

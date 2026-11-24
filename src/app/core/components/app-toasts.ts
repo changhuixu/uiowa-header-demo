@@ -73,34 +73,9 @@ export class UiowaToast implements OnInit, OnDestroy {
       [delay]="toast.delay || 5"
       [toastType]="toast.toastType"
       [message]="toast.content"
-      animate.enter="entering"
-      animate.leave="leaving"
     />
     }
   `,
-  styles: [
-    `
-      .entering {
-        animation: slide-fade 300ms;
-      }
-      @keyframes slide-fade {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .leaving {
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: opacity 300ms ease-out, transform 300ms ease-out;
-      }
-    `,
-  ],
   host: {
     class: 'toast-container position-fixed top-0 end-0 p-3',
     style: 'z-index: 1200',
